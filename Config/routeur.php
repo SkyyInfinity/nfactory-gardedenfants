@@ -7,5 +7,7 @@ $page = $_GET["page"];
 }
 
 switch ($page) {
+    case 'home':
+        break;
 
 }
