@@ -1,24 +1,33 @@
-@charset "UTF-8";
 /* ─────────────────────────────────────────────────────────
 /* ------------------ C S S   S T A R T --------------------
 /* ───────────────────────────────────────────────────────── */
+
 /* ─── IMPORTATION ───────────────────────────────────────── */
 @import url("reset.css");
+
 /* ─── VARIABLE ──────────────────────────────────────────── */
+$color: red;
+
 /* ─── BASE ──────────────────────────────────────────────── */
 body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ─── LAYOUT ────────────────────────────────────────────── */
+
 /* ─── MODULE ────────────────────────────────────────────── */
+
 /* ─── STATE ─────────────────────────────────────────────── */
+
 /* ─── RESPONSIVE ────────────────────────────────────────── */
+@media screen and (max-width: 375px) {
+
+}
+
 /* ─────────────────────────────────────────────────────────
 /* ------------------- C S S   E N D -----------------------
 /* ───────────────────────────────────────────────────────── */
-/*# sourceMappingURL=style.css.map */
