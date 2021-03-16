@@ -25,11 +25,12 @@
             <nav>
                 <ul>
                 <li><a href="index.php" class="nav-link">Acceuil</a></li>
-                <?php if(isset($_SESSION["user"])): ?>
-                <li><a href="index.php?page=logout" class="nav-link">Déconnexion</a></li>
+            <?php if(isset($_SESSION["user"])): ?>
+                <li><a href="index.php?page=userSettings&id=".$>Paramètre</a></li>
+                <li><a href="index.php?page=logout">Déconnexion</a></li>
             <?php else: ?>
-                <li><a href="index.php?page=registration" class="nav-link">Inscription</a></li>
-                <li><a href="index.php?page=login" class="nav-link">Connexion</a></li>
+                <li><a href="index.php?page=registration">Inscription</a></li>
+                <li><a href="index.php?page=login">Connexion</a></li>
             <?php endif; ?>
                 </ul>
             </nav>

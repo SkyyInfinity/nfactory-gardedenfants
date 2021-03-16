@@ -27,6 +27,10 @@ switch ($page) {
         $user = new UserController();
         $user->logout();
         break;
+    case "userSettings":
+        $user = new UserController();
+        $user->updateUser($_POST);
+        break;
     default:
         $user = new UserController();
         $user->login($_POST);

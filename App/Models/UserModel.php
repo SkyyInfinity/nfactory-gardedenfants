@@ -16,7 +16,7 @@ class UserModel extends Model{
      *
      * @var string
      */
-    protected $table = "user";
+    protected $table = "kido_user";
 
     /**
      * Récupère un utilisateur en fonction de son email
@@ -26,44 +26,29 @@ class UserModel extends Model{
      */
     public function getUserByEmail(string $email):object
     {
-        $statement = "SELECT * FROM user WHERE email = '$email'";
+        $statement = "SELECT * FROM kido_user WHERE email = '$email'";
         return $this->db->getData($statement, true);
     }
 
-    /**
-     * Retourne les 3 auteurs les plus actifs
-     *
-     * @return array
-     */
-    public function getBest3():array
-    {
-        $statement = "SELECT user.id, user.pseudo, COUNT(article.user_id) as nbArticle 
-                        FROM user
-                        INNER JOIN article ON user.id = article.user_id
-                        GROUP BY article.user_id
-                        ORDER BY nbArticle DESC
-                        LIMIT 3
-                        ";
-        
-        return $this->db->getData($statement);
-    }
+    // public function updateWithoutPassword($id, $data)
+    // {
+    //     $statement = "UPDATE kido_user SET
+    //                     name= :name,
+    //                     surname= :surname,
+    //                     email= :email,
 
-    public function updateWithoutPassword($id, $data)
-    {
-        $statement = "UPDATE user SET
-                        email= :email,
-                        pseudo = :pseudo
-                        WHERE id = $id";
+    //                     WHERE id = $id";
         
-        $this->db->postData($statement, $data);
-    }
+    //     $this->db->postData($statement, $data);
+    // }
 
     public function updateWithPassword($id, $data)
     {
-        $statement = "UPDATE user SET
+        $statement = "UPDATE kido_user SET
+                        name= :name,
+                        surname= :surname,
                         email= :email,
                         password= :password,
-                        pseudo = :pseudo
                         WHERE id = $id";
         
         $this->db->postData($statement, $data);

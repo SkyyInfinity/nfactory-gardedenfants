@@ -71,7 +71,7 @@ class UserController extends Controller{
                     $user[$key] = $value;
                 }
             }
-            $this->userModel->updateWithoutPassword($_GET["id"], $user);
+            // $this->userModel->updateWithoutPassword($_GET["id"], $user);
         } else {
             $data["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
 
