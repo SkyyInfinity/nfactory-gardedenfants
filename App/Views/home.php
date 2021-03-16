@@ -1,3 +1,1 @@
-<?php
-$title = 'Acceuil';
-?> 
+<?php $title = 'Accueil'; ?>

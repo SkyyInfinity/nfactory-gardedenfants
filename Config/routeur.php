@@ -32,8 +32,7 @@ switch ($page) {
         $user->updateUser($_POST);
         break;
     default:
-        $user = new UserController();
-        $user->login($_POST);
+        $home = new HomeController();
+        $home->home();
         break;
-
 }
