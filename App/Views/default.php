@@ -14,7 +14,7 @@
     <title>Kid'oma | <?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
 </head>
 
-<body>
+<body id="js_body">
     <!-- LOADER -->
     <div id="loader">
         <img src="./Public/assets/img/loader.gif" alt="loading image">
@@ -23,14 +23,25 @@
     <header id="l-header">
 		<div class="wrap">
             <nav>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">Inscription</a></li>
-                    <li><a href="./Pro">Partie Pro</a></li>
-                </ul>
+                <div id="js_hamburger" class="hamburger">
+                    <div class="bar top"></div>
+                    <div class="bar middle"></div>
+                    <div class="bar bottom"></div>
+                </div>
+                <div class="right-links">
+                    <ul>
+                        <li><a class="btn" href="#">Connexion</a></li>
+                        <li><a class="btn" href="#">Inscription</a></li>
+                        <li><a href="./"><img src="./Public/assets/img/logo_without_text.svg" alt="logo du site"></a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
+        <ul id="js_nav-links" class="nav-links">
+            <li><a href="./">Accueil</a></li>
+            <li><a href="./Pro">Partie Pro</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
     </header>
 
     <!-- CONTENT -->
@@ -49,5 +60,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- JAVASCRIPT -->
     <script src="./Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./Public/assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
