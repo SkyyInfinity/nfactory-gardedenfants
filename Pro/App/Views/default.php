@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Public/assets/css/style.min.css">
-    <link rel="stylesheet" href="./Public/assets/css/style.css">
-    <title>title | <?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
+    <link rel="stylesheet" href="./Public/assets/css/main.css">
+    <title><?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
 </head>
 
 <body>

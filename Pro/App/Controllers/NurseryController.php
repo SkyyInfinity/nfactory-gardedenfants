@@ -14,14 +14,15 @@ class NurseryController extends Controller {
 
     public function register($data) {
 
-        if(!empty($data['email'])){
+        if(!empty($data['email-registration-nursery'])){
             $errors = [];
             $user = [];
             $ValideForm = new VerifForm();
 
-            $email = $ValideForm->cleanXSS($data['email']);
-            $password = $ValideForm->cleanXSS($data['password']);
-            $passwordConfirm = $ValideForm->cleanXSS($data['passwordConfirm']);
+            $email = $ValideForm->cleanXSS($data['email-registration-nursery']);
+            $name = $ValideForm->cleanXSS($data['name-registration-nursery']);
+            $password = $ValideForm->cleanXSS($data['password-registration-nursery']);
+            $passwordConfirm = $ValideForm->cleanXSS($data['passwordConfirm-registration-nursery']);
             
         }
 

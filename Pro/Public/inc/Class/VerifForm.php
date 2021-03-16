@@ -8,9 +8,10 @@ class VerifForm {
    * Purge les faille XSS
    *
    * @param string $notClean
-   * @return void
+   * @return string
    */
-  public function cleanXSS($notClean){
+  public function cleanXSS($notClean)
+  {
       return trim(strip_tags($notClean));
   }
 
