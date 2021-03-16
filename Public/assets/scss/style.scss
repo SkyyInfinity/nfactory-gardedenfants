@@ -6,18 +6,12 @@
 @import url("reset.css");
 
 /* ─── VARIABLE ──────────────────────────────────────────── */
-$rose: #FF7171;
-$orange: #FF9163;
-
-$bleu: #227093;
-$violet: #9743D9;
-
-$font1: 'Amatic SC', cursive;
-$font2: 'Kanit', sans-serif;
+$color: red;
+$color2: blue;
 
 /* ─── BASE ──────────────────────────────────────────────── */
 body {
-    font-family: $font2;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
