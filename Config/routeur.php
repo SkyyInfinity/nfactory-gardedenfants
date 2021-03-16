@@ -15,7 +15,7 @@ switch ($page) {
         $home = new HomeController();
         $home->home();
         break;
-    case "registration":
+    case "signup":
         $user = new UserController();
         $user->signup($_POST);
         break;
