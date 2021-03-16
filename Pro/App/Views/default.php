@@ -27,7 +27,7 @@
                     <li><a href="#">Accueil</a></li>
                     <li><a href="#">Connexion</a></li>
                     <li><a href="#">Inscription</a></li>
-                    <li><a href="../../Public/index.php">Partie Particulier</a></li>
+                    <li><a href="../">Partie Particulier</a></li>
                 </ul>
             </nav>
         </div>
