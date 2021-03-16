@@ -56,7 +56,7 @@
         </div>
         <ul id="js_nav-links" class="nav-links">
             <li><a href="./">Accueil</a></li>
-            <li><a href="./Pro">Partie Pro</a></li>
+            <li><a href="./Pro/">Partie Pro</a></li>
             <li><a href="contact">Contact</a></li>
         </ul>
     </header>
