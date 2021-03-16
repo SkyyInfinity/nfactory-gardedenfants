@@ -3,7 +3,7 @@
 <h1>PARTIE PRO</h1>
 
 <section>
-    <div class="title">
+    <div class="titlePage">
         <p>kid'oma pro !</p>
     </div>
     <div>
