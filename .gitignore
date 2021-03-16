@@ -1,3 +1,7 @@
 README.md
 Config/DbConfig.php
+<<<<<<< HEAD
 Pro/Config/DbConfig.php
+=======
+.htaccess
+>>>>>>> 8ec177ca2d035105ab8fcdae6fd40464fbeb61eb
