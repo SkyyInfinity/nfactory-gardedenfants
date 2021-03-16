@@ -21,16 +21,15 @@
         <img src="./Public/assets/img/loader.gif" alt="loading image">
     </div>
     <!-- HEADER -->
-    <header id="l-header">
-		<div class="wrap">
-            <nav>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">Inscription</a></li>
-                    <li><a href="../">Partie Particulier</a></li>
-                </ul>
-            </nav>
+    <header id="proHeader">
+        <nav class="proNav">
+            <ul>
+                <li><a href="../">Partie Particulier</a></li>
+            </ul>
+        </nav>
+
+        <div class="logoPro">
+            <img src=".\Public\assets\img\logo_without_text.svg" alt="" >            
         </div>
     </header>
 

@@ -1,0 +1,27 @@
+/*------------HEADER---------------*/
+
+#proHeader {
+  background-color: #227093;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.logoPro img {
+  width: 70%;
+}
+
+.proNav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.titlePage {
+  font-family: "Amatic SC", cursive;
+  font-size: 5em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 5px;
+}

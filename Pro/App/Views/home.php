@@ -1,3 +1,5 @@
+<?php $title = "Kid'Oma Profesionnel" ?>
+
 <h1>PARTIE PRO</h1>
 
 <section id="main">
@@ -41,4 +43,11 @@
             <div class="button">Se connecter</div>
         </div>
     </div>
+<<<<<<< HEAD
 </section>
+=======
+</section>
+
+<img src="./Public/assets/img/svg/house.svg" alt="House">
+<img src="./Public/assets/img/svg/woman.svg" alt="House">
+>>>>>>> 69798f05606c9ba908c4d2681b10016f202d7716
