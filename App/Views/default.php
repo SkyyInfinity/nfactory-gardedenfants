@@ -24,16 +24,10 @@
 		<div class="wrap">
             <nav>
                 <ul>
-<<<<<<< HEAD
                     <li><a href="#">Accueil</a></li>
                     <li><a href="#">Connexion</a></li>
                     <li><a href="#">Inscription</a></li>
-                    <li><a href="../Pro/Public/index.php">Partie Pro</a></li>
-=======
-                    <li><a href="./">Accueil</a></li>
-                    <li><a href="login">Connexion</a></li>
-                    <li><a href="signup">Inscription</a></li>
->>>>>>> 8ec177ca2d035105ab8fcdae6fd40464fbeb61eb
+                    <li><a href="./Pro">Partie Pro</a></li>
                 </ul>
             </nav>
         </div>
