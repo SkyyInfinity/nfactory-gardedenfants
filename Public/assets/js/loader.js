@@ -1,4 +1,4 @@
-$(document).onload(function(){
+$(document).ready(function(){
     // JQUERY START
     /* ─── VARIABLES ────────────────────────────────────────────── */
     var loader = $('#loader');
@@ -9,7 +9,7 @@ $(document).onload(function(){
     setTimeout(function() {
         loader.fadeOut(200);
         body.css('overflow', 'auto');
-    }, 1600);
+    }, 1400);
 
     // JQUERY END
 });
