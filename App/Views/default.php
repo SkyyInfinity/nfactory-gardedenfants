@@ -9,15 +9,15 @@
     <meta name="keywords" content="html,css,formation">
 	<!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Public/assets/css/style.min.css">
     <title>Kid'oma | <?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
 </head>
 
 <body>
     <!-- LOADER -->
     <div id="loader">
-        <img src="./assets/img/loader.gif" alt="loading image">
+        <img src="./Public/assets/img/loader.gif" alt="loading image">
 
     </div>
     <!-- HEADER -->
@@ -44,10 +44,10 @@
                 <div class="right-links">
                     <ul>
                         <?php if(isset($_SESSION["user"])): ?>
-                            <li><a href="index.php?page=logout">Déconnexion</a></li>
+                            <li><a class="btn" href="logout">Déconnexion</a></li>
                         <?php else: ?>
-                            <li><a href="index.php?page=registration">Inscription</a></li>
-                            <li><a href="index.php?page=login">Connexion</a></li>
+                            <li><a class="btn" href="signup">Inscription</a></li>
+                            <li><a class="btn" href="login">Connexion</a></li>
                         <?php endif; ?>
                         <li><a href="./"><img src="./Public/assets/img/logo_without_text.svg" alt="logo du site"></a></li>
                     </ul>
@@ -76,8 +76,8 @@
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- JAVASCRIPT -->
-    <script src="./assets/js/userAjax.js" type="text/javascript" charset="utf-8"></script>
-    <script src="./assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
-    <script src="./assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./Public/assets/js/userAjax.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./Public/assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
