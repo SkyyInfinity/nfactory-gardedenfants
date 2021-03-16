@@ -10,14 +10,15 @@
 	<!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <link rel="stylesheet" href="./Public/assets/css/style.min.css">
+    <link rel="stylesheet" href="./Public/assets/css/style.css">
     <title>title | <?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
 </head>
 
 <body>
     <!-- LOADER -->
     <div id="loader">
-        <img src="./assets/img/loader.gif" alt="loading image">
+        <img src="./Public/assets/img/loader.gif" alt="loading image">
     </div>
     <!-- HEADER -->
     <header id="l-header">
@@ -46,6 +47,6 @@
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- JAVASCRIPT -->
-    <script src="./assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

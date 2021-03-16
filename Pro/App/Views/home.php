@@ -1,7 +1,7 @@
 <h1>PARTIE PRO</h1>
 
-<section>
-    <div class="title">
+<section id="main">
+    <div class="titlemain">
         <p>kid'oma pro !</p>
     </div>
     <div>
@@ -9,7 +9,7 @@
             <div class="title">
                 <p>Vous étes gérant d'une créche ?</p>
             </div>
-            <div class="img pos1"></div>
+            <div class="img pos1"><img src="./Public/assets/img/svg/house.svg" alt="House"></div>
             <div class="text">
                 <p>
                     Sweet roll fruitcake cookie. Tootsie roll jelly-o toffee marshmallow 
@@ -25,7 +25,7 @@
             <div class="title">
                 <p>Vous étes assitante maternelle ?</p>
             </div>
-            <div class="img pos2"></div>
+            <div class="img pos2"><img src="./Public/assets/img/svg/woman.svg" alt="woman"></div>
             <div class="text">
                 <p>
                     Sweet roll fruitcake cookie. Tootsie roll jelly-o toffee marshmallow 
@@ -42,6 +42,3 @@
         </div>
     </div>
 </section>
-
-<img src="./Public/assets/img/svg/house.svg" alt="House">
-<img src="./Public/assets/img/svg/woman.svg" alt="House">
