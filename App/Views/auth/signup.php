@@ -3,7 +3,7 @@ $title = 'Inscription';
 ?> 
 <h1>Inscription</h1>
 
-<form action="index.php?page=registration" method="post" id="registration_form">
+<form action="signup" method="post" id="registration_form">
     <label>Votre prenom: <input type="text" name="name" id="name"></label>
     <label>Votre nom: <input type="text" name="surname" id="surname"></label>
     <label>Votre email: <input type="email" name="email" id="email"></label>

@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
+
 <head>
     <meta charset="utf-8">
-	<!-- Responsive -->
+    <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Search Engine -->
+    <!-- Search Engine -->
     <meta name="description" content="max 156 caractères">
     <meta name="keywords" content="html,css,formation">
-	<!-- Font -->
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Public/assets/css/style.min.css">
-    <title>Kid'oma | <?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
+    <title>Kid'oma | 
+    <?php if (isset($title)) {
+        echo $title;
+    } else {
+        echo 'undefined';
+    } ?></title>
 </head>
 
 <body>
@@ -22,14 +28,14 @@
     </div>
     <!-- HEADER -->
     <header id="l-header">
-		<div class="wrap">
+        <div class="wrap">
             <nav>
                 <!-- <ul>
                 <li><a href="index.php" class="nav-link">Acceuil</a></li>
-            <?php if(isset($_SESSION["user"])): ?>
+            <?php if (isset($_SESSION["user"])) : ?>
                 <li><a href="index.php?page=userSettings&id=".$>Paramètre</a></li>
                 <li><a href="index.php?page=logout">Déconnexion</a></li>
-            <?php else: ?>
+            <?php else : ?>
                 <li><a href="index.php?page=registration">Inscription</a></li>
                 <li><a href="index.php?page=login">Connexion</a></li>
             <?php endif; ?>
@@ -43,9 +49,9 @@
                 </div>
                 <div class="right-links">
                     <ul>
-                        <?php if(isset($_SESSION["user"])): ?>
+                        <?php if (isset($_SESSION["user"])) : ?>
                             <li><a class="btn" href="logout">Déconnexion</a></li>
-                        <?php else: ?>
+                        <?php else : ?>
                             <li><a class="btn" href="signup">Inscription</a></li>
                             <li><a class="btn" href="login">Connexion</a></li>
                         <?php endif; ?>
@@ -56,14 +62,27 @@
         </div>
         <ul id="js_nav-links" class="nav-links">
             <li><a href="./">Accueil</a></li>
-            <li><a href="./Pro/">Partie Pro</a></li>
+            <li><a href="Pro">Partie Pro</a></li>
             <li><a href="contact">Contact</a></li>
         </ul>
+        
+        <div>
+        <?php if (isset($_SESSION['user'])) : ?>
+            <p>Bonjour
+                <span>
+                    <?php 
+                        echo $_SESSION['user']->name . ' ' . $_SESSION['user']->surname;
+                    ?>
+                </span>
+            </p>
+            <img src="<?php echo $_SESSION['user']->picture ?>" alt="profile">
+        <?php endif; ?>
+        </div>
     </header>
 
     <!-- CONTENT -->
     <main id="l-content">
-		<?= $content ?>
+        <?= $content ?>
     </main>
 
     <!-- FOOTER -->
@@ -79,5 +98,8 @@
     <script src="./Public/assets/js/userAjax.js" type="text/javascript" charset="utf-8"></script>
     <script src="./Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
     <script src="./Public/assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
+            
+
 </body>
+
 </html>
