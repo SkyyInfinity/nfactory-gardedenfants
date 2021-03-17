@@ -14,14 +14,10 @@
     <link rel="stylesheet" href="./Public/assets/css/style.min.css">
     <link rel="stylesheet" href="./Public/assets/css/style.css">
     <link rel="stylesheet" href="./Public/assets/css/main.css">
-    <title>title | <?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
+    <title><?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
 </head>
 
 <body>
-    <!-- LOADER -->
-    <div id="loader">
-        <img src="./Public/assets/img/loader.gif" alt="loading image">
-    </div>
     <!-- HEADER -->
     <header id="proHeader">
         <nav class="proNav">

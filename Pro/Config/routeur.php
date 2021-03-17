@@ -1,6 +1,8 @@
 <?php
 
 use App\Controllers\HomeController;
+use App\Controllers\NounouController;
+use App\Controllers\NurseryController;
 
 if (!empty($_GET['page'])) {
 $page = $_GET['page'];
@@ -13,6 +15,35 @@ switch ($page) {
         $home = new HomeController();
         $home->home();
         break;
+
+    //Nursery
+    case 'registerNursery':
+        $nursery = new NurseryController();
+        $nursery->register($_POST);
+        break;
+    case 'loginNursery':
+        $nursery = new NurseryController();
+        $nursery->login($_POST);
+        break;
+    case 'logoutNursery':
+        $nursery = new NurseryController();
+        $nursery->logout();
+        break;
+
+    //Nounou
+    case 'registerNounou':
+        $nounou = new NounouController();
+        $nounou->register($_POST);
+        break;
+    case 'loginNounou':
+        $nounou = new NounouController();
+        $nounou->login($_POST);
+        break;
+    case 'logoutNounou':
+        $nounou = new NounouController();
+        $nounou->logout();
+        break;
+        
     default:
         $home = new HomeController();
         $home->home();

@@ -18,19 +18,47 @@
     <!-- LOADER -->
     <div id="loader">
         <img src="./Public/assets/img/loader.gif" alt="loading image">
+
     </div>
     <!-- HEADER -->
     <header id="l-header">
 		<div class="wrap">
             <nav>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">Inscription</a></li>
-                    <li><a href="./Pro">Partie Pro</a></li>
+                <!-- <ul>
+                <li><a href="index.php" class="nav-link">Acceuil</a></li>
+            <?php if(isset($_SESSION["user"])): ?>
+                <li><a href="index.php?page=userSettings&id=".$>Paramètre</a></li>
+                <li><a href="index.php?page=logout">Déconnexion</a></li>
+            <?php else: ?>
+                <li><a href="index.php?page=registration">Inscription</a></li>
+                <li><a href="index.php?page=login">Connexion</a></li>
+            <?php endif; ?>
                 </ul>
             </nav>
+        </div> -->
+                <div id="js_hamburger" class="hamburger">
+                    <div class="bar top"></div>
+                    <div class="bar middle"></div>
+                    <div class="bar bottom"></div>
+                </div>
+                <div class="right-links">
+                    <ul>
+                        <?php if(isset($_SESSION["user"])): ?>
+                            <li><a class="btn" href="logout">Déconnexion</a></li>
+                        <?php else: ?>
+                            <li><a class="btn" href="signup">Inscription</a></li>
+                            <li><a class="btn" href="login">Connexion</a></li>
+                        <?php endif; ?>
+                        <li><a href="./"><img src="./Public/assets/img/logo_without_text.svg" alt="logo du site"></a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
+        <ul id="js_nav-links" class="nav-links">
+            <li><a href="./">Accueil</a></li>
+            <li><a href="./Pro/">Partie Pro</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
     </header>
 
     <!-- CONTENT -->
@@ -48,6 +76,8 @@
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- JAVASCRIPT -->
+    <script src="./Public/assets/js/userAjax.js" type="text/javascript" charset="utf-8"></script>
     <script src="./Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./Public/assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
