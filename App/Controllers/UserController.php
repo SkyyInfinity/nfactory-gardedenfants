@@ -83,7 +83,10 @@ class UserController extends Controller{
         }
     }
 
-    public function account() {
+    public function homeUser() {
         $this->render("user");
+    }
+    public function account() {
+        $this->render("account");
     }
 }

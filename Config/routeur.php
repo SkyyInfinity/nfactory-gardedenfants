@@ -27,11 +27,11 @@ switch ($page) {
         break;
     case "user":
         $user = new UserController();
-        $user->account();
+        $user->homeUser();
         break;
-    case "userSettings":
+    case "account":
         $user = new UserController();
-        $user->updateUser($_POST);
+        $user->account();
         break;
     default:
         $home = new HomeController();

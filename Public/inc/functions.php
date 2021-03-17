@@ -123,3 +123,15 @@ function showJson($data) {
     die('Error in json encoding');
   }
 }
+function getUserIpAddr(){
+  if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+      //ip from share internet
+      $ip = $_SERVER['HTTP_CLIENT_IP'];
+  }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+      //ip pass from proxy
+      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+  }else {
+      $ip = '91.167.218.202';
+  }
+  return $ip;
+}
