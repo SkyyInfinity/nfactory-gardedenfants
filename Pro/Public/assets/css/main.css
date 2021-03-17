@@ -1,3 +1,122 @@
+/*font
+font-family: 'Kanit', sans-serif;
+font-family: "Amatic SC", cursive;
+*/
+
+body{
+  font-family: 'Kanit', sans-serif;
+  color: #222F3E;
+}
+
+#main{
+  max-height: 80vh;
+}
+
+#main .titlemain{
+  font-family: "Amatic SC", cursive;
+  letter-spacing: 5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: calc(3vw + 20px);
+  display: flex;
+  justify-content: center;
+}
+
+#main .title{
+  font-family: 'Kanit', sans-serif;
+  font-size: calc(1vw + 20px);
+}
+
+#main .text{
+  color: #576574;
+}
+
+#main .box_categorie{
+  display: flex;
+  justify-content: space-around;
+}
+
+#main .box{
+  width: 45%;
+}
+#main .content_box1{
+  margin-left: 100px;
+}
+
+#main .content_box1 .text,.img{
+padding: 40px 0;
+}
+
+#main .button button{
+  background-color: #F1F2F6;
+  color: #227093;
+  border: 0 solid #fff;
+  padding: 1vh 1vw;
+  font-size: 2vh;
+  font-weight: 600;
+  border-radius: 2vh;
+  text-decoration: none;
+}
+
+#main .button button:hover{
+  color: #F1F2F6;
+  background-color: #227093;
+  transition: ease-in 200ms;
+}
+
+#main .box .content1{
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+}
+
+#main .box .content1right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 5vh;
+}
+
+#main .text{
+  padding-left: 4vw;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+#main .img img{
+  transform: scale(1);
+  animation: slidein 3s ease-out infinite;
+}
+
+@keyframes slidein {
+  0%{
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1);
+
+  }
+}
+
+#main .loginbtn{
+  margin-top: 50px;
+}
+
+#main .login{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+} 
+
+#main .login div.loginbtn{
+  position: relative;
+  left: 50px;
+
+}
+
 /*------------HEADER---------------*/
 
 #proHeader {
