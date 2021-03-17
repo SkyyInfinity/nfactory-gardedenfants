@@ -56,4 +56,35 @@ class NurseryController extends Controller {
             'errors' => $errors,
         ]);
     }
+
+    public function login($data){
+        $errors = [];
+
+        if (isset($data["email-login-nursery"])) {
+
+            $ValideForm = new VerifForm();
+            $email = $ValideForm->cleanXSS($data["email-login-nursery"]);
+
+            $user = $this->nurseryModel->getNurseryByEmail($email);
+
+            if ($user && password_verify($data["password-login-nursery"], $user->password)) {
+                $_SESSION["user"] = $user;
+                header("Location: home");
+            } else {
+                $errors['login'] = "Utilisateur ou mot de passe incorrect.";
+            }
+            
+        }
+
+        $this->render('loginNursery', [
+            'errors' => $errors,
+        ]);
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        header("Location: home");
+    }
+
 }

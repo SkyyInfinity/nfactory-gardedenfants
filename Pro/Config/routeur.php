@@ -18,6 +18,14 @@ switch ($page) {
         $nursery = new NurseryController();
         $nursery->register($_POST);
         break;
+    case 'loginNursery':
+        $nursery = new NurseryController();
+        $nursery->login($_POST);
+        break;
+    case 'logoutNursery':
+        $nursery = new NurseryController();
+        $nursery->logout();
+        break;
     default:
         $home = new HomeController();
         $home->home();

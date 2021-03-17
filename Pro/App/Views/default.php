@@ -16,10 +16,6 @@
 </head>
 
 <body>
-    <!-- LOADER -->
-    <div id="loader">
-        <img src="./Public/assets/img/loader.gif" alt="loading image">
-    </div>
     <!-- HEADER -->
     <header id="proHeader">
         <nav class="proNav">
