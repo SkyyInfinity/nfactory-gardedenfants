@@ -9,7 +9,7 @@ $(document).ready(function(){
     setTimeout(function() {
         loader.fadeOut(200);
         body.css('overflow', 'auto');
-    }, 200/*1000*/);
+    }, 800/*800*/);
 
     // JQUERY END
 });
