@@ -11,13 +11,9 @@
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Public/assets/css/style.min.css">
-    <title>Kid'oma |
-        <?php if (isset($title)) {
-            echo $title;
-        } else {
-            echo 'undefined';
-        } ?></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.css" integrity="sha256-5a0xpHkTzfwkcKzU4wSYL64rzPYgmIVf7PO4TB5/6jQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Public/assets/css/style.css">
+    <title>Kid'oma | <?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
 </head>
 
 <body>
@@ -52,7 +48,7 @@
                                 <li><a class="btn" href="login">Connexion</a></li>
                             <?php endif; ?>
                         <?php endif; ?>
-                        <li><a href="./"><img src="./Public/assets/img/logo_without_text.svg" alt="logo du site"></a></li>
+                        <li><a class="logo" href="./"><img src="./Public/assets/img/logo_without_text.svg" alt="logo du site"></a></li>
                     </ul>
                 </div>
             </nav>

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* ─── FOOTER ───────────────────────────────────────── */
+#l-footer {
+  position: relative;
+  z-index: 1;
+  padding: 15px 0;
+  background: -webkit-gradient(linear, right top, left top, from(#FF7171), to(#FF9163));
+  background: linear-gradient(to left, #FF7171, #FF9163);
+}
+
+#l-footer p {
+  text-align: center;
+  color: white;
+  font-weight: 200;
+}
