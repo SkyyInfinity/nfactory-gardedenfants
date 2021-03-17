@@ -14,7 +14,11 @@ class UserController extends Controller{
     public function signup($data)
     {
         if (isset($data["email"])) {
+            $errors = [];
             $user = $this->encodeChars($data);
+            if (!empty($data["password"]) && !empty($data["password2"])) {
+
+            }
             $user["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
             $user["role"] = json_encode(['user']);
             $this->userModel->create($user);
