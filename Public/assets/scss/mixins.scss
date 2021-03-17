@@ -1,29 +1,19 @@
-/* ─── MIXIN ──────────────────────────────────────────── */
-/*
-* Permet de wrapper le contenu en definissant une taille.
-*
-* string $wrapSize = La taille à donner au wrap (en px).
-*/
 @mixin wrap($wrapSize) {
     width: 100%;
     max-width: $wrapSize;
     margin: 0 auto;
     padding: 0 1em;
 }
-/*
-* Permet d'avoir des dégradé avec les couleurs primary(rose, orange).
-*/
 @mixin primary-gradient {
-    background: -webkit-gradient(linear, right top, left top, from($rose), to($orange));
-    background: -o-linear-gradient(right, $rose, $orange);
-    background: linear-gradient(to left, $rose, $orange);
+    background: -webkit-gradient(linear, right top, left top, from($orange), to($rose));
+    background: -o-linear-gradient(right, $orange, $rose);
+    background: linear-gradient(to left, $orange, $rose);
 }
-/*
-* Permet d'avoir les propriété flexbox de base.
-*
-* string $justifyValue = La valeur de la propriété 'justify-content'.
-* string $alignValue = La valeur de la propriété 'align-items'.
-*/
+@mixin secondary-gradient {
+    background: -webkit-gradient(linear, right top, left top, from($bleu), to($violet));
+    background: -o-linear-gradient(right, $bleu, $violet);
+    background: linear-gradient(to left, $bleu, $violet);
+}
 @mixin flex($justifyValue, $alignValue) {
     display: flex;
     justify-content: $justifyValue;

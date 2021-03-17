@@ -1,0 +1,46 @@
+/* ─── BASE ──────────────────────────────────────────────── */
+@import 'variables';
+@import 'mixins';
+
+body {
+    font-family: $font2;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.wrap {
+    @include wrap(1440px);
+}
+a.btn {
+    font-family: $font1;
+    font-weight: 700;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    padding: 7px 20px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: all .2s ease-out;
+}
+a.btn:hover {
+    background-color: #dddddd;
+    border: 2px solid #dddddd;
+}
+a.btn-orange {
+    @include primary-gradient;
+    border: none;
+    color: white;
+}
+a.btn-blue {
+    @include secondary-gradient;
+    border: none;
+    color: white;
+}
+a.btn-orange:hover,
+a.btn-blue:hover {
+    border: none;
+    filter: brightness(90%);
+}
