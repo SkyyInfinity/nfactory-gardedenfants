@@ -7,7 +7,7 @@ $(document).ready(function(){
     /* ─── CODE ────────────────────────────────────────────── */
     body.css('overflow', 'hidden');
     setTimeout(function() {
-        loader.fadeOut(200);
+        loader.fadeOut(100);
         body.css('overflow', 'auto');
     }, 100/*1400*/);
 

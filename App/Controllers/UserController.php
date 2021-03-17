@@ -14,12 +14,16 @@ class UserController extends Controller{
     public function signup($data)
     {
         if (isset($data["email"])) {
+            $errors = [];
             $user = $this->encodeChars($data);
+            if (!empty($data["password"]) && !empty($data["password2"])) {
+
+            }
             $user["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
             $user["role"] = json_encode(['user']);
             $this->userModel->create($user);
 
-            header("Location:index.php?page=login");
+            header("Location:login");
         }
 
         $this->render("auth.signup");
@@ -35,7 +39,7 @@ class UserController extends Controller{
             if ($user && password_verify($data["password"], $user->password)) {
                 $_SESSION["user"] = $user;
                 $_SESSION["user"]->role = json_decode($user->role);
-                header("Location:index.php");
+                header("Location:user");
             } else {
                 $error = "Utilisateur ou mot de passe incorrect.";
             }
@@ -48,7 +52,7 @@ class UserController extends Controller{
     public function logout()
     {
         session_destroy();
-        header("Location:index.php");
+        header("Location:home");
     }
 
     public function getUser()
@@ -71,11 +75,18 @@ class UserController extends Controller{
                     $user[$key] = $value;
                 }
             }
-            // $this->userModel->updateWithoutPassword($_GET["id"], $user);
+            $this->userModel->updateWithoutPassword($_GET["id"], $user);
         } else {
             $data["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
 
             $this->userModel->updateWithPassword($_GET["id"], $data);
         }
+    }
+
+    public function homeUser() {
+        $this->render("user");
+    }
+    public function account() {
+        $this->render("account");
     }
 }

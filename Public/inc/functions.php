@@ -54,10 +54,10 @@ function validationEmail($errors, $data, $key) {
 }
 // V A L I D A T I O N   P A S S W O R D /////////////////////////////////////////////
 function validationPassword($errors, $data, $key, $min, $max) {
-  $majuscule        = preg_match('@[A-Z]@', $password);
-  $minuscule        = preg_match('@[a-z]@', $password);
-  $chiffre          = preg_match('@[0-9]@', $password);
-  $caractereSpecial = preg_match('@[^\w]@', $password);
+  $majuscule        = preg_match('@[A-Z]@', $data);
+  $minuscule        = preg_match('@[a-z]@', $data);
+  $chiffre          = preg_match('@[0-9]@', $data);
+  $caractereSpecial = preg_match('@[^\w]@', $data);
 
   if(!empty($data)) {
     if(mb_strlen($data) < $min) {
@@ -122,4 +122,16 @@ function showJson($data) {
   } else {
     die('Error in json encoding');
   }
+}
+function getUserIpAddr(){
+  if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+      //ip from share internet
+      $ip = $_SERVER['HTTP_CLIENT_IP'];
+  }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+      //ip pass from proxy
+      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+  }else {
+      $ip = '91.167.218.202';
+  }
+  return $ip;
 }

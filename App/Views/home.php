@@ -1,1 +1,4 @@
 <?php $title = 'Accueil'; ?>
+<?php 
+
+?>
