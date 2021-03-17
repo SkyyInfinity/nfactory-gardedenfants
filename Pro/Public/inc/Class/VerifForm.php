@@ -1,6 +1,6 @@
 <?php
 
-namespace class;
+namespace Public\inc\Class;
 
 class VerifForm {
 

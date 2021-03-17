@@ -10,11 +10,11 @@ class NurseryModel extends Model {
      *
      * @var string
      */
-    protected $table = "";
+    protected $table = "kido_pro_creche";
 
     public function getNurseryByEmail(string $email):object
     {
-        $statement = "SELECT * FROM table WHERE email = '$email'";
+        $statement = "SELECT * FROM $this->table WHERE email = '$email'";
         return $this->db->getData($statement, true);
     }
 
