@@ -23,6 +23,13 @@
         <nav class="proNav">
             <ul>
                 <li><a href="../">Partie Particulier</a></li>
+                <li><a href="./home">Accueil</a></li>
+                <?php if(!empty($_SESSION['user']['email']) && $_SESSION['user']['type'] === 'nursery') : ?>
+                <li><a href="./logoutNursery">Deconnexion</a></li>
+                <?php endif; ?>
+                <?php if(!empty($_SESSION['user']['email']) && $_SESSION['user']['type'] === 'nounou') : ?>
+                <li><a href="./logoutNounou">Deconnexion</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
 

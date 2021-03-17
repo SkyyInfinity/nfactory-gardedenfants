@@ -19,7 +19,7 @@
                         jelly-o icing pudding jelly-o danish candy marshmallow cookie.
                     </p>
                 </div>
-                <div class="button"><button><i class="fas fa-arrow-right"></i> Créer votre compte pro <i class="fas fa-user"></i></button></div>
+                <div class="button"><a href="./registerNursery"><i class="fas fa-arrow-right"></i> Créer votre compte pro <i class="fas fa-user"></i></a></div>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
                             jelly-o icing pudding jelly-o danish candy marshmallow cookie.
                         </p>
                     </div>
-                    <div class="button"><button><i class="fas fa-arrow-right"></i> Créer votre compte pro <i class="fas fa-user"></i></button></div>
+                    <div class="button"><a href="./registerNounou"><i class="fas fa-arrow-right"></i> Créer votre compte pro <i class="fas fa-user"></i></a></div>
                 </div>
                 <div class="content1left img pos2">
                     <img src="./Public/assets/img/svg/woman.svg" alt="woman">
@@ -47,7 +47,7 @@
                 <p>Vous avez déja un compte ?</p>
             </div>
             <div class="login">
-                <div class="button loginbtn"><button><i class="fas fa-arrow-right"></i> Se connecter <i class="fas fa-user"></i></button></div>
+                <div class="button loginbtn"><a href="./loginNounou"><i class="fas fa-arrow-right"></i> Se connecter <i class="fas fa-user"></i></a></div>
                 <div><img src="./Public/assets/img/svg/profil.svg" alt=""></div>
             </div>
         </div>
