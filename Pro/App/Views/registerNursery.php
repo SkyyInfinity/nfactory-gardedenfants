@@ -1,6 +1,6 @@
 <?php $title = "Kid'Oma Pro | Inscription" ?>
 
-<h2>Inscription</h2>
+<h2>Inscription Crèche</h2>
 
 <div id="formRegisterNursery">
     <form action="" method="post">

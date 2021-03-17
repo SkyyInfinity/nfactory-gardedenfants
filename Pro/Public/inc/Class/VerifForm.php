@@ -80,4 +80,20 @@ class VerifForm {
     return $errors;
   }
 
+  /**
+   * Check si la valeurs des bouton radio n'as pas été modifié par l'utilisateur
+   *
+   * @param string $gender
+   * @param array $errors
+   * @param string $key
+   * @return void
+   */
+  public function checkGender(string $gender, $errors, string $key)
+  {
+    if($gender !== 'homme' && $gender !== 'femme' && $gender !== 'autre'){
+      $errors[$key] = 'Erreur lors du choix du genre';
+    }
+    return $errors;
+  }
+
 }
