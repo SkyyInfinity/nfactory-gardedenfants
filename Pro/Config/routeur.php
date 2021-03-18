@@ -1,8 +1,10 @@
 <?php
 
+use Public\inc\Class\ToolBox;
 use App\Controllers\HomeController;
 use App\Controllers\NounouController;
 use App\Controllers\NurseryController;
+use App\Controllers\NurseryDashboardController;
 
 if (!empty($_GET['page'])) {
 $page = $_GET['page'];
@@ -44,6 +46,27 @@ switch ($page) {
         $nounou->logout();
         break;
         
+    //Redirection vers le bon dashboard
+    case 'Dashboard':
+        $ToolBox = new ToolBox();
+
+        if($ToolBox->isLogged()){
+
+            if($_SESSION['user']['type'] === 'nursery') {
+                $dashboard = new NurseryDashboardController();
+                $dashboard->home();
+            } elseif ($_SESSION['user']['type'] === 'nounou'){
+                //$dashboard = new NounouDashboardController();
+                //$dashboard->render();
+            }
+
+        } else {
+            $home = new HomeController();
+            $home->home();
+        }
+
+        break;
+
     default:
         $home = new HomeController();
         $home->home();

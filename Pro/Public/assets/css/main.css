@@ -117,6 +117,9 @@ body {
   left: 50px;
 }
 
+/*-------- LOGIN --------*/
+
+
 /*------------HEADER---------------*/
 
 #proHeader {
@@ -124,12 +127,15 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
-  margin-bottom: 20px;
+  padding: 2vh 0;
+  height: 15vh;
+  font-size: 2vh;
 }
 
 .logoPro img {
-  width: 70%;
+  width: 5vw;
+  position: relative;
+  right: 40%;
 }
 
 .proNav ul li a {

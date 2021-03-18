@@ -36,7 +36,7 @@ class NurseryController extends Controller {
                         $user = $this->encodeChars($user);
                         $this->nurseryModel->create($user);
                         unset($user['password']);
-                        header("Location: home");
+                        header("Location: loginNursery");
                     }
     
                 } else {
