@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<?php $title = 'Dashboard' ?>
+<?php $title = 'Dashboard'; ?>
 
 <div id="NurseryDashboard">
 
@@ -30,5 +29,14 @@
         </div>
     </div>
 </div>
-=======
->>>>>>> a5edad2517a0110dabca240c888b6a5d8e46f48c
+
+<!-- Code Vérification pro -->
+
+<h1>enorme</h1>
+<div>
+    <p>Sastus :</p>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit" name="VerifProFile">Upload</button>
+    </form>
+</div>
