@@ -55,6 +55,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- JAVASCRIPT -->
     <script src="./Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./Public/assets/js/main.js" type="text/javascript" charset="utf-8"></script>
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/0e818bc5f3.js" crossorigin="anonymous"></script>
 </body>

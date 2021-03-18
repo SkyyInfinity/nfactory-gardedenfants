@@ -125,7 +125,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 .logoPro img {
@@ -143,4 +143,91 @@ body {
   font-weight: bold;
   text-align: center;
   letter-spacing: 5px;
+}
+
+/*--------------------------------------------*/
+/*-------------DASHBOARD NOUNOU---------------*/
+/*--------------------------------------------*/
+
+#NounouDashboard,
+#NurseryDashboard {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#NounouDashboard .navBar,
+#NurseryDashboard .navBar {
+  background-color: #f1f2f6;
+  width: 20%;
+  display: flex;
+  align-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  color: #227093;
+  font-size: 1.5em;
+  height: 86.5vh;
+}
+
+#NounouDashboard .navBar div,
+#NurseryDashboard .navBar div {
+  width: 70%;
+  margin: 10px 0;
+  height: 50px;
+  padding: 10px;
+  transition: all 0.2s;
+}
+
+#NounouDashboard .navBar div:hover,
+#NurseryDashboard .navBar div:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#NounouDashboard .navBar div.menuItem-1,
+#NurseryDashboard .navBar div.menuItem-1 {
+  margin-bottom: 20px;
+}
+
+#NounouDashboard .navBar .active,
+#NurseryDashboard .navBar .active {
+  font-weight: bold;
+}
+
+#NounouDashboard .content,
+#NurseryDashboard .content {
+  width: 80%;
+}
+
+/*---Dashboard css----*/
+#NounouDashboard .content .contentItem-1,
+#NurseryDashboard .content .contentItem-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  height: 100%;
+}
+
+#NounouDashboard .content .contentItem-1 .box,
+#NurseryDashboard .content .contentItem-1 .box {
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#NounouDashboard .content .contentItem-1 .box .titleBox,
+#NurseryDashboard .content .contentItem-1 .box .titleBox {
+  font-size: 1.4em;
+  color: #227093;
+  margin-top: 5px;
+}
+
+#NounouDashboard .content .contentItem-1 .box-1,
+#NounouDashboard .content .contentItem-1 .box-4,
+#NurseryDashboard .content .contentItem-1 .box-1,
+#NurseryDashboard .content .contentItem-1 .box-4 {
+  background-color: #dfe4ea;
 }

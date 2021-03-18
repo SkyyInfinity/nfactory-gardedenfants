@@ -1,11 +1,11 @@
 <?php $title = 'Dashboard' ?>
 
-<div id="NurseryDashboard">
+<div id="NounouDashboard">
 
     <div class="navBar">
         <div class="menuItem menuItem-1 active">Dashboard</div>
-        <div class="menuItem menuItem-2">Votre crèche</div>
-        <div class="menuItem menuItem-3">Vos effectifs</div>
+        <div class="menuItem menuItem-2">Votre profil</div>
+        <div class="menuItem menuItem-3">Votre planning</div>
         <div class="menuItem menuItem-4">Certification</div>
         <div class="menuItem menuItem-5">Paiment</div>
         <div class="menuItem menuItem-6">Clients</div>
