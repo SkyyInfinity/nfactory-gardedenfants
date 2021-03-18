@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* ─── SIGNUP ──────────────────────────────────────────────── */
+.illustration,
+.form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.illustration {
+  position: relative;
+  width: 704;
+  height: 674px;
+}
+
+#scene {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%) !important;
+          transform: translate(-50%, -50%) !important;
+}
+
+.card {
+  margin-left: 0;
+}
+
+.man {
+  margin-top: 0;
+  margin-left: 0;
+}

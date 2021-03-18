@@ -3,9 +3,9 @@
 @media screen and (max-width: 800px) {
   .flex {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     padding: 15px;
   }
   .left,
@@ -17,6 +17,10 @@
   .right {
     padding-left: 0;
     padding-right: 0;
+  }
+  .illustration,
+  .form {
+    width: 100% !important;
   }
 }
 
@@ -44,6 +48,15 @@
   ul.nav-links.is-active {
     -webkit-transform: translate3d(0, 90px, 0);
             transform: translate3d(0, 90px, 0);
+  }
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  input[type=date],
+  input[type=file],
+  input[type=tel],
+  textarea {
+    width: 100%;
   }
 }
 

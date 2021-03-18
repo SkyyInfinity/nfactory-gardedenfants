@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* ─── SIGNUP ──────────────────────────────────────────────── */
+.card2 {
+  width: 500px;
+}
+
+.man2 {
+  left: 50% !important;
+  top: 50% !important;
+}

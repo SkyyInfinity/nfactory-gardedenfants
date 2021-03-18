@@ -64,9 +64,12 @@
 
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- PARALLAX JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <!-- JAVASCRIPT -->
     <script src="./Public/assets/js/userAjax.js" type="text/javascript" charset="utf-8"></script>
     <script src="./Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
     <script src="./Public/assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./Public/assets/js/parallax.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
