@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php $title = 'Dashboard' ?>
 
 <div id="NurseryDashboard">
@@ -14,7 +13,7 @@
     </div>
 
     <div class="content">
-        <div class="contentItem contentItem-1" id="Dashboard">
+        <div class="contentItem contentItem-1" id="contentItem-1">
             <div class="box box-1">
                 <h2 class="titleBox">Récapitulatif</h2>
             </div>
@@ -28,7 +27,9 @@
                 <h2 class="titleBox">Finance</h2>
             </div>
         </div>
+
+        <div class="contentItem hidden" id="contentItem-2">
+            <h2>Votre crèche</h2>
+        </div>
     </div>
 </div>
-=======
->>>>>>> a5edad2517a0110dabca240c888b6a5d8e46f48c
