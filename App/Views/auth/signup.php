@@ -1,4 +1,10 @@
-<?php $title = 'Inscription'; ?>
+<?php $title = 'Inscription'; 
+
+if(!empty($_POST)) {
+    debug($_POST);
+}
+
+?>
 
 <section id="inscription">
     <div class="wrap">

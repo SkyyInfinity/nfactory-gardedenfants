@@ -3,13 +3,11 @@
 use App\Controllers\UserController;
 use App\Controllers\HomeController;
 
-
 if (!empty($_GET['page'])) {
-$page = $_GET['page'];
+    $page = $_GET['page'];
 } else {
     $page = 'home';
 }
-
 switch ($page) {
     case 'home':
         $home = new HomeController();
@@ -27,9 +25,13 @@ switch ($page) {
         $user = new UserController();
         $user->logout();
         break;
-    case "userSettings":
+    case "user":
         $user = new UserController();
-        $user->updateUser($_POST);
+        $user->homeUser();
+        break;
+    case "account":
+        $user = new UserController();
+        $user->account();
         break;
     default:
         $home = new HomeController();
