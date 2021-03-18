@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php $title = 'Dashboard' ?>
 
 <div id="NurseryDashboard">
@@ -29,3 +30,5 @@
         </div>
     </div>
 </div>
+=======
+>>>>>>> a5edad2517a0110dabca240c888b6a5d8e46f48c
