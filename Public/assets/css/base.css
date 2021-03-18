@@ -17,7 +17,6 @@ body {
 
 section {
   padding: 50px 0;
-  height: 81.3vh;
 }
 
 h1.section-title {
@@ -123,6 +122,7 @@ button.btn-blue:hover {
 
 form {
   padding: 20px 0;
+  width: 100%;
 }
 
 .champ {
@@ -152,6 +152,7 @@ textarea {
   color: #505050;
   -webkit-transition: .2s ease-out;
   transition: .2s ease-out;
+  width: 80%;
 }
 
 input[type=text]:focus,

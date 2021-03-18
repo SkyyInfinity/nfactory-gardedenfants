@@ -22,7 +22,6 @@ body {
 
 section {
   padding: 50px 0;
-  height: 81.3vh;
 }
 
 h1.section-title {
@@ -128,6 +127,7 @@ button.btn-blue:hover {
 
 form {
   padding: 20px 0;
+  width: 100%;
 }
 
 .champ {
@@ -157,6 +157,7 @@ textarea {
   color: #505050;
   -webkit-transition: .2s ease-out;
   transition: .2s ease-out;
+  width: 80%;
 }
 
 input[type=text]:focus,
@@ -426,13 +427,53 @@ ul.nav-links.is-active {
   padding-bottom: 20px;
 }
 
+/* ─── SIGNUP ──────────────────────────────────────────────── */
+.illustration,
+.form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.illustration {
+  position: relative;
+  width: 704;
+  height: 674px;
+}
+
+#scene {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%) !important;
+          transform: translate(-50%, -50%) !important;
+}
+
+.card {
+  margin-left: 0;
+}
+
+.man {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+/* ─── SIGNUP ──────────────────────────────────────────────── */
+.card2 {
+  width: 500px;
+}
+
+.man2 {
+  left: 50% !important;
+  top: 50% !important;
+}
+
 /* ─── RESPONSIVE ───────────────────────────────────────── */
 @media screen and (max-width: 800px) {
   .flex {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     padding: 15px;
   }
   .left,
@@ -444,6 +485,10 @@ ul.nav-links.is-active {
   .right {
     padding-left: 0;
     padding-right: 0;
+  }
+  .illustration,
+  .form {
+    width: 100% !important;
   }
 }
 
@@ -471,6 +516,15 @@ ul.nav-links.is-active {
   ul.nav-links.is-active {
     -webkit-transform: translate3d(0, 90px, 0);
             transform: translate3d(0, 90px, 0);
+  }
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  input[type=date],
+  input[type=file],
+  input[type=tel],
+  textarea {
+    width: 100%;
   }
 }
 

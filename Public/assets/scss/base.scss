@@ -14,7 +14,6 @@ body {
 }
 section {
     padding: 50px 0;
-    height: 81.3vh;
 }
 h1.section-title {
     padding: 10px 0;
@@ -102,6 +101,7 @@ button.btn-blue:hover {
 // FORMULAIRE
 form {
     padding: 20px 0;
+    width: 100%;
 }
 .champ {
     padding: 15px 0;
@@ -127,6 +127,7 @@ textarea {
     font-family: $font2;
     color: #505050;
     transition: .2s ease-out;
+    width: 80%;
 }
 input[type=text]:focus,
 input[type=email]:focus,
