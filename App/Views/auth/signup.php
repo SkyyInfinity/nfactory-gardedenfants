@@ -1,7 +1,14 @@
 <?php
 $title = 'Inscription';
 
+
+if(!empty($_POST)) {
+    debug($_POST);
+}
 ?> 
+
+
+
 <h1>Inscription</h1>
 
 <form action="signup" method="post" id="registration_form">
@@ -10,5 +17,5 @@ $title = 'Inscription';
     <label>Votre email: <input type="email" name="email" id="email"></label>
     <label>Votre mot de passe: <input type="password" name="password" id="password"></label>
     <label>Confirmation: <input type="password" name="password2" id="password2"></label>
-    <button>S'inscrire</button>
+    <input type="submit">
 </form>
