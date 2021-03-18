@@ -28,7 +28,7 @@ $(document).ready(function () {
             console.log('error no selection')
         }
     })
-    $('#form_add_childs').on('0000000000000 submit', function (e) {
+    $('#form_add_childs').on('submit', function (e) {
         e.preventDefault();
         var children = [];
         $('#form_add_childs input[type=text]').each(function (index, element) {
