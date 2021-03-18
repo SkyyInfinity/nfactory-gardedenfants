@@ -1,16 +1,5 @@
 @charset "UTF-8";
 /* ─── HOME ──────────────────────────────────────────────── */
-#home {
-  padding: 50px 0;
-}
-
-h1.section-title {
-  text-align: center;
-  font-family: "Amatic SC", cursive;
-  font-size: 5em;
-  font-weight: bold;
-}
-
 .flex {
   padding: 50px 0;
   display: -webkit-box;
