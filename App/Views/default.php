@@ -34,8 +34,14 @@
                 <div class="right-links">
                     <ul>
                         <?php if (isset($_SESSION["user"])) : ?>
-                            <li><a class="btn" href="account">Mon Compte</a></li>
-                            <li><a class="btn" href="logout">Déconnexion</a></li>
+                            <?php if ($title == 'Compte') : ?>
+                                <li><a class="btn" href="home">Accueil</a></li>
+                                <li><a class="btn" href="logout">Déconnexion</a></li>
+                            <?php else : ?>
+                                <li><a class="btn" href="account">Mon Compte</a></li>
+                                <li><a class="btn" href="logout">Déconnexion</a></li>
+                            <?php endif; ?> 
+
                         <?php else : ?>
                             <?php if ($title == 'Inscription') : ?>
                                 <li><a class="btn" href="home">Acceuil</a></li>
