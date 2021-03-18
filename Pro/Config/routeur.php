@@ -4,6 +4,7 @@ use Public\inc\Class\ToolBox;
 use App\Controllers\HomeController;
 use App\Controllers\NounouController;
 use App\Controllers\NurseryController;
+use App\Controllers\NounouDashboardController;
 use App\Controllers\NurseryDashboardController;
 
 if (!empty($_GET['page'])) {
@@ -56,8 +57,8 @@ switch ($page) {
                 $dashboard = new NurseryDashboardController();
                 $dashboard->home();
             } elseif ($_SESSION['user']['type'] === 'nounou'){
-                //$dashboard = new NounouDashboardController();
-                //$dashboard->render();
+                $dashboard = new NounouDashboardController();
+                $dashboard->home();
             }
 
         } else {
