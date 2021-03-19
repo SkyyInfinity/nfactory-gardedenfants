@@ -119,68 +119,6 @@ body {
 
 /*-------- LOGIN --------*/
 
-#loginSectionNounou{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: 80vh;
-  color: #2F2E41;
-}
-#loginSectionNounou div.login form{
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-end;
-}
-
-#loginSectionNounou div.login h2{
-  text-align: center;
-  font-family: "Amatic SC", cursive;
-  font-weight: 800;
-}
-
-#loginSectionNounou div.login input{
-  background-color: #F1F2F6;
-  outline: none;
-  border: none;
-  font-size: 20px;
-  padding: 4px 8px;
-  color: #227093;
-  width: 300px;
-}
-
-#loginSectionNounou div.login h2{
-  font-size: 60px;
-  margin-bottom: 40px;
-  border-bottom: 2px solid #227093;
-  padding-bottom: 15px;
-}
-
-#loginSectionNounou div.login label{
-  font-size: 20px;
-}
-#loginSectionNounou div.login span.span-error{
-  font-size: 20px;
-}
-
-#loginSectionNounou div.login input[type="submit"]{
-  font-weight: 700;
-}
-
-#loginSectionNounou div.login input[type="submit"]:hover{
-  background-color: #227093;
-  color: #F1F2F6;
-  transition-duration: 500ms;
-}
-
-#loginSectionNounou div.login input[type="submit"]:active{
-  position: relative;
-  bottom: 2px;
-}
-
-
 /*------------HEADER---------------*/
 
 #proHeader {
@@ -188,14 +126,9 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-<<<<<<< HEAD
-  padding: 10px 0;
-  /*margin-bottom: 20px;*/
-=======
   padding: 2vh 0;
   height: 15vh;
   font-size: 2vh;
->>>>>>> a5edad2517a0110dabca240c888b6a5d8e46f48c
 }
 
 .logoPro img {
@@ -215,7 +148,6 @@ body {
   font-weight: bold;
   text-align: center;
   letter-spacing: 5px;
-<<<<<<< HEAD
 }
 
 /*--------------------------------------------*/
@@ -304,6 +236,3 @@ body {
 #NurseryDashboard .content .contentItem-1 .box-4 {
   background-color: #dfe4ea;
 }
-=======
-}
->>>>>>> a5edad2517a0110dabca240c888b6a5d8e46f48c
