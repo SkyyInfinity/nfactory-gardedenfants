@@ -11,7 +11,7 @@
             </div>
             <div class="form">
                 <h1 class="section-title">Connexion</h1>
-                <form action="index.php?page=login" method="post" class="form">
+                <form action="login" method="post" class="form">
                     <div class="champ">
                         <label for="email">Votre email</label>
                         <input id="email" type="email" name="email" placeholder="john.doe@example.com">
