@@ -1,4 +1,15 @@
-<?php $title = 'Acceuil Utilisateur'; 
+<?php
+if(empty($_SESSION['user'])) {
+    redirect('home');
+}
+
+if(date('H') >= 17) {
+    $hello = 'Bonsoir';
+} else {
+    $hello = 'Bonjour';
+}
+
+$title = 'Acceuil Utilisateur'; 
 ?>
 
 <h2>Bienvenue <?php echo $_SESSION['user']->name . ' ' . $_SESSION['user']->surname;?></h2>

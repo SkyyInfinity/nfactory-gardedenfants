@@ -51,8 +51,9 @@ class UserController extends Controller{
 
     public function logout()
     {
+        $_SESSION['user'] = [];
         session_destroy();
-        header("Location:home");
+        header("Location:login");
     }
 
     public function getUser()

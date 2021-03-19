@@ -135,3 +135,14 @@ function getUserIpAddr(){
   }
   return $ip;
 }
+
+// H E L L O   T I M E /////////////////////////////////////////////////////////////
+function helloTime() {
+  $hour = date('H');
+  if($hour >= 18) {
+    $hello = 'Bonsoir';
+  } else {
+      $hello = 'Bonjour';
+  }
+  return $hello;
+}

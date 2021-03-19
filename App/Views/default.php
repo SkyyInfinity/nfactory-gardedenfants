@@ -64,21 +64,19 @@
             <li><a href="Pro">Partie Pro</a></li>
             <li><a href="contact">Contact</a></li>
         </ul>
-
-        <div>
+        <div class="wrap">
             <?php if (isset($_SESSION['user'])) : ?>
-                <p>Bonjour
-                    <span>
-                        <?php
-                        echo $_SESSION['user']->name . ' ' . $_SESSION['user']->surname;
-                        ?>
-                    </span>
+            <div class="user-card">
+                <p><?= helloTime() ?>
+                    <span><?php echo $_SESSION['user']->name . ' ' . $_SESSION['user']->surname; ?></span>
                 </p>
                 <?php
                 // echo $_SESSION['user']->picture 
                 ?>
-                <img src="./Public/assets/img/profile.svg" alt="profile" width="125px">
+                <img class="avatar" src="./Public/assets/img/profile.svg" alt="avatar">
+            </div>
             <?php endif; ?>
+            <div class="clear"></div>
         </div>
     </header>
 

@@ -1,10 +1,13 @@
-<?php $title = 'Inscription'; 
+<?php 
+if(!empty($_SESSION['user']->role)) {
+    redirect('user');
+}
+
+$title = 'Inscription'; 
 
 if(!empty($_POST)) {
     debug($_POST);
-}
-
-?>
+} ?>
 
 <section id="inscription">
     <div class="wrap">
@@ -17,7 +20,7 @@ if(!empty($_POST)) {
             </div>
             <div class="form">
                 <h1 class="section-title">Inscription</h1>
-                <form action="index.php?page=registration" method="post" id="registration_form">
+                <form action="" method="post" id="registration_form">
                     <div class="champ">
                         <label for="name">Votre prénom</label>
                         <input id="name" type="text" name="name" placeholder="John">

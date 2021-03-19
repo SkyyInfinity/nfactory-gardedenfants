@@ -1,4 +1,9 @@
-<?php $title = 'Compte'; ?>
+<?php
+if(empty($_SESSION['user'])) {
+    redirect('home');
+}
+
+$title = 'Compte'; ?>
 
 <p>Votre profil est complété à 0%</p>
 
