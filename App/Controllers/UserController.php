@@ -44,7 +44,7 @@ class UserController extends Controller{
 
     public function login($data)
     {
-        if (isset($data["email"])) {
+        if (!empty($data["email"])) {
 
             $user = $this->userModel->getUserByEmail($data["email"]);
 

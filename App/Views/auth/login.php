@@ -1,5 +1,5 @@
 <?php 
-if(!empty($_SESSION['user']->role)) {
+if(isLogged()) {
     redirect('user');
 }
 
@@ -30,6 +30,9 @@ $title = 'Connexion'; ?>
                     <?php endif; ?>
                     <div class="champ submit">
                         <button class="btn-submit btn-orange">Se connecter</button>
+                    </div>
+                    <div class="champ">
+                        <a href="signup">Pas de compte ? Inscrivez-vous !</a>
                     </div>
                 </form>
             </div>

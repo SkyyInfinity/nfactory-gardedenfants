@@ -24,7 +24,7 @@ h1.section-title {
   position: relative;
   text-align: center;
   font-family: "Amatic SC", cursive;
-  font-size: 5em;
+  font-size: 10vh;
   font-weight: bold;
 }
 
@@ -40,6 +40,14 @@ h1.section-title::before {
   border-radius: 50px;
   background: -webkit-gradient(linear, right top, left top, from(#FF9163), to(#FF7171));
   background: linear-gradient(to left, #FF9163, #FF7171);
+}
+
+h2.second-title {
+  padding: 10px 0;
+  position: relative;
+  font-family: "Amatic SC", cursive;
+  font-size: 3em;
+  font-weight: bold;
 }
 
 a.btn {
@@ -83,7 +91,7 @@ a.btn-blue:hover {
           filter: brightness(90%);
 }
 
-button.btn-submit {
+.btn-submit {
   cursor: pointer;
   outline: none;
   font-family: "Amatic SC", cursive;
@@ -99,22 +107,22 @@ button.btn-submit {
   transition: all .2s ease-out;
 }
 
-button.btn-orange {
+.btn-orange {
   background: -webkit-gradient(linear, right top, left top, from(#FF9163), to(#FF7171));
   background: linear-gradient(to left, #FF9163, #FF7171);
   border: none;
   color: white;
 }
 
-button.btn-blue {
+.btn-blue {
   background: -webkit-gradient(linear, right top, left top, from(#227093), to(#9743D9));
   background: linear-gradient(to left, #227093, #9743D9);
   border: none;
   color: white;
 }
 
-button.btn-orange:hover,
-button.btn-blue:hover {
+.btn-orange:hover,
+.btn-blue:hover {
   border: none;
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
@@ -185,11 +193,35 @@ input::placeholder {
 #inscription form,
 #connexion form {
   text-align: center;
+  width: 100%;
+}
+
+.error {
+  display: inline-block;
+  position: relative;
+  padding: 5px 35px;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.7);
+  border-radius: 100px;
+  font-weight: 200;
+  word-break: break-word;
+}
+
+.error::before {
+  content: '\f06a';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  padding-left: 10px;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: white;
 }
 
 .user-card {
   cursor: default;
-  pointer-events: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -228,6 +260,117 @@ input::placeholder {
 
 .user-card .avatar {
   width: 75px;
-  margin-left: 25px;
+  margin: 0 25px;
   border-radius: 50%;
+}
+
+.user-card a.logout-btn {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, right top, left top, from(#FF9163), to(#FF7171));
+  background: linear-gradient(to left, #FF9163, #FF7171);
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.user-card a.account-btn {
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.user-card a.logout-btn:hover,
+.user-card a.account-btn:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+#tooltipLogout {
+  background: #333;
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.complete p {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+
+.complete span {
+  display: block;
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+.grid {
+  padding: 25px 0;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "g n" "m m";
+  grid-gap: 20px;
+  grid-auto-flow: dense;
+}
+
+.grid .fav-garderie,
+.grid .fav-nourisse,
+.grid .map {
+  padding: 15px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.grid .fav-garderie:hover,
+.grid .fav-nourisse:hover,
+.grid .map:hover {
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+
+.fav-garderie {
+  grid-area: 'g';
+  height: 340px;
+}
+
+.fav-nourisse {
+  grid-area: 'n';
+  height: 340px;
+}
+
+.map {
+  grid-area: 'm';
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+}
+
+#map {
+  border-radius: 15px;
+  border: 1px solid white;
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+#map:focus-within {
+  border: 1px solid #505050;
+}
+
+canvas.mapboxgl-canvas {
+  outline: none;
+  border: none;
+}
+
+canvas.mapboxgl-canvas:focus {
+  outline: none;
+  border: none;
 }

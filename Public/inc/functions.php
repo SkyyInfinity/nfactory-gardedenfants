@@ -92,11 +92,11 @@ function formatDateWithoutMinute($dateValue) {
 // I S   L O G G E D /////////////////////////////////////////////////////////////////
 function isLogged(){
   if(!empty($_SESSION['user'])) {
-    if(!empty($_SESSION['user']['id']) && is_numeric($_SESSION['user']['id'])) {
-      if(!empty($_SESSION['user']['pseudo'])) {
-        if(!empty($_SESSION['user']['role'])) {
-          if($_SESSION['user']['role'] == 'abonne' || $_SESSION['user']['role'] == 'admin') {
-            if(!empty($_SESSION['user']['ip']) && $_SESSION['user']['ip'] == $_SERVER['REMOTE_ADDR']) {
+    if(!empty($_SESSION['user']->id) && is_numeric($_SESSION['user']->id)) {
+      if(!empty($_SESSION['user']->name)) {
+        if(!empty($_SESSION['user']->surname)) {
+          if(!empty($_SESSION['user']->role)) {
+            if(in_array('user', $_SESSION['user']->role) || in_array('admin', $_SESSION['user']->role)) {
               return true;
             }
           }
