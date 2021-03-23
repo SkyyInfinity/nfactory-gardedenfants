@@ -176,6 +176,7 @@ input[type=password]:focus,
 input[type=date]:focus,
 input[type=file]:focus,
 input[type=tel]:focus,
+input[type=number], :focus,
 select:focus,
 textarea:focus {
   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -838,6 +839,7 @@ ul.nav-links.is-active {
   input[type=date],
   input[type=file],
   input[type=tel],
+  input[type=number],
   textarea {
     width: 100%;
   }
