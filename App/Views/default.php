@@ -19,14 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css" integrity="sha512-jN4O0AUkRmE6Jwc8la2I5iBmS+tCDcfUd1eq8nrZIBnDKTmCp5YxxNN1/aetnAH32qT+dDbk1aGhhoaw5cJNlw==" crossorigin="anonymous" />
     <!-- MY STYLESHEET -->
     <link rel="stylesheet" href="./Public/assets/css/style.css">
-    <title>Kid'oma | <?php if(isset($title)){echo $title;}else{echo 'undefined';} ?></title>
+    <title>Kid'oma | <?php if(!empty($title)){echo $title;}else{echo 'undefined';} ?></title>
 </head>
 
-<body data-simplebar>
+<body>
     <!-- LOADER -->
     <div id="loader">
         <img src="./Public/assets/img/loader.gif" alt="loading image">
-
     </div>
     <!-- HEADER -->
     <header id="l-header">
@@ -39,7 +38,7 @@
                 </div>
                 <div class="right-links">
                     <ul>
-                        <?php if (isset($_SESSION["user"])) : ?>
+                        <?php if (!empty($_SESSION["user"])) : ?>
                             <?php if ($title == 'Mon compte') : ?>
                                 <li><a class="btn" href="user">Mon espace</a></li>
                                 <li><a class="btn" href="logout">Déconnexion</a></li>
@@ -65,7 +64,7 @@
             </nav>
         </div>
         <ul id="js_nav-links" class="nav-links">
-            <?php if (isset($_SESSION["user"])) : ?>
+            <?php if (!empty($_SESSION["user"])) : ?>
                 <?php if ($title == 'Mon compte') : ?>
                     <li><a href="user">Mon espace</a></li>
                     <li><a href="logout">Déconnexion</a></li>
@@ -81,7 +80,7 @@
             <li><a href="contact">Contact</a></li>
         </ul>
         <div class="wrap">
-            <?php if (isset($_SESSION['user'])) : ?>
+            <?php if (!empty($_SESSION['user'])) : ?>
                 <div class="user-card">
                     <p><?= helloTime() ?>
                         <span><?php echo $_SESSION['user']->name . ' ' . $_SESSION['user']->surname; ?></span>
@@ -114,11 +113,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- MAPBOX (maps) -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <?php if ($title == 'Connexion' || $title == 'Inscription' || $title == 'Accueil') : ?>
     <!-- PARALLAX JS (parallax) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js" type="text/javascript" charset="utf-8"></script>
+    <?php endif; ?>
     <!-- TIPPY JS (Tooltips) -->
-    <script src="https://unpkg.com/@popperjs/core@2" type="text/javascript" charset="utf-8"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
     <!-- OVERLAYSCROLLBAR -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js" integrity="sha512-B1xv1CqZlvaOobTbSiJWbRO2iM0iii3wQ/LWnXWJJxKfvIRRJa910sVmyZeOrvI854sLDsFCuFHh4urASj+qgw==" crossorigin="anonymous"></script>
     <!-- OUR SCRIPTS -->
@@ -128,7 +129,9 @@
     <?php if ($title == 'Mon espace') : ?>
         <script src="./Public/assets/js/mapbox.js" type="text/javascript" charset="utf-8"></script>
     <?php endif; ?>
+    <?php if ($title == 'Connexion' || $title == 'Inscription' || $title == 'Accueil') : ?>
     <script src="./Public/assets/js/parallax.js" type="text/javascript" charset="utf-8"></script>
+    <?php endif; ?>
     <script src="./Public/assets/js/tooltip.js" type="text/javascript" charset="utf-8"></script>
     <script src="./Public/assets/js/overlayScrollBar.js" type="text/javascript" charset="utf-8"></script>
 </body>

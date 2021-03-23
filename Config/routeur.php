@@ -33,6 +33,10 @@ switch ($page) {
         $user = new UserController();
         $user->account();
         break;
+    case "forgotPassword":
+        $user = new UserController();
+        $user->forgotPassword();
+        break;
     default:
         $home = new HomeController();
         $home->home();

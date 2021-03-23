@@ -3,11 +3,7 @@ if(isLogged()) {
     redirect('user');
 }
 
-$title = 'Inscription'; 
-
-if(!empty($_POST)) {
-    debug($_POST);
-} ?>
+$title = 'Inscription'; ?>
 
 <section id="inscription">
     <div class="wrap">

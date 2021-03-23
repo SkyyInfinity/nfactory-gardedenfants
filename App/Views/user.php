@@ -3,8 +3,7 @@ if(!isLogged()) {
     redirect('home');
 }
 
-$title = 'Mon espace'; 
-?>
+$title = 'Mon espace'; ?>
 
 <section id="user">
     <div class="wrap">
@@ -18,78 +17,6 @@ $title = 'Mon espace';
             <div class="fav fav-garderie">
                 <h2 class="second-title">Vos garderies favorites</h2>
                 <ul>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
                     <li>Content</li>
                 </ul>
             </div>
@@ -106,17 +33,3 @@ $title = 'Mon espace';
         </div>
     </div>
 </section>
-
-
-<noscript>
-  <style>
-    /**
-    * Reinstate scrolling for non-JS clients
-    */
-    .grid .fav-garderie,
-    .grid .fav-nourisse {
-      overflow: auto;
-    }
-  </style>
-</noscript>
-

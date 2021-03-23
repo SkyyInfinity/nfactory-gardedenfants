@@ -8,3 +8,8 @@
   left: 55% !important;
   top: 50% !important;
 }
+
+.forgot {
+  margin: 10px 0;
+  display: block;
+}

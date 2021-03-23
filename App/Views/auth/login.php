@@ -24,8 +24,9 @@ $title = 'Connexion'; ?>
                     <div class="champ">
                         <label for="password">Votre mot de passe</label>
                         <input id="password" type="password" name="password" placeholder="********">
+                        <a class="forgot" href="forgotPassword">Mot de passe oublié ?</a>
                     </div>
-                    <?php if(isset($error)): ?>
+                    <?php if(!empty($error)) : ?>
                         <p class="error"> <?= $error ?></p>
                     <?php endif; ?>
                     <div class="champ submit">

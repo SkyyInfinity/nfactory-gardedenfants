@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    $('body').overlayScrollbars({ });
+    $('body').overlayScrollbars({
+        sizeAutoCapable : false
+    });
     $('.fav-garderie').overlayScrollbars({
         sizeAutoCapable : false
     });

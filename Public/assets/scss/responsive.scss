@@ -1,9 +1,27 @@
 /* ─── RESPONSIVE ───────────────────────────────────────── */
 
+@media screen and (max-width: 1280px) {
+    #account .flex {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1120px) {
+    #account .flex {
+        width: 90%;
+    }
+}
 @media screen and (max-width: 1000px) {
     .grid {
         display: flex;
         flex-direction: column;
+    }
+    #account .flex {
+        width: 100%;
+        flex-direction: column;
+    }
+    #account .modifyInfos {
+        padding-top: 50px;
+        border-top: 1px solid #555;
     }
 }
 @media screen and (max-width: 800px) {
@@ -62,6 +80,9 @@
     input[type=tel],
     textarea {
         width: 100%;
+    }
+    select {
+        width: 90%;
     }
 }
 @media screen and (max-width: 500px) {
