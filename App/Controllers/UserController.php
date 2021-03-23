@@ -16,14 +16,26 @@ class UserController extends Controller{
         if (isset($data["email"])) {
             $errors = [];
             $user = $this->encodeChars($data);
-            if (!empty($data["password"]) && !empty($data["password2"])) {
+            if (!empty($user["password"]) && !empty($user["password2"])) {
+                if ($user["password"] == $user["password2"]) {
+                   unset($user["password2"]);
+                    $errors = validationPassword($errors, $user, 'password', 8, 30);
+                } else {
+                    $errors['passwords'] = "Les mots de passe ne sont pas identiquent";
+                }
+            } else {
+                $errors['passwords'] = "Veuillez verifier que vous avez bien remplis les deux champs de mot de passe ";
+            }
+            if (count($errors) == 0 ) {
+                $user["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
+                $user["role"] = json_encode(['user']);
+                $this->userModel->create($user);
+    
+                header("Location:login");
+            } else {
 
             }
-            $user["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
-            $user["role"] = json_encode(['user']);
-            $this->userModel->create($user);
 
-            header("Location:login");
         }
 
         $this->render("auth.signup");
@@ -51,8 +63,9 @@ class UserController extends Controller{
 
     public function logout()
     {
+        $_SESSION['user'] = [];
         session_destroy();
-        header("Location:home");
+        header("Location:login");
     }
 
     public function getUser()

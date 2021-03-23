@@ -1,11 +1,19 @@
-<?php $title = 'Accueil'; ?>
+<?php
+if(!empty($_SESSION['user']->role)) {
+    redirect('user');
+}
+
+$title = 'Accueil'; ?>
 
 <section id="home">
     <div class="wrap">
         <h1 class="section-title">Kid'oma !</h1>
         <div class="flex">
             <div class="left">
-                <img loading="lazy" src="./Public/assets/img/undraw-children.svg" alt="children">
+                <div id="scene" data-relative-input="true">
+                    <img class="card card3" data-depth="0.3" src="./Public/assets/img/undraw_home1.svg" alt="card">
+                    <img class="man man3" data-depth="0.1" src="./Public/assets/img/undraw_home2.svg" alt="man">
+                </div>
             </div>
             <div class="right">
                 <div class="particulier">

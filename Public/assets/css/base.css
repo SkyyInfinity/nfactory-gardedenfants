@@ -186,3 +186,48 @@ input::placeholder {
 #connexion form {
   text-align: center;
 }
+
+.user-card {
+  cursor: default;
+  pointer-events: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 15px;
+  padding-left: 20px;
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 100px;
+  float: right;
+}
+
+.user-card p {
+  background: -webkit-gradient(linear, right top, left top, from(#FF9163), to(#FF7171));
+  background: linear-gradient(to left, #FF9163, #FF7171);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+.user-card span {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.user-card .avatar {
+  width: 75px;
+  margin-left: 25px;
+  border-radius: 50%;
+}

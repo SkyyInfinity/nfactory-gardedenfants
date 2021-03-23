@@ -9,15 +9,15 @@
 .left,
 .right {
     width: 50%;
+    height: 378px;
 }
 .left {
     padding-right: 30px;
-}
-.left img {
-    width: 100%;
+    position: relative;
 }
 .right {
     padding-left: 30px;
+    height: 100%;
 }
 .right h2 {
     padding: 30px 0;
@@ -31,4 +31,19 @@
 }
 .particulier {
     padding-bottom: 20px;
+}
+.card3 {
+    width: 100%;
+    // left: -50% !important;
+    // top: 0% !important;
+    // margin-top: 35%;
+}
+.man3 {
+    width: 100%;
+    // left: -50% !important;
+    // top: 60% !important;
+}
+#home #scene {
+    width: 100%;
+    top: 50%;
 }
