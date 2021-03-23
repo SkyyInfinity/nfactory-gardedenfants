@@ -18,5 +18,36 @@ $(document).ready(function () {
     IdContent.fadeIn(400);
     $("div#menuItem-" + IdButton[1]).addClass("active");
   });
+
+  //Envoie FILE VERIFICATION JURIDIQUE PRO
+
+  $("#PV_form_file").on("submit", function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "Public/ajax/ajax.php",
+      data:  new FormData(this),
+      contentType: false,
+      cache: false,
+      processData:false,
+
+      beforeSend: function (){
+        console.log("Requete en cours")
+      },
+
+      success: function (response){
+        console.log(response);
+      }
+    });
+  });
+
+  //API GEOLOCALISATION PRO
+
+  const apiGeo = 'https://api-adresse.data.gouv.fr/search/?q=';
+  const geoFormat = '&format=json';
+
+  let geoAdresse = $('#geoadresse');
+
+  
   // JQUERY END
 });

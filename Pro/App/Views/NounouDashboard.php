@@ -44,5 +44,18 @@
         <div class="contentItem hidden" id="contentItem-4">
         <h2>Votre Planning</h2>
         </div>
+
+        <div class="contentItem hidden" id="contentItem-5">
+            <h2>Votre Planning</h2>
+
+            <h1>enorme</h1>
+            <div>
+                <p>Sastus :</p>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file">
+                    <button type="submit" name="VerifProFile">Upload</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
