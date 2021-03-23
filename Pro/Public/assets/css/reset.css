@@ -152,3 +152,7 @@ table {
 span.span-error {
   color: #e74c3c;
 }
+
+.hidden {
+  display: none;
+}

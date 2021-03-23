@@ -180,7 +180,6 @@ body {
   bottom: 2px;
 }
 
-
 /*------------HEADER---------------*/
 
 #proHeader {
@@ -188,14 +187,9 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-<<<<<<< HEAD
-  padding: 10px 0;
-  /*margin-bottom: 20px;*/
-=======
   padding: 2vh 0;
   height: 15vh;
   font-size: 2vh;
->>>>>>> a5edad2517a0110dabca240c888b6a5d8e46f48c
 }
 
 .logoPro img {
@@ -215,7 +209,6 @@ body {
   font-weight: bold;
   text-align: center;
   letter-spacing: 5px;
-<<<<<<< HEAD
 }
 
 /*--------------------------------------------*/
@@ -304,6 +297,3 @@ body {
 #NurseryDashboard .content .contentItem-1 .box-4 {
   background-color: #dfe4ea;
 }
-=======
-}
->>>>>>> a5edad2517a0110dabca240c888b6a5d8e46f48c

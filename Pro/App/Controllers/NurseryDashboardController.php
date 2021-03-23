@@ -14,13 +14,4 @@ class NurseryDashboardController extends Controller {
     public function home() {
         $this->render('NurseryDashboard');
     }
-
-    public function VerifProFile(){
-        if(isset($_POST['VerifProFile'])){
-            $file = $_FILES['file'];
-            debug($file);
-            $fileName = $_FILES['file']['name'];
-
-        }
-    }
 }
