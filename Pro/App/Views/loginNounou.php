@@ -18,7 +18,7 @@
                     <input type="password" name="password-login-nounou" id="password-login-nounou">
                 </div>
                 <span class="span-error error-email-login-nounou">&nbsp;<?php if(!empty($errors['login']) && $errors['login'] != ''){ echo $errors['login']; } ?></span>
-                
+
                 <div class="input-area">
                     <input type="submit" value="Se connecter">
                 </div>
