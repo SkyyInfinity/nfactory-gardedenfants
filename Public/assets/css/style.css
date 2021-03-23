@@ -192,6 +192,51 @@ input::placeholder {
   text-align: center;
 }
 
+.user-card {
+  cursor: default;
+  pointer-events: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 15px;
+  padding-left: 20px;
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 100px;
+  float: right;
+}
+
+.user-card p {
+  background: -webkit-gradient(linear, right top, left top, from(#FF9163), to(#FF7171));
+  background: linear-gradient(to left, #FF9163, #FF7171);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+.user-card span {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.user-card .avatar {
+  width: 75px;
+  margin-left: 25px;
+  border-radius: 50%;
+}
+
 /* ─── NAVBAR ───────────────────────────────────────── */
 #l-header {
   position: relative;
@@ -202,7 +247,7 @@ input::placeholder {
 }
 
 ul.nav-links {
-  z-index: -1;
+  z-index: 999;
   padding: 20px;
   position: absolute;
   width: 400px;
@@ -397,18 +442,17 @@ ul.nav-links.is-active {
 .left,
 .right {
   width: 50%;
+  height: 378px;
 }
 
 .left {
   padding-right: 30px;
-}
-
-.left img {
-  width: 100%;
+  position: relative;
 }
 
 .right {
   padding-left: 30px;
+  height: 100%;
 }
 
 .right h2 {
@@ -425,6 +469,19 @@ ul.nav-links.is-active {
 
 .particulier {
   padding-bottom: 20px;
+}
+
+.card3 {
+  width: 100%;
+}
+
+.man3 {
+  width: 100%;
+}
+
+#home #scene {
+  width: 100%;
+  top: 50%;
 }
 
 /* ─── SIGNUP ──────────────────────────────────────────────── */
@@ -486,6 +543,9 @@ ul.nav-links.is-active {
     padding-left: 0;
     padding-right: 0;
   }
+  .right {
+    margin-bottom: 50px;
+  }
   .illustration,
   .form {
     width: 100% !important;
@@ -532,6 +592,10 @@ ul.nav-links.is-active {
   ul.nav-links {
     width: 100%;
     border-radius: 0;
+  }
+  .user-card {
+    float: none;
+    margin: 25px auto 0 auto;
   }
 }
 

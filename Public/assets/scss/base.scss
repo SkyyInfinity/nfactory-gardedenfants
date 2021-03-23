@@ -146,3 +146,38 @@ input::placeholder {
 #connexion form {
     text-align: center;
 }
+
+// USER CARD
+.user-card {
+    cursor: default;
+    pointer-events: none;
+    width: fit-content;
+    padding: 10px 15px;
+    padding-left: 20px;
+    margin-top: 25px;
+    @include flex(center, center);
+    background-color: #fff;
+    border-radius: 100px;
+    float: right;
+}
+.user-card p {
+    @include primary-gradient();
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2em;
+    font-weight: 200;
+}
+.user-card span {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.user-card .avatar {
+    width: 75px;
+    margin-left: 25px;
+    border-radius: 50%;
+}
+.user-card {
+
+}

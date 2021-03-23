@@ -4,8 +4,8 @@
   position: relative;
   z-index: 1;
   padding: 15px 0;
-  background: -webkit-gradient(linear, right top, left top, from(#FF7171), to(#FF9163));
-  background: linear-gradient(to left, #FF7171, #FF9163);
+  background: -webkit-gradient(linear, right top, left top, from(#FF9163), to(#FF7171));
+  background: linear-gradient(to left, #FF9163, #FF7171);
 }
 
 #l-footer p {
