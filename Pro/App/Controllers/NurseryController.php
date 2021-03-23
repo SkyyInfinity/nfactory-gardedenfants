@@ -69,6 +69,7 @@ class NurseryController extends Controller {
 
             if ($nursery && password_verify($data["password-login-nursery"], $nursery->password)) {
                 $_SESSION["user"]['email'] = $nursery->email;
+                $_SESSION["user"]['id'] = $nursery->id;
                 $_SESSION["user"]['status'] = $nursery->status;
                 $_SESSION["user"]['name'] = $nursery->name;
                 $_SESSION["user"]['places'] = $nursery->places;
