@@ -7,8 +7,9 @@ $(document).ready(function(){
     /* ─── CODE ────────────────────────────────────────────── */
     body.css('overflow', 'hidden');
     setTimeout(function() {
-        loader.fadeOut(100);
-        body.css('overflow', 'auto');
+        loader.fadeOut(100, function(){
+            body.css('overflow', 'initial');
+        });
     }, 800/*800*/);
 
     // JQUERY END

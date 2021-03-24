@@ -13,7 +13,7 @@ class UserController extends Controller{
 
     public function signup($data)
     {
-        if (isset($data["email"])) {
+        if (!empty($data["email"])) {
             $errors = [];
             $user = $this->encodeChars($data);
             if (!empty($user["password"]) && !empty($user["password2"])) {
@@ -44,7 +44,7 @@ class UserController extends Controller{
 
     public function login($data)
     {
-        if (isset($data["email"])) {
+        if (!empty($data["email"])) {
 
             $user = $this->userModel->getUserByEmail($data["email"]);
 
@@ -101,5 +101,10 @@ class UserController extends Controller{
     }
     public function account() {
         $this->render("account");
+    }
+    public function forgotPassword() {
+        $_SESSION['user'] = [];
+        session_destroy();
+        $this->render("forgotPassword");
     }
 }
