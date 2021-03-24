@@ -40,17 +40,19 @@
         <div class="contentItem hidden" id="contentItem-3">
             <h2>Vos compétences</h2>
             <?php if(!empty($competences)) : ?>
-            <?php foreach($competences as $skill) : ?>
-                <div class="skill">
-                    <p><span class="title"><?= $skill->title ?></span> - <span class="description"><?= $skill->description ?></span></p>
-                </div>
-            <?php endforeach ?>
+            <div id="allSkills">
+                <?php foreach($competences as $skill) : ?>
+                    <div class="skill">
+                        <p><span class="title"><?= $skill->title ?></span> - <span class="description"><?= $skill->description ?></span></p>
+                    </div>
+                <?php endforeach ?>
+            </div>
             <?php endif ?>
 
             <h2>Ajouter une compétence :</h2>
 
             <div class="form-control">
-                <form action="" method="POST" id="AddSkillNounou">
+                <form action="./Public/ajax/ajax-addSkill.php" method="POST" id="AddSkillNounou" novalidate>
                 
                     <div class="input-area">
                         <label for="title">Titre :</label>
@@ -63,7 +65,7 @@
                     </div>
 
                     <div class="input-area">
-                        <input type="submit" value="Se connecter">
+                        <input type="submit" value="Ajouter" id="btn-submit-addSkill">
                     </div>
 
                 </form>

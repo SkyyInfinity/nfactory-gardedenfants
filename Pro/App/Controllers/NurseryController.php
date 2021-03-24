@@ -75,7 +75,7 @@ class NurseryController extends Controller {
                 $_SESSION["user"]['places'] = $nursery->places;
                 $_SESSION["user"]['adresse'] = $nursery->adresse;
                 $_SESSION["user"]['type'] = $nursery->type;
-                header("Location: home");
+                header("Location: Dashboard");
             } else {
                 $errors['login'] = "Utilisateur ou mot de passe incorrect.";
             }

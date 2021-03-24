@@ -18,4 +18,23 @@ class NounouModel extends Model {
         return $this->db->getData($statement, true);
     }
 
+    public function createSkill(array $data, $table)
+    {
+        // On récupère les informations d'un formulaire
+        // Ces informations sont dans le $_POST avec le name des input
+        
+        $statement = "INSERT INTO $table (";
+        $values = "VALUES (";
+        foreach ($data as $key => $value) {
+            $statement .= $key .",";
+            $values .= "'". $value ."',";
+        }
+        $statement = substr($statement,0,-1) . ") ";
+        $values = substr($values, 0, -1) . ")";
+
+        $statement .= $values;
+        $this->db->postData($statement);
+
+    }
+
 }

@@ -79,7 +79,7 @@ class NounouController extends Controller {
                 $_SESSION["user"]['first_name'] = $nounou->first_name;
                 $_SESSION["user"]['adresse'] = $nounou->adresse;
                 $_SESSION["user"]['type'] = $nounou->type;
-                header("Location: loginNounou");
+                header("Location: Dashboard");
             } else {
                 $errors['login'] = "Utilisateur ou mot de passe incorrect.";
             }
