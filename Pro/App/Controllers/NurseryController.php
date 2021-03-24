@@ -69,12 +69,13 @@ class NurseryController extends Controller {
 
             if ($nursery && password_verify($data["password-login-nursery"], $nursery->password)) {
                 $_SESSION["user"]['email'] = $nursery->email;
+                $_SESSION["user"]['id'] = $nursery->id;
                 $_SESSION["user"]['status'] = $nursery->status;
                 $_SESSION["user"]['name'] = $nursery->name;
                 $_SESSION["user"]['places'] = $nursery->places;
                 $_SESSION["user"]['adresse'] = $nursery->adresse;
                 $_SESSION["user"]['type'] = $nursery->type;
-                header("Location: home");
+                header("Location: Dashboard");
             } else {
                 $errors['login'] = "Utilisateur ou mot de passe incorrect.";
             }

@@ -26,7 +26,7 @@ $title = 'Mon compte'; ?>
                     <!-- AGE -->
                     <div class="champ">
                         <label for="age">Son âge</label>
-                        <span class="ageLabel"><input id="age" type="text" name="age"></span>
+                        <span class="ageLabel"><input id="age" type="number" name="age" min="0" max="12"></span>
                     </div>
                     <!-- MALADIES -->
                     <div class="champ">
