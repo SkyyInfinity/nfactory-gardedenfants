@@ -11,7 +11,7 @@ require('../inc/Class/ToolBox.php');
 $toolbox = new ToolBox();
 
 if(isset($_FILES['PV_file'])){
-    $name = -implode($_SESSION['user']);
+    $name = implode($_SESSION['user']);
     $PVerror = "";
     $file = $_FILES['PV_file'];
     $fileName = $_FILES['PV_file']['name'];

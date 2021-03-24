@@ -8,10 +8,15 @@ class NounouDashboardController extends Controller {
 
     public function __construct()
     {
-        $this->NurseryDashboardModel = new NounouDashboardModel();
+        $this->nounouDashboardModel = new NounouDashboardModel();
     }
 
     public function home() {
-        $this->render('NounouDashboard');
+
+        $competences = $this->nounouDashboardModel->getAllSkills($_SESSION['user']['id']);
+
+        $this->render('NounouDashboard', [
+            'competences' => $competences
+        ]);
     }
 }
