@@ -73,12 +73,13 @@ class NounouController extends Controller {
 
             if ($nounou && password_verify($data["password-login-nounou"], $nounou->password)) {
                 $_SESSION["user"]['email'] = $nounou->email;
+                $_SESSION["user"]['id'] = $nounou->id;
                 $_SESSION["user"]['status'] = $nounou->status;
                 $_SESSION["user"]['last_name'] = $nounou->last_name;
                 $_SESSION["user"]['first_name'] = $nounou->first_name;
                 $_SESSION["user"]['adresse'] = $nounou->adresse;
                 $_SESSION["user"]['type'] = $nounou->type;
-                header("Location: loginNounou");
+                header("Location: Dashboard");
             } else {
                 $errors['login'] = "Utilisateur ou mot de passe incorrect.";
             }

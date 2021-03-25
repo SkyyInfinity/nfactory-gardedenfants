@@ -1,5 +1,30 @@
 /* ─── RESPONSIVE ───────────────────────────────────────── */
 
+@media screen and (max-width: 1280px) {
+    #account .flex {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1120px) {
+    #account .flex {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+    #account .flex {
+        width: 100%;
+        flex-direction: column;
+    }
+    #account .modifyInfos {
+        padding-top: 50px;
+        border-top: 1px solid #ddd;
+        border-left: none;
+    }
+}
 @media screen and (max-width: 800px) {
     .flex {
         flex-direction: column-reverse;
@@ -21,6 +46,9 @@
     .illustration,
     .form {
         width: 100% !important;
+    }
+    .illustration {
+        display: none;
     }
 }
 @media screen and (max-width: 700px) {
@@ -51,8 +79,12 @@
     input[type=date],
     input[type=file],
     input[type=tel],
+    input[type=number],
     textarea {
         width: 100%;
+    }
+    select {
+        width: 90%;
     }
 }
 @media screen and (max-width: 500px) {
@@ -63,5 +95,31 @@
     .user-card {
         float: none;
         margin: 25px auto 0 auto;
+    }
+}
+@media screen and (max-width: 450px) {
+    nav {
+        align-items: center;
+        flex-direction: column;
+    }
+    nav .right-links ul {
+        flex-direction: column-reverse;
+    }
+    nav .right-links ul li {
+        margin: 15px 0;
+    }
+    .user-card {
+        width: 100%;
+        transform: scale(.8);
+        flex-direction: column;
+        text-align: center;
+    }
+    .flex {
+        padding: 15px 0;
+    }
+}
+@media screen and (max-width: 300px) {
+    h1.section-title {
+        font-size: 8vh;
     }
 }

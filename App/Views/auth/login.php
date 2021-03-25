@@ -1,5 +1,5 @@
 <?php 
-if(!empty($_SESSION['user']->role)) {
+if(isLogged()) {
     redirect('user');
 }
 
@@ -24,11 +24,17 @@ $title = 'Connexion'; ?>
                     <div class="champ">
                         <label for="password">Votre mot de passe</label>
                         <input id="password" type="password" name="password" placeholder="********">
+                        <a class="forgot" href="forgotPassword">Mot de passe oublié ?</a>
                     </div>
-                        <span class="error"> <?php if(!empty($errors)){echo $errors;}?></span>
+                    <?php if(!empty($error)) : ?>
+                        <p class="error"> <?= $error ?></p>
+                    <?php endif; ?>
                     <div class="champ submit">
                         <!-- <button class="btn-submit btn-orange">Se connecter</button> -->
                         <input class="btn-submit btn-orange" type="submit"value="Se connecter"></input>
+                    </div>
+                    <div class="champ">
+                        <a href="signup">Pas de compte ? Inscrivez-vous !</a>
                     </div>
                 </form>
             </div>

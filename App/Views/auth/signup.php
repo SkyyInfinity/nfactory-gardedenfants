@@ -1,10 +1,9 @@
 <?php 
-if(!empty($_SESSION['user']->role)) {
+if(isLogged()) {
     redirect('user');
 }
 
-$title = 'Inscription'; 
- ?>
+$title = 'Inscription'; ?>
 
 <section id="inscription">
     <div class="wrap">
@@ -40,13 +39,16 @@ $title = 'Inscription';
                         <span class="error"><?php if (isset($errors['passwords'])){echo $errors['passwords'];} ?></span>
                     </div>
                     <div class="champ">
-                        <label for="password">Confirmation</label>
+                        <label for="password2">Confirmation du mot de passe</label>
                         <input type="password" name="password2" id="password2" placeholder="********">
                         <span class="error"><?php if (!empty($errors['password2'])){echo $errors['password2'];} ?></span>
                         <span class="error"><?php if (isset($errors['passwords'])){echo $errors['passwords'];} ?></span>
                     </div>
                     <div class="champ submit">
                         <input class="btn-submit btn-orange" type="submit"value="S'inscrire"></input>
+                    </div>
+                    <div class="champ">
+                        <a href="login">Déjà inscrit ? Connectez-vous !</a>
                     </div>
                 </form>
             </div>

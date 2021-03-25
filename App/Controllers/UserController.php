@@ -115,4 +115,9 @@ class UserController extends Controller
     {
         $this->render("account");
     }
+    public function forgotPassword() {
+        $_SESSION['user'] = [];
+        session_destroy();
+        $this->render("forgotPassword");
+    }
 }
