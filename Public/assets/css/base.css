@@ -318,7 +318,8 @@ input::placeholder {
   width: 100%;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "g n" "m m";
+      grid-template-areas: "g n"
+ "m m";
   grid-gap: 20px;
   grid-auto-flow: dense;
 }
@@ -449,3 +450,4 @@ p#selected_allergy_list,
 p#selected_disease_list {
   margin-top: 10px;
 }
+
