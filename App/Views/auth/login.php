@@ -16,7 +16,7 @@ $title = 'Connexion'; ?>
             </div>
             <div class="form">
                 <h1 class="section-title">Connexion</h1>
-                <form action="login" method="post" class="form">
+                <form action="loginRequest" method="post" class="form">
                     <div class="champ">
                         <label for="email">Votre email</label>
                         <input id="email" type="email" name="email" placeholder="john.doe@example.com">
@@ -25,11 +25,10 @@ $title = 'Connexion'; ?>
                         <label for="password">Votre mot de passe</label>
                         <input id="password" type="password" name="password" placeholder="********">
                     </div>
-                    <?php if(isset($error)): ?>
-                        <p class="error"> <?= $error ?></p>
-                    <?php endif; ?>
+                        <span class="error"> <?php if(!empty($errors)){echo $errors;}?></span>
                     <div class="champ submit">
-                        <button class="btn-submit btn-orange">Se connecter</button>
+                        <!-- <button class="btn-submit btn-orange">Se connecter</button> -->
+                        <input class="btn-submit btn-orange" type="submit"value="Se connecter"></input>
                     </div>
                 </form>
             </div>

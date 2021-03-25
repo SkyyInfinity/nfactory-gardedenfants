@@ -9,7 +9,6 @@ $(document).ready(function () {
         event.preventDefault();
         if ($('#allergy_list').val() != '') {
             var selected_allergy = $('#allergy_list').val();
-            console.log(allergys.indexOf(selected_allergy))
             if (allergys.indexOf(selected_allergy) < 0) {
                 allergys.push(selected_allergy)
             }
@@ -17,10 +16,10 @@ $(document).ready(function () {
             var i = 0;
             allergys.forEach(allergy => {
                 if (i == 0) {
-                    $('#selected_allergy_list').append('Allergies : <a href class="span_allergy_' + allergy + '" id="remove_allergy">' + allergy + '</a>')
+                    $('#selected_allergy_list').append('<p>Allergies : </p><a href="#" class="span_allergy_' + allergy + '" id="remove_allergy">' + allergy + '</a>')
                     i++;
                 } else {
-                    $('#selected_allergy_list').append(', <a href class="span_allergy_' + allergy + '" id="remove_allergy">' + allergy + '</a>')
+                    $('#selected_allergy_list').append(', <a href="#" class="span_allergy_' + allergy + '" id="remove_allergy">' + allergy + '</a>')
                     i++;
                 }
             });
@@ -48,10 +47,11 @@ $(document).ready(function () {
         //     }
         // })
     })
-    $('#remove_allergy').on('click', function(e) {
+    $('#remove_allergy').click(function (e) { 
         e.preventDefault();
-        console.log('test')
-        var allergy_id = $(this).getAttribute('id');
-        console.log(allergy_id);
-    })
+            console.log('test')
+            var allergy_id = $(this).attr;
+            console.log(allergy_id);
+    });
+
 });
