@@ -399,6 +399,11 @@ canvas.mapboxgl-canvas:focus {
   text-align: center;
 }
 
+.modifyInfos {
+  padding-left: 8%;
+  border-left: 1px solid #ddd;
+}
+
 input#age {
   padding-right: 80px;
 }
@@ -774,7 +779,8 @@ ul.nav-links.is-active {
   }
   #account .modifyInfos {
     padding-top: 50px;
-    border-top: 1px solid #555;
+    border-top: 1px solid #ddd;
+    border-left: none;
   }
 }
 

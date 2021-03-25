@@ -310,6 +310,10 @@ canvas.mapboxgl-canvas:focus {
 .modifyInfos form {
     text-align: center;
 }
+.modifyInfos {
+    padding-left: 8%;
+    border-left: 1px solid #ddd;
+}
 input#age {
     padding-right: 80px;
 }

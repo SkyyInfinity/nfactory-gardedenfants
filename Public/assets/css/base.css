@@ -394,6 +394,11 @@ canvas.mapboxgl-canvas:focus {
   text-align: center;
 }
 
+.modifyInfos {
+  padding-left: 8%;
+  border-left: 1px solid #ddd;
+}
+
 input#age {
   padding-right: 80px;
 }
