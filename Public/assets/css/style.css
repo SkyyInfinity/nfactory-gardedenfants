@@ -171,6 +171,9 @@ textarea {
   transition: .2s ease-out;
   width: 80%;
 }
+textarea{
+  padding: 25px 0 0 40px;
+}
 
 input[type=text]:focus,
 input[type=email]:focus,
@@ -396,6 +399,7 @@ canvas.mapboxgl-canvas:focus {
 .modifyInfos input {
   width: 100%;
 }
+.contact
 
 .addChild form,
 .modifyInfos form {

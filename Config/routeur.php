@@ -45,9 +45,17 @@ switch ($page) {
         $user = new UserController();
         $user->account();
         break;
+    case "accountUpdate":
+        $user = new UserController();
+        $user->updateUser($_POST);
+        break;
     case "forgotPassword":
         $user = new UserController();
         $user->forgotPassword();
+        break;
+    case "contactSubmit":
+        $user = new UserController();
+        $user->submitContact($_POST);
         break;
     default:
         $home = new HomeController();

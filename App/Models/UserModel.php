@@ -30,18 +30,19 @@ class UserModel extends Model{
         return $this->db->getData($statement, true);
     }
 
-
-
-    public function updateWithPassword($id, $data)
+    public function updateWithoutPassword($id, $data)
     {
         $statement = "UPDATE kido_user SET
                         name= :name,
                         surname= :surname,
-                        email= :email,
-                        password= :password,
+                        email= :email
 
                         WHERE id = $id";
         
+        $this->db->postData($statement, $data);
+    }
+    public function submitContact($data) {
+        $statement = "INSERT INTO kido_contact email,title,textMessage VALUES :email,:title,:message";
         $this->db->postData($statement, $data);
     }
 }

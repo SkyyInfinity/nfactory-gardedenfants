@@ -91,20 +91,11 @@ class UserController extends Controller
     public function updateUser($data)
     {
         $data = $this->encodeChars($data);
-
-        if (empty($data["password"])) {
-            $user = [];
-            foreach ($data as $key => $value) {
-                if ($key !== "password") {
-                    $user[$key] = $value;
-                }
-            }
-            $this->userModel->updateWithoutPassword($_GET["id"], $user);
-        } else {
-            $data["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
-
-            $this->userModel->updateWithPassword($_GET["id"], $data);
-        }
+        $this->userModel->updateWithoutPassword($_SESSION["user"]->id, $data);
+        $_SESSION["user"]->name = $data['name'];
+        $_SESSION["user"]->surname = $data['surname'];
+        $_SESSION["user"]->email = $data['email'];
+        header("Location:account");
     }
 
     public function homeUser()
@@ -119,5 +110,8 @@ class UserController extends Controller
         $_SESSION['user'] = [];
         session_destroy();
         $this->render("forgotPassword");
+    }
+    public function submitContact($data) {
+        $this->userModel->updateWithoutPassword($data);
     }
 }
