@@ -4,6 +4,8 @@
 /* ───────────────────────────────────────────────────────── */
 /* ─── IMPORTATION ───────────────────────────────────────── */
 @import url("reset.css");
+/* ─── VARIABLES ───────────────────────────────────────── */
+/* ─── MIXINS ──────────────────────────────────────────── */
 /* ─── BASE ──────────────────────────────────────────────── */
 body {
   font-family: "Kanit", sans-serif;
@@ -176,7 +178,7 @@ input[type=password]:focus,
 input[type=date]:focus,
 input[type=file]:focus,
 input[type=tel]:focus,
-input[type=number], :focus,
+input[type=number]:focus,
 select:focus,
 textarea:focus {
   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -323,7 +325,8 @@ input::placeholder {
   width: 100%;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "g n" "m m";
+      grid-template-areas: "g n"
+ "m m";
   grid-gap: 20px;
   grid-auto-flow: dense;
 }
@@ -399,6 +402,11 @@ canvas.mapboxgl-canvas:focus {
   text-align: center;
 }
 
+.modifyInfos {
+  padding-left: 8%;
+  border-left: 1px solid #ddd;
+}
+
 input#age {
   padding-right: 80px;
 }
@@ -412,7 +420,7 @@ span.ageLabel::before {
   content: 'ans';
   bottom: 10%;
   right: 0;
-  z-index: 999;
+  z-index: 15;
   padding-right: 25px;
   font-size: 1.5em;
   font-weight: 500;
@@ -450,6 +458,23 @@ p#selected_disease_list {
   margin-top: 10px;
 }
 
+/* ─── LOADER ────────────────────────────────────────────── */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+#loader img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /* ─── NAVBAR ───────────────────────────────────────── */
 #l-header {
   position: relative;
@@ -460,7 +485,7 @@ p#selected_disease_list {
 }
 
 ul.nav-links {
-  z-index: 999;
+  z-index: 115;
   padding: 20px;
   position: absolute;
   width: 400px;
@@ -621,23 +646,6 @@ ul.nav-links.is-active {
   font-weight: 200;
 }
 
-/* ─── LOADER ────────────────────────────────────────────── */
-#loader {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  z-index: 999;
-}
-
-#loader img {
-  width: 100%;
-  height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 /* ─── HOME ──────────────────────────────────────────────── */
 .flex {
   padding: 50px 0;
@@ -727,7 +735,7 @@ ul.nav-links.is-active {
   margin-left: 0;
 }
 
-/* ─── SIGNUP ──────────────────────────────────────────────── */
+/* ─── SIGNIN ──────────────────────────────────────────────── */
 .card2 {
   width: 500px;
 }
@@ -740,6 +748,71 @@ ul.nav-links.is-active {
 .forgot {
   margin: 10px 0;
   display: block;
+}
+
+/* ─── MULTICHECKBOX ────────────────────────────────────────── */
+.MultiCheckBox {
+  border: 1px solid #e2e2e2;
+  padding: 5px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.MultiCheckBox .k-icon {
+  font-size: 15px;
+  float: right;
+  font-weight: bolder;
+  margin-top: -7px;
+  height: 10px;
+  width: 14px;
+  color: #787878;
+}
+
+.MultiCheckBoxDetail {
+  display: none;
+  position: absolute;
+  border: 1px solid #e2e2e2;
+  overflow-y: hidden;
+  z-index: 15;
+}
+
+.MultiCheckBoxDetailBody {
+  overflow-y: scroll;
+  background-color: #cfcfcf;
+}
+
+.MultiCheckBoxDetail .cont {
+  clear: both;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.MultiCheckBoxDetail .cont:hover {
+  background-color: #cfcfcf;
+}
+
+.MultiCheckBoxDetailBody > div > div {
+  float: left;
+}
+
+.MultiCheckBoxDetailHeader {
+  overflow: hidden;
+  position: relative;
+  height: 28px;
+  background-color: #3d3d3d;
+}
+
+.MultiCheckBoxDetailHeader > input {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
+.MultiCheckBoxDetailHeader > div {
+  position: absolute;
+  top: 5px;
+  left: 24px;
+  color: #fff;
 }
 
 /* ─── RESPONSIVE ───────────────────────────────────────── */
@@ -774,7 +847,8 @@ ul.nav-links.is-active {
   }
   #account .modifyInfos {
     padding-top: 50px;
-    border-top: 1px solid #555;
+    border-top: 1px solid #ddd;
+    border-left: none;
   }
 }
 

@@ -35,9 +35,15 @@
                 <div>
                     <label for="">Adresse</label>
                     <input type="text" id="geoadresse">
-                    <select>
-                    
-                    </select>
+                </div>
+
+                <div id="geolist">
+                    <tr>
+                        <th>Adresse</th>
+                    </tr>
+                    <tr>
+
+                    </tr>
                 </div>
 
                 <div>
