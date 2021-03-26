@@ -19,8 +19,9 @@ $(document).ready(function () {
     })
     $.ajax({
         type: 'GET',
-        url: './Public/assets/ajax/getUserloc.php',
+        url: './Public/assets/ajax/getProLocs.php',
         success: function (response) {
+            console.log(response)
             var marker1 = new mapboxgl.Marker()
                 .setLngLat([userLoc.lon, userLoc.lat])
                 .addTo(map);
