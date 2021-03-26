@@ -18,7 +18,7 @@ class NounouModel extends Model {
         return $this->db->getData($statement, true);
     }
 
-    public function createSkill(array $data, $table)
+    public function createCustom(array $data, $table)
     {
         // On récupère les informations d'un formulaire
         // Ces informations sont dans le $_POST avec le name des input

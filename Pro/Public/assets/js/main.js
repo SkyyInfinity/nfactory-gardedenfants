@@ -68,6 +68,25 @@ $(document).ready(function () {
     });
   });
 
+  $("#AddDateNounou").on("submit", function (e) {
+    e.preventDefault();
+    let form = $("#AddDateNounou");
+    $.ajax({
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serialize(),
+      dataType: "json",
+      beforeSend: function () {
+        $("#btn-submit-addSkill").fadeIn("200");
+      },
+
+      success: function (response) {
+        $("#btn-submit-addSkill").fadeIn("200");
+        console.log("pouet");
+      },
+    });
+  });
+
   //API GEOLOCALISATION PRO
 
   const apiGeo = "https://api-adresse.data.gouv.fr/search/?q=";
@@ -77,3 +96,21 @@ $(document).ready(function () {
 
   // JQUERY END
 });
+
+//Calendar
+/*
+document.addEventListener("DOMContentLoaded", function () {
+  var calendarEl = document.getElementById("Calendar");
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: "timeGridWeek",
+    heigth: "100%",
+    contentHeight: "auto",
+    allDaySlot: false,
+    firstDay: 1,
+    slotEventOverlap: false,
+    slotDuration: "00:30:00",
+  });
+  calendar.setOption("locale", "fr");
+  calendar.render();
+});
+*/

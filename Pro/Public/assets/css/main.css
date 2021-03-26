@@ -119,15 +119,15 @@ body {
 
 /*-------- LOGIN --------*/
 
-#loginSectionNounou{
+#loginSectionNounou {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   height: 80vh;
-  color: #2F2E41;
+  color: #2f2e41;
 }
-#loginSectionNounou div.login form{
+#loginSectionNounou div.login form {
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -135,14 +135,14 @@ body {
   align-items: flex-end;
 }
 
-#loginSectionNounou div.login h2{
+#loginSectionNounou div.login h2 {
   text-align: center;
   font-family: "Amatic SC", cursive;
   font-weight: 800;
 }
 
-#loginSectionNounou div.login input{
-  background-color: #F1F2F6;
+#loginSectionNounou div.login input {
+  background-color: #f1f2f6;
   outline: none;
   border: none;
   font-size: 20px;
@@ -151,31 +151,31 @@ body {
   width: 300px;
 }
 
-#loginSectionNounou div.login h2{
+#loginSectionNounou div.login h2 {
   font-size: 60px;
   margin-bottom: 40px;
   border-bottom: 2px solid #227093;
   padding-bottom: 15px;
 }
 
-#loginSectionNounou div.login label{
+#loginSectionNounou div.login label {
   font-size: 20px;
 }
-#loginSectionNounou div.login span.span-error{
+#loginSectionNounou div.login span.span-error {
   font-size: 20px;
 }
 
-#loginSectionNounou div.login input[type="submit"]{
+#loginSectionNounou div.login input[type="submit"] {
   font-weight: 700;
 }
 
-#loginSectionNounou div.login input[type="submit"]:hover{
+#loginSectionNounou div.login input[type="submit"]:hover {
   background-color: #227093;
-  color: #F1F2F6;
+  color: #f1f2f6;
   transition-duration: 500ms;
 }
 
-#loginSectionNounou div.login input[type="submit"]:active{
+#loginSectionNounou div.login input[type="submit"]:active {
   position: relative;
   bottom: 2px;
 }
