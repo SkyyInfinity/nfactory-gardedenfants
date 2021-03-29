@@ -9,7 +9,7 @@
         <div id="menuItem-4" class="menuItem">Votre planning</div>
         <div id="menuItem-5" class="menuItem">Certification</div>
         <div id="menuItem-6" class="menuItem">Paiment</div>
-        <div id="menuItem-7" class="menuItem">Clients</div>
+        <div id="menuItem-7" class="menuItem">Localisation</div>
         <div id="menuItem-8" class="menuItem">Enfants</div>
     </div>
 
@@ -105,21 +105,47 @@
         </div>
 
     <!-- Espace Certification-->
-        <div class="contentItem hidden" id="contentItem-5">
-            <h2>Votre Planning</h2>
-        </div>
+
 
         <div class="contentItem hidden" id="contentItem-5">
-            <h2>Votre Planning</h2>
-
-            <h1>enorme</h1>
-            <div>
-                <p>Sastus :</p>
-                <form action="" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="file">
-                    <button type="submit" name="VerifProFile">Upload</button>
+            <h2>Vos fichiers</h2>
+            <div>   
+                <h2>Status : </h2>
+                <p>Envoyer une pièces justificatives : </p>
+                <form action="" method="POST" enctype="multipart/form-data" id="PV_form_file">
+                    <input type="file" name="PV_file">
+                    <button type="submit" name="PV_send_file">Upload File</button>
                 </form>
             </div>
+
+
+        </div>
+
+        <div class="contentItem hidden" id="contentItem-7">
+            <h2>Votre crèche</h2>
+
+            <form action="" method="post">
+                <div>
+                    <label for="">Adresse</label>
+                    <input type="text" id="geoadresse">
+                </div>
+
+                <div id="geolist">
+                    <tr>
+                        <th>Adresse</th>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                </div>
+
+                <div>
+                    <input type="submit" id="geosubmit">
+                </div>
+
+            
+            </form>
+
         </div>
     </div>
 </div>
