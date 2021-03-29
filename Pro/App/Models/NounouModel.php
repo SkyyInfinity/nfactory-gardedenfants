@@ -37,4 +37,10 @@ class NounouModel extends Model {
 
     }
 
+    public function getAllCrenauxOfNounou(string $id)//:object
+    {
+        $statement = "SELECT * FROM kido_pro_planning_nounou WHERE id_user_nounou = '$id'";
+        return $this->db->getData($statement, false);
+    }
+
 }
