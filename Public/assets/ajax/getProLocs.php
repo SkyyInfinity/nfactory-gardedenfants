@@ -1,11 +1,14 @@
 <?php
+use Core\App;
+use Core\Autoloader\Autoloader;
+use App\Controllers\UserController;
+define('ROOT', dirname(dirname(__DIR__)) . '/');
+App::load();
 require('../../inc/functions.php');
 $errors = array();
 $success = false;
-use App\Controllers\UserController;
 $proPos = new UserController();
 $proPos->getProPos();
-
 
 if(count($errors) == 0) {
     $success = true;
@@ -14,7 +17,7 @@ if(count($errors) == 0) {
 $data = array(
     'errors' => $errors,
     'success' => $success,
-    'ProLoc' => $proPos
+    'ProPos' => $proPos
 );
 
 showJson($data);
