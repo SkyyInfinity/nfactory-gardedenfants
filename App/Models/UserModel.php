@@ -45,4 +45,8 @@ class UserModel extends Model{
         $statement = "INSERT INTO kido_contact (email,title,textMessage) VALUES (:email,:title,:message)";
         $this->db->postData($statement, $data);
     }
+    public function getProLoc() {
+        $statement = "SELECT * FROM kido_pro_user_nounou";
+        return $this->db->getData($statement);
+    }
 }

@@ -4,7 +4,7 @@ $(document).ready(function () {
     // Gestion Formulaire
     $.ajax({
         type: 'GET',
-        url: './Public/assets/ajax/getUserloc.php',
+        url: './Public/ajax/getUserloc.php',
         success: function (response) {
             userLoc = response.userLoc;
             map = new mapboxgl.Map({
@@ -19,16 +19,22 @@ $(document).ready(function () {
     })
     $.ajax({
         type: 'GET',
-        url: './Public/assets/ajax/getProLocs.php',
+        url: './Public/ajax/getProLocs.php',
         success: function (response) {
-            console.log(response)
-            var marker1 = new mapboxgl.Marker()
-                .setLngLat([userLoc.lon, userLoc.lat])
-                .addTo(map);
-            map.setLayoutProperty('country-label', 'text-field', [
-                'get',
-                'name_fr'
-            ]);
+            console.log(response.ProPos)
+            var i = 0;
+            response.ProPos.forEach(element => {
+                coordinates = element.features[0].geometry.coordinates;
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([coordinates[0],coordinates[1]])
+                    .addTo(map);
+                map.setLayoutProperty('country-label', 'text-field', [
+                    'get',
+                    'name_fr'
+                ]);
+                i++;
+            });
+
         }, error: function (response) {
             console.log(response);
         }
