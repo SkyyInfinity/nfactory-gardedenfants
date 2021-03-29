@@ -109,6 +109,7 @@ $(document).ready(function () {
           contentHeight: "auto",
           allDaySlot: false,
           firstDay: 1,
+          nowIndicator: true,
           slotEventOverlap: false,
           slotMinTime: "06:00:00",
           slotMaxTime: "22:00:00",
