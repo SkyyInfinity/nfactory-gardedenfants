@@ -98,6 +98,7 @@
                     </div>
                 </form>
             </div>
+            <button id="showPlanning">Afficher mon planning</button>
             <section id="HoldCalendar">
                 <div id="Calendar"></div>
             </section>
