@@ -107,17 +107,12 @@ $(document).ready(function () {
 
         $("#geoAdd"+[i]).on("click", function (e) {
           e.preventDefault();
+          var stuff ={'key1':geolabel[i],'key2':geocodepostal[i],'key3':geolong[i],'key4':geolatt[i]};
+          console.log(stuff)
           $.ajax({
             type: "POST",
             url: "Public/ajax/ajaxgeo.php",
-            //dataType: "json",
-            //data: 'label=' + geolabel[i] + '&codepostal=' + geocodepostal[i] + '&long=' + geolong[i] + '&latt=' + geolatt[i],
-            data: {
-              'label' : geolabel[1]
-            },
-            contentType: false,
-            cache: false,
-            processData:false,
+            data : stuff,
       
             beforeSend: function (){
               console.log("Requete en cours")

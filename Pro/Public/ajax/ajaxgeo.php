@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 use Public\inc\Class\ToolBox;
 use Public\inc\Class\VerifForm;
@@ -10,4 +9,7 @@ require('../inc/Class/ToolBox.php');
 
 $toolbox = new ToolBox();
 
-echo $_POST['label'];
+echo "key1 : ".$_POST["key1"];
+echo "key2 : ".$_POST["key2"];
+echo "key3 : ".floatval($_POST["key3"]);
+echo "key4 : ".floatval($_POST["key4"]);
