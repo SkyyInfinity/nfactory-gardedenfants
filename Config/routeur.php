@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\ChildController;
 use App\Controllers\UserController;
 use App\Controllers\HomeController;
 
@@ -38,16 +39,24 @@ switch ($page) {
         $user->logout();
         break;
     case "user":
-        $user = new UserController();
-        $user->homeUser();
+        // $user = new UserController();
+        // $user->homeUser();
+        $childs = new ChildController();
+        $childs->getChilds($_SESSION['user']->id);
         break;
     case "account":
-        $user = new UserController();
-        $user->account();
+        // $user = new UserController();
+        // $user->account();
+        $child = new ChildController();
+        $child->addChild($_POST);
         break;
     case "forgotPassword":
         $user = new UserController();
         $user->forgotPassword();
+        break;
+    case "reserve":
+        $childs = new ChildController();
+        $childs->getChild($_SESSION['user']->id, 1);
         break;
     default:
         $home = new HomeController();

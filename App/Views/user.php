@@ -31,5 +31,20 @@ $title = 'Mon espace'; ?>
                 <div id='map' style='width: 100%; height: 600px;'></div>
             </div>
         </div>
+        <div class="childList">
+            <ul>
+                <?php foreach($childs as $child) : ?>
+                <li>
+                    <div class="infos">
+                        <h3><?= $child->name ?></h3>
+                        <p><?php if($child->age <= 1){echo $child->age . ' an';}else{echo $child->age . ' ans';} ?></p>
+                    </div>
+                    <div class="btn">
+                        <a href="reserve?id=<?= $child->id ?>" class="btn btn-orange">Reservé pour <?= $child->name ?></a>
+                    </div>
+                </li>
+                <?php endforeach ?>
+            </ul>
+        </div>
     </div>
 </section>
