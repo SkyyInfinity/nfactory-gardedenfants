@@ -34,6 +34,48 @@
     <!-- Espace Mon profil-->
         <div class="contentItem hidden" id="contentItem-2">
             <h2>Votre profil</h2>
+
+            <form action="" method="POST">
+                <div class="input-area-infoUser">
+                    <label for="name-infoUser">nom</label>
+                    <i class="fas fa-arrow-right" style="color: #227093"></i>
+                    <input type="text" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                </div>
+
+                <div class="input-area-infoUser">
+                    <label for="firstname-infoUser">prenom</label>
+                    <i class="fas fa-arrow-right" style="color: #227093"></i>
+                    <input type="text" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                </div>
+
+                <div class="input-area-infoUser">
+                    <label for="email-infoUser">email</label>
+                    <i class="fas fa-arrow-right" style="color: #227093"></i>
+                    <input type="email" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                </div>
+
+                <div class="input-area-infoUser">
+                    <label for="email-infoUser">adresse</label>
+                    <i class="fas fa-arrow-right" style="color: #227093"></i>
+                    <input type="text" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                </div>
+
+                <div class="input-area-infoUser">
+                    <label for="email-infoUser">Nouveau mot de passe</label>
+                    <i class="fas fa-arrow-right" style="color: #227093"></i>
+                    <input type="password" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                </div>
+
+                <div class="input-area-infoUser">
+                    <label for="email-infoUser">Confirmer nouveau mot de passe</label>
+                    <i class="fas fa-arrow-right" style="color: #227093"></i>
+                    <input type="password" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                </div>
+
+                <div class="submitButtonInfoUser">
+                    <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedInfoUser" value="Sauvegarder">
+                </div>
+            </form>
         </div>
 
     <!-- Espace Vos compétence-->
@@ -121,6 +163,17 @@
 
         </div>
 
+        <!-- Espace paiment-->
+
+
+        <div class="contentItem hidden" id="contentItem-6">
+            <h2>Vos paiment reçu</h2>
+            <div>   
+            </div>
+
+
+        </div>
+
         <div class="contentItem hidden" id="contentItem-7">
             <h2>Votre crèche</h2>
 
@@ -145,6 +198,17 @@
 
             
             </form>
+
+        </div>
+
+        <!-- Espace paiment-->
+
+
+        <div class="contentItem hidden" id="contentItem-8">
+            <h2>Vos paiment reçu</h2>
+            <div>   
+            </div>
+
 
         </div>
     </div>
