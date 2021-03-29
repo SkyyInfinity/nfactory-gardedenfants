@@ -19,7 +19,7 @@ switch ($page) {
         break;
     case "signup":
         $user = new UserController();
-        $user->signup();
+        $user->signup($_POST);
         break;
     case "signupRequest":
         $user = new UserController();

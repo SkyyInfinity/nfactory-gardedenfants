@@ -20,27 +20,17 @@ class UserController extends Controller
     {
         $errors = [];
         $user = $this->encodeChars($data);
-        validationText($errors, $user["name"], 'name', 1, 30);
-        validationText($errors, $user["surname"], 'surname', 1, 30);
-        validationEmail($errors, $user["email"], 'email');
-        if (!empty($user["password"]) && !empty($user["password2"])) {
-            if ($user["password"] == $user["password2"]) {
-                unset($user["password2"]);
-                validationPassword($errors, $user['password'], 'password', 8, 30);
-            } else {
-                $errors['passwords'] = "Les mots de passe ne sont pas identiquent";
-            }
-        } else {
-            $errors['passwords'] = "Veuillez renseigner ce champ";
-        }
-        if (count($errors) == 0) {
+        $errors = validationText($errors, $user["name"], 'name', 1, 30);
+        $errors = validationText($errors, $user["surname"], 'surname', 1, 30);
+        $errors = validationEmail($errors, $user["email"], 'email');
+        $errors = validationPassword($errors, $user['password'], $user['password2'], 'password', 8, 30);
+        if (empty($errors)) {
+            unset($user['password2']);
             $user["password"] = password_hash($user["password"], PASSWORD_DEFAULT);
             $user["role"] = json_encode(['user']);
             $this->userModel->create($user);
-
             header("Location:login");
-        }
-        if (count($errors) != 0) {
+        } else {
             $this->render("auth.signup", [
                 "errors" => $errors
             ]);
@@ -54,20 +44,22 @@ class UserController extends Controller
     public function loginRequest($data)
     {
         if (!empty($data["email"])) {
-            $user = $this->userModel->getUserByEmail($data["email"]);
-            if ($user && password_verify($data["password"], $user->password)) {
-                $_SESSION["user"] = $user;
-                $_SESSION["user"]->role = json_decode($user->role);
-                header("Location:user");
-            } else {
-                $errors = "Utilisateur ou mot de passe incorrect.";
+            if ($user = $this->userModel->getUserByEmail($data["email"])) {
+                if ($user && password_verify($data["password"], $user->password)) {
+                    $_SESSION["user"] = $user;
+                    $_SESSION["user"]->role = json_decode($user->role);
+                    $user = [];
+                    header("Location:user");
+                } else {
+                    $errors = "Utilisateur ou mot de passe incorrect.";
+                }
             }
         } else {
             $errors = "Veuillez renseigner les champs";
         }
         if (!empty($errors)) {
             $this->render("auth.login", [
-                "errors" => $errors
+                "error" => $errors
             ]);
         }
     }
@@ -76,7 +68,7 @@ class UserController extends Controller
     {
         $_SESSION['user'] = [];
         session_destroy();
-        header("Location:login");
+        header("Location:home");
     }
 
     public function getUser()
@@ -106,12 +98,31 @@ class UserController extends Controller
     {
         $this->render("account");
     }
-    public function forgotPassword() {
+    public function forgotPassword()
+    {
         $_SESSION['user'] = [];
         session_destroy();
         $this->render("forgotPassword");
     }
-    public function submitContact($data) {
-        $this->userModel->updateWithoutPassword($data);
+    public function submitContact($data)
+    {
+        $errors = [];
+        $errors = validationText($errors, $data["email"], 'email', 7, 30);
+        $errors = validationText($errors, $data["title"], 'title', 10, 50);
+        $errors = validationText($errors, $data["textMessage"], 'textMessage', 10, 200);
+        if (empty($errors)) {
+            $success = "Message envoyé";
+            $this->userModel->submitContact($data);
+            $this->render("contact", [
+                "success" => $success
+            ]);
+        } else {
+            $this->render("contact", [
+                "errors" => $errors
+            ]);
+        }
     }
+    // public function getProPos(){
+    //     $this->userModel->getProLoc();
+    // }
 }

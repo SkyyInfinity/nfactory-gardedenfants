@@ -24,7 +24,7 @@ class UserModel extends Model{
      * @param string $email
      * @return object
      */
-    public function getUserByEmail(string $email):object
+    public function getUserByEmail(string $email)
     {
         $statement = "SELECT * FROM kido_user WHERE email = '$email'";
         return $this->db->getData($statement, true);
@@ -42,7 +42,11 @@ class UserModel extends Model{
         $this->db->postData($statement, $data);
     }
     public function submitContact($data) {
-        $statement = "INSERT INTO kido_contact email,title,textMessage VALUES :email,:title,:message";
+        $statement = "INSERT INTO kido_contact (email,title,textMessage) VALUES (:email,:title,:message)";
         $this->db->postData($statement, $data);
+    }
+    public function getProLoc() {
+        $statement = "SELECT * FROM kido_pro_user_nounou";
+        return $this->db->getData($statement);
     }
 }

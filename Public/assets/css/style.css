@@ -171,9 +171,6 @@ textarea {
   transition: .2s ease-out;
   width: 80%;
 }
-textarea{
-  padding: 25px 0 0 40px;
-}
 
 input[type=text]:focus,
 input[type=email]:focus,
@@ -328,8 +325,7 @@ input::placeholder {
   width: 100%;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "g n"
- "m m";
+      grid-template-areas: "g n" "m m";
   grid-gap: 20px;
   grid-auto-flow: dense;
 }
@@ -399,10 +395,10 @@ canvas.mapboxgl-canvas:focus {
 .modifyInfos input {
   width: 100%;
 }
-.contact
 
 .addChild form,
-.modifyInfos form {
+.modifyInfos form,
+.contactForm form {
   text-align: center;
 }
 
