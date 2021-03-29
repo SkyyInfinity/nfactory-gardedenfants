@@ -41,10 +41,8 @@
                         <?php if (!empty($_SESSION["user"])) : ?>
                             <?php if ($title == 'Mon compte') : ?>
                                 <li><a class="btn" href="user">Mon espace</a></li>
-                                <li><a class="btn" href="logout">Déconnexion</a></li>
                             <?php else : ?>
                                 <li><a class="btn" href="account">Mon Compte</a></li>
-                                <li><a class="btn" href="logout">Déconnexion</a></li>
                             <?php endif; ?>
                         <?php else : ?>
                             <?php if ($title == 'Inscription') : ?>

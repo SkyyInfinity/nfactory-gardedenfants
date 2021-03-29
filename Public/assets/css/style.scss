@@ -344,7 +344,8 @@ canvas.mapboxgl-canvas:focus {
     width: 100%;
 }
 .addChild form,
-.modifyInfos form {
+.modifyInfos form,
+.contactForm form {
     text-align: center;
 }
 .modifyInfos {
@@ -665,6 +666,9 @@ ul.nav-links.is-active {
     top: 5px;
     left: 24px;
     color: #fff;
+}
+.contactForm {
+
 }
 
 /* ─── RESPONSIVE ───────────────────────────────────────── */

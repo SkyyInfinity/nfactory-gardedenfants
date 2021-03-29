@@ -325,8 +325,7 @@ input::placeholder {
   width: 100%;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "g n"
- "m m";
+      grid-template-areas: "g n" "m m";
   grid-gap: 20px;
   grid-auto-flow: dense;
 }
@@ -398,7 +397,8 @@ canvas.mapboxgl-canvas:focus {
 }
 
 .addChild form,
-.modifyInfos form {
+.modifyInfos form,
+.contactForm form {
   text-align: center;
 }
 

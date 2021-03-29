@@ -61,11 +61,11 @@ $title = 'Mon compte'; ?>
             <!-- MODIFY INFORMATIONS -->
             <div class="modifyInfos">
                 <h2 class="second-title">Modifier vos informations</h2>
-                <form id="modifyInfos" action="account" method="POST">
-                    <!-- PRENOM -->
+                <form id="modifyInfos" action="accountUpdate" method="POST">
+                    <!-- NOM -->
                     <div class="champ">
-                        <label for="name">Votre nom</label>
-                        <input id="name" type="text" name="name" value="<?php if(!empty($_SESSION['user']->surname)){echo $_SESSION['user']->surname;} ?>">
+                        <label for="surname">Votre nom</label>
+                        <input id="surname" type="text" name="surname" value="<?php if(!empty($_SESSION['user']->surname)){echo $_SESSION['user']->surname;} ?>">
                     </div>
                     <!-- PRENOM -->
                     <div class="champ">
