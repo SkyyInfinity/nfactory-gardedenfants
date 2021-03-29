@@ -138,29 +138,48 @@ $(document).ready(function () {
   $("#geoadresse").keyup(function () {
     let geourl = apiGeo + trim(geoAdresse.val()) + geoFormat;
     console.log(geourl);
-    fetch(geourl, { method: "get" })
-      .then((response) => response.json())
-      .then((results) => {
-        $("#geoselectadresse").find("option").remove();
-        $("#geolist").find("tr").remove();
+    fetch(geourl, {method: 'get'}).then(response => response.json()).then(results =>{
+      $('#geoselectadresse').find('option').remove();
+      $('#geolist').find('tr').remove();
 
-        let geolabel = [];
-        let geolong = [];
-        let geolatt = [];
-        let geocodepostal = [];
+      let geolabel = [];
+      let geolong = [];
+      let geolatt = [];
+      let geocodepostal = [];
 
-        for (let i = 0; i < results["features"].length; i++) {
-          $("#geolist").append(
-            "<tr><td>numéro " +
-              [i + 1] +
-              " | </td><td>" +
-              results["features"][i]["properties"]["label"] +
-              '</td><td><button id="geoAdd' +
-              [i] +
-              '">X' +
-              i +
-              "</button></td><tr>"
-          );
+      for(let i = 0 ; i < results['features'].length ; i++){
+        $('#geolist').append('<tr><td>numéro '+[i + 1]+' | </td><td>'+results['features'][i]['properties']['label']+'</td><td><button id="geoAdd'+[i]+'">X'+i+'</button></td><tr>');
+        
+        
+        geolabel.push(results['features'][i]['properties']['label']);
+        geolong.push(results['features'][i]['geometry']['coordinates'][0]);
+        geolatt.push(results['features'][i]['geometry']['coordinates'][1]);
+        geocodepostal.push(results['features'][i]['properties']['postcode']);
+
+        console.log('geolabel');
+        console.log(geolabel);
+
+        $("#geoAdd"+[i]).on("click", function (e) {
+          e.preventDefault();
+          var stuff ={'key1':geolabel[i],'key2':geocodepostal[i],'key3':geolong[i],'key4':geolatt[i]};
+          console.log(stuff)
+          $.ajax({
+            type: "POST",
+            url: "Public/ajax/ajaxgeo.php",
+            data : stuff,
+      
+            beforeSend: function (){
+              console.log("Requete en cours")
+            },
+      
+            success: function (response){
+              console.log({
+                label: geolabel[i]
+              })
+              console.log(response);
+            }
+          });
+        });
 
           geolabel.push(results["features"][i]["properties"]["label"]);
           geolong.push(results["features"][i]["geometry"]["coordinates"][0]);
@@ -169,33 +188,6 @@ $(document).ready(function () {
 
           console.log("geolabel");
           console.log(geolabel);
-
-          $("#geoAdd" + [i]).on("click", function (e) {
-            e.preventDefault();
-            $.ajax({
-              type: "POST",
-              url: "Public/ajax/ajaxgeo.php",
-              //dataType: "json",
-              //data: 'label=' + geolabel[i] + '&codepostal=' + geocodepostal[i] + '&long=' + geolong[i] + '&latt=' + geolatt[i],
-              data: {
-                label: geolabel[1],
-              },
-              contentType: false,
-              cache: false,
-              processData: false,
-
-              beforeSend: function () {
-                console.log("Requete en cours");
-              },
-
-              success: function (response) {
-                console.log({
-                  label: geolabel[i],
-                });
-                console.log(response);
-              },
-            });
-          });
         }
       });
   });
