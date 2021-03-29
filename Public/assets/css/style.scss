@@ -1,0 +1,797 @@
+/* ─────────────────────────────────────────────────────────
+/* ------------------ C S S   S T A R T --------------------
+/* ───────────────────────────────────────────────────────── */
+
+/* ─── IMPORTATION ───────────────────────────────────────── */
+@import url("reset.css");
+
+/* ─── VARIABLES ───────────────────────────────────────── */
+$rose: #FF7171;
+$orange: #FF9163;
+
+$bleu: #227093;
+$violet: #9743D9;
+
+$font1: 'Amatic SC', cursive;
+$font2: 'Kanit', sans-serif;
+
+/* ─── MIXINS ──────────────────────────────────────────── */
+@mixin wrap($wrapSize) {
+    width: 100%;
+    max-width: $wrapSize;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+@mixin primary-gradient {
+    background: -webkit-gradient(linear, right top, left top, from($orange), to($rose));
+    background: -o-linear-gradient(right, $orange, $rose);
+    background: linear-gradient(to left, $orange, $rose);
+}
+@mixin secondary-gradient {
+    background: -webkit-gradient(linear, right top, left top, from($bleu), to($violet));
+    background: -o-linear-gradient(right, $bleu, $violet);
+    background: linear-gradient(to left, $bleu, $violet);
+}
+@mixin flex($justifyValue, $alignValue) {
+    display: flex;
+    justify-content: $justifyValue;
+    align-items: $alignValue;
+}
+
+/* ─── BASE ──────────────────────────────────────────────── */
+body {
+    font-family: $font2;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.wrap {
+    @include wrap(1440px);
+}
+section {
+    padding: 50px 0;
+}
+h1.section-title {
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    font-family: $font1;
+    font-size: 10vh;
+    font-weight: bold;
+}
+h1.section-title::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    width: 200px;
+    height: 4px;
+    border-radius: 50px;
+    @include primary-gradient;
+}
+h2.second-title {
+    padding: 10px 0;
+    position: relative;
+    font-family: $font1;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+//BUTTONS
+a.btn {
+    font-family: $font1;
+    font-weight: 700;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    padding: 7px 20px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: all .2s ease-out;
+}
+a.btn:hover {
+    background-color: #dddddd;
+    border: 2px solid #dddddd;
+}
+a.btn-orange {
+    @include primary-gradient;
+    border: none;
+    color: white;
+}
+a.btn-blue {
+    @include secondary-gradient;
+    border: none;
+    color: white;
+}
+a.btn-orange:hover,
+a.btn-blue:hover {
+    border: none;
+    filter: brightness(90%);
+}
+.btn-submit {
+    cursor: pointer;
+    outline: none;
+    font-family: $font1;
+    font-weight: 700;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    padding: 7px 20px;
+    color: black;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: all .2s ease-out;
+}
+.btn-orange {
+    @include primary-gradient;
+    border: none;
+    color: white;
+}
+.btn-blue {
+    @include secondary-gradient;
+    border: none;
+    color: white;
+}
+.btn-orange:hover,
+.btn-blue:hover {
+    border: none;
+    filter: brightness(90%);
+}
+
+// FORMULAIRE
+form {
+    padding: 20px 0;
+    width: 100%;
+}
+.champ {
+    padding: 15px 0;
+}
+label {
+    display: block;
+    font-family: $font1;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=file],
+input[type=tel],
+input[type=number],
+select,
+textarea {
+    outline: none;
+    border: 1px solid #dddddd;
+    border-radius: 100px;
+    padding: 5px 15px;
+    font-size: 1.3em;
+    font-family: $font2;
+    color: #505050;
+    transition: .2s ease-out;
+    width: 80%;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=date]:focus,
+input[type=file]:focus,
+input[type=tel]:focus,
+input[type=number]:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2),
+                0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+input::placeholder {
+    opacity: .5;
+}
+#inscription form,
+#connexion form {
+    text-align: center;
+    width: 100%;
+}
+.error {
+    display: inline-block;
+    position: relative;
+    padding: 5px 35px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 100px;
+    font-weight: 200;
+    word-break: break-word;
+}
+.error::before {
+    content: '\f06a';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    padding-left: 10px;
+    transform: translate3d(0, -50%, 0);
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: white;
+}
+
+// USER CARD
+.user-card {
+    cursor: default;
+    width: fit-content;
+    padding: 10px 15px;
+    padding-left: 20px;
+    margin-top: 25px;
+    @include flex(center, center);
+    background-color: #fff;
+    border-radius: 100px;
+    float: right;
+}
+.user-card p {
+    @include primary-gradient();
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2em;
+    font-weight: 200;
+}
+.user-card span {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.user-card .avatar {
+    width: 75px;
+    margin: 0 25px;
+    border-radius: 50%;
+}
+.user-card a.logout-btn {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    border-radius: 50%;
+    @include primary-gradient();
+    transition: .2s ease-out;
+}
+.user-card a.account-btn {
+    transition: .2s ease-out;
+}
+.user-card a.logout-btn:hover,
+.user-card a.account-btn:hover {
+    filter: brightness(90%);
+}
+#tooltipLogout {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+// GRID
+.complete p {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.3em;
+}
+.complete span {
+    display: block;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+.grid {
+    padding: 25px 0;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "g n"
+                         "m m";
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+}
+.grid .fav-garderie,
+.grid .fav-nourisse,
+.grid .map {
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+    transition: .2s ease-out;
+}
+.grid .fav-garderie:hover,
+.grid .fav-nourisse:hover,
+.grid .map:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2),
+                0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+.fav-garderie {
+    grid-area: 'g';
+    height: 340px;
+}
+.fav-nourisse {
+    grid-area: 'n';
+    height: 340px;
+}
+.map {
+    grid-area: 'm';
+    grid-row: 1 / 3;
+}
+#map {
+    border-radius: 15px;
+    border: 1px solid white;
+    transition: .2s ease-out;
+}
+#map:focus-within {
+    border: 1px solid #505050;
+}
+canvas.mapboxgl-canvas {
+    outline: none;
+    border: none;
+}
+canvas.mapboxgl-canvas:focus {
+    outline: none;
+    border: none;
+}
+#account .flex {
+    margin: 0 auto;
+    width: 70%;
+}
+.addChild input,
+.modifyInfos input {
+    width: 100%;
+}
+.addChild form,
+.modifyInfos form {
+    text-align: center;
+}
+.modifyInfos {
+    padding-left: 8%;
+    border-left: 1px solid #ddd;
+}
+input#age {
+    padding-right: 80px;
+}
+span.ageLabel {
+    position: relative;
+}
+span.ageLabel::before {
+    position: absolute;
+    content: 'ans';
+    bottom: 10%;
+    right: 0;
+    z-index: 15;
+    padding-right: 25px;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #999;
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+}
+span.beCareful {
+    display: block;
+    margin-top: 10px;
+    font-weight: 300;
+}
+a.add {
+    margin-left: 5px;
+    text-decoration: none;
+    font-size: 1.5em;
+    @include primary-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: .2s ease-out;
+}
+a.add:hover {
+    filter: brightness(90%);
+}
+p#selected_allergy_list,
+p#selected_disease_list {
+    margin-top: 10px;
+}
+
+/* ─── LOADER ────────────────────────────────────────────── */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+#loader img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* ─── NAVBAR ───────────────────────────────────────── */
+#l-header {
+    position: relative;
+    z-index: 99;
+    padding: 15px 0;
+    @include primary-gradient;
+}
+ul.nav-links {
+    z-index: 115;
+    padding: 20px;
+    position: absolute;
+    width: 400px;
+    height: calc(100vh - 132px);
+    top: 0;
+    left: 0;
+    transform: translate3d(-100%, 132px, 0);
+    @include flex(space-around, center);
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0 50px 50px 0;
+    transition: all .2s ease-out;
+}
+ul.nav-links li a {
+    padding: 10px 20px;
+    font-family: $font1;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+    opacity: .7;
+    transition: all .2s ease-out;
+}
+ul.nav-links li a:hover {
+    opacity: 1;
+}
+nav,
+nav .right-links ul {
+    @include flex(space-between, center);
+}
+nav {
+    position: relative;
+}
+nav .right-links ul img {
+    width: 85px;
+}
+nav .right-links ul li {
+    margin: 0 20px;
+}
+nav .right-links ul li a.logo img {
+    transform: rotate(0);
+    transition: all .2s ease-out;
+}
+nav .right-links ul li a.logo:hover img {
+    transform: rotate(45deg);
+}
+nav .hamburger {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+}
+nav .hamburger .bar {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 50px;
+    transition: all .2s ease-out;
+}
+nav .hamburger .top {
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0, 0);
+    width: 80%;
+}
+nav .hamburger .middle {
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
+}
+nav .hamburger .bottom {
+    top: 100%;
+    left: 0;
+    transform: translate3d(0, -100%, 0);
+    width: 80%;
+}
+
+nav .hamburger.is-active .top {
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0) rotate(-45deg);
+}
+nav .hamburger.is-active .middle {
+    width: 0;
+    opacity: 0;
+}
+nav .hamburger.is-active .bottom {
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+}
+ul.nav-links.is-active {
+    transform: translate3d(0, 132px, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3),
+                0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* ─── FOOTER ───────────────────────────────────────── */
+#l-footer {
+    position: relative;
+    z-index: 1;
+    padding: 15px 0;
+    @include primary-gradient;
+}
+#l-footer p {
+    text-align: center;
+    color: white;
+    font-weight: 200;
+}
+
+/* ─── HOME ──────────────────────────────────────────────── */
+.flex {
+    padding: 50px 0;
+    @include flex(space-between, center);
+}
+.left,
+.right {
+    width: 50%;
+    height: 378px;
+}
+.left {
+    padding-right: 30px;
+    position: relative;
+}
+.right {
+    padding-left: 30px;
+    height: 100%;
+}
+.right h2 {
+    padding: 30px 0;
+    font-size: 2em;
+    font-weight: 600;
+}
+.right p {
+    line-height: 1.5em;
+    color: #505050;
+    margin-bottom: 20px;
+}
+.particulier {
+    padding-bottom: 20px;
+}
+.card3 {
+    width: 100%;
+}
+.man3 {
+    width: 100%;
+}
+#home #scene {
+    width: 100%;
+    top: 50%;
+}
+
+/* ─── SIGNUP ──────────────────────────────────────────────── */
+.illustration,
+.form {
+    width: 50%;
+    margin: 0 auto;
+}
+.illustration {
+    position: relative;
+    width: 704;
+    height: 674px;
+}
+#scene{
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%) !important;
+}
+.card {
+    margin-left: 0;
+}
+.man {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+/* ─── SIGNIN ──────────────────────────────────────────────── */
+.card2 {
+    width: 500px;
+}
+.man2 {
+    left: 55% !important;
+    top: 50% !important;
+}
+.forgot {
+    margin: 10px 0;
+    display: block;
+}
+
+/* ─── MULTICHECKBOX ────────────────────────────────────────── */
+.MultiCheckBox {
+    border: 1px solid #e2e2e2;
+    padding: 5px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.MultiCheckBox .k-icon {
+    font-size: 15px;
+    float: right;
+    font-weight: bolder;
+    margin-top: -7px;
+    height: 10px;
+    width: 14px;
+    color: #787878;
+}
+.MultiCheckBoxDetail {
+    display: none;
+    position: absolute;
+    border: 1px solid #e2e2e2;
+    overflow-y: hidden;
+    z-index: 15;
+}
+.MultiCheckBoxDetailBody {
+    overflow-y: scroll;
+    background-color: #cfcfcf;
+}
+.MultiCheckBoxDetail .cont {
+    clear: both;
+    overflow: hidden;
+    padding: 2px;
+}
+.MultiCheckBoxDetail .cont:hover {
+    background-color: #cfcfcf;
+}
+.MultiCheckBoxDetailBody>div>div {
+    float: left;
+}
+.MultiCheckBoxDetail>div>div:nth-child(1) {
+
+}
+.MultiCheckBoxDetailHeader {
+    overflow: hidden;
+    position: relative;
+    height: 28px;
+    background-color: #3d3d3d;
+}
+.MultiCheckBoxDetailHeader>input {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+}
+.MultiCheckBoxDetailHeader>div {
+    position: absolute;
+    top: 5px;
+    left: 24px;
+    color: #fff;
+}
+
+/* ─── RESPONSIVE ───────────────────────────────────────── */
+@media screen and (max-width: 1280px) {
+    #account .flex {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1120px) {
+    #account .flex {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+    #account .flex {
+        width: 100%;
+        flex-direction: column;
+    }
+    #account .modifyInfos {
+        padding-top: 50px;
+        border-top: 1px solid #ddd;
+        border-left: none;
+    }
+}
+@media screen and (max-width: 800px) {
+    .flex {
+        flex-direction: column-reverse;
+        padding: 15px;
+    }
+    .left,
+    .right {
+        width: 100%;
+        text-align: center;
+    }
+    .left,
+    .right {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .right {
+        margin-bottom: 50px;
+    }
+    .illustration,
+    .form {
+        width: 100% !important;
+    }
+    .illustration {
+        display: none;
+    }
+}
+@media screen and (max-width: 700px) {
+    ul.nav-links {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    nav .right-links ul img {
+        width: 50px;
+    }
+    nav .right-links ul li {
+        margin: 0 10px;
+    }
+    a.btn {
+        font-size: 1em;
+    }
+    ul.nav-links {
+        height: calc(100vh - 90px);
+        transform: translate3d(-100%, 90px, 0);
+    }
+    ul.nav-links.is-active {
+        transform: translate3d(0, 90px, 0);
+    }
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    input[type=date],
+    input[type=file],
+    input[type=tel],
+    input[type=number],
+    textarea {
+        width: 100%;
+    }
+    select {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 500px) {
+    ul.nav-links {
+        width: 100%;
+        border-radius: 0;
+    }
+    .user-card {
+        float: none;
+        margin: 25px auto 0 auto;
+    }
+}
+@media screen and (max-width: 450px) {
+    nav {
+        align-items: center;
+        flex-direction: column;
+    }
+    nav .right-links ul {
+        flex-direction: column-reverse;
+    }
+    nav .right-links ul li {
+        margin: 15px 0;
+    }
+    .user-card {
+        width: 100%;
+        transform: scale(.8);
+        flex-direction: column;
+        text-align: center;
+    }
+    .flex {
+        padding: 15px 0;
+    }
+}
+@media screen and (max-width: 300px) {
+    h1.section-title {
+        font-size: 8vh;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────
+/* ------------------- C S S   E N D -----------------------
+/* ───────────────────────────────────────────────────────── */

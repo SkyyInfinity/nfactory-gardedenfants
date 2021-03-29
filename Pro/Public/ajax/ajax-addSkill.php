@@ -26,7 +26,7 @@ if(!empty($_POST['title-addSkill-nounou']) && !empty($_POST['description-addSkil
 
     if(count($errors) === 0) {
         $skill['id_user_nounou'] = $_SESSION['user']['id'];
-        $nounou->nounouModel->createSkill($skill, 'kido_pro_caract_nounou');
+        $nounou->nounouModel->createCustom($skill, 'kido_pro_caract_nounou');
         $success = true;
     }
 }

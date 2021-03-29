@@ -18,7 +18,7 @@ class NounouModel extends Model {
         return $this->db->getData($statement, true);
     }
 
-    public function createSkill(array $data, $table)
+    public function createCustom(array $data, $table)
     {
         // On récupère les informations d'un formulaire
         // Ces informations sont dans le $_POST avec le name des input
@@ -35,6 +35,12 @@ class NounouModel extends Model {
         $statement .= $values;
         $this->db->postData($statement);
 
+    }
+
+    public function getAllCrenauxOfNounou(string $id)//:object
+    {
+        $statement = "SELECT * FROM kido_pro_planning_nounou WHERE id_user_nounou = '$id'";
+        return $this->db->getData($statement, false);
     }
 
 }

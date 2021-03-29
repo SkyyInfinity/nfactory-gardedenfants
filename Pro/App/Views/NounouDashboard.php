@@ -75,6 +75,33 @@
     <!-- Espace Planning-->
         <div class="contentItem hidden" id="contentItem-4">
             <h2>Votre Planning</h2>
+            <div class="holdFormAddDateNounou">
+                <form action="./Public/ajax/ajax-addCrenaux.php" method="POST" id="AddDateNounou" novalidate>
+
+                    <div class="input-area">
+                        <label for="start">Heure de début</label>
+                        <input type="datetime-local" name="start" id="startDate">
+                    </div>
+
+                    <div class="input-area">
+                        <label for="start">Heure de fin</label>
+                        <input type="datetime-local" name="end" id="endDate">
+                    </div>
+
+                    <div class="input-area">
+                        <label for="start">Places disponibles</label>
+                        <input type="number" name="place" id="placeDate">
+                    </div>
+
+                    <div class="input-area">
+                        <input type="submit" name="submit" id="btn-submit-addDate" value="Ajouter disponibilité">
+                    </div>
+                </form>
+            </div>
+            <button id="showPlanning">Afficher mon planning</button>
+            <section id="HoldCalendar">
+                <div id="Calendar"></div>
+            </section>
         </div>
 
     <!-- Espace Certification-->

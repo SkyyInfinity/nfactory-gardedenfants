@@ -96,4 +96,9 @@ class VerifForm {
     return $errors;
   }
 
+  public function isNumber($isNaN)
+  {
+    return is_numeric($isNaN);
+  }
+
 }

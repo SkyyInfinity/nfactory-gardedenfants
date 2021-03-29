@@ -13,13 +13,25 @@ switch ($page) {
         $home = new HomeController();
         $home->home();
         break;
+    case 'contact':
+        $home = new HomeController();
+        $home->contact();
+        break;
     case "signup":
         $user = new UserController();
-        $user->signup($_POST);
+        $user->signup();
+        break;
+    case "signupRequest":
+        $user = new UserController();
+        $user->signupRequest($_POST);
         break;
     case "login":
         $user = new UserController();
         $user->login($_POST);
+        break;
+    case "loginRequest":
+        $user = new UserController();
+        $user->loginRequest($_POST);
         break;
     case "logout":
         $user = new UserController();

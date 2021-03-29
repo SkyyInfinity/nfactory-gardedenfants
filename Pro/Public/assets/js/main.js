@@ -68,21 +68,74 @@ $(document).ready(function () {
     });
   });
 
+  $("#AddDateNounou").on("submit", function (e) {
+    e.preventDefault();
+    let form = $("#AddDateNounou");
+    $.ajax({
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serialize(),
+      dataType: "json",
+      beforeSend: function () {
+        $("#btn-submit-addSkill").fadeOut("200");
+      },
+
+      success: function (response) {
+        $("#btn-submit-addSkill").fadeIn("200");
+        console.log("pouet");
+      },
+    });
+  });
+
+  //Bouton afficher planning
+
+  $("#showPlanning").on("click", function (e) {
+    console.log("pouet");
+    $(this).html("Actualiser mon planning");
+    $.ajax({
+      type: "POST",
+      url: "./Public/ajax/ajax-getPlanning.php",
+      beforeSend: function () {
+        $("#showPlanning").css("display", "none");
+      },
+      success: function (response) {
+        $("#showPlanning").css("display", "block");
+        console.log(response);
+
+        var calendarEl = document.getElementById("Calendar");
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "timeGridWeek",
+          heigth: "100%",
+          contentHeight: "auto",
+          allDaySlot: false,
+          firstDay: 1,
+          slotEventOverlap: false,
+          slotMinTime: "06:00:00",
+          slotMaxTime: "22:00:00",
+          slotDuration: "00:30:00",
+          events: response,
+        });
+        calendar.setOption("locale", "fr");
+        calendar.render();
+      },
+    });
+  });
+
   //API GEOLOCALISATION PRO
 
-    //fonction trim
+  //fonction trim
 
-  function trim(myString){
-    return myString.replace(/ /gi,'%20');
-  } 
+  function trim(myString) {
+    return myString.replace(/ /gi, "%20");
+  }
 
-  const apiGeo = 'https://api-adresse.data.gouv.fr/search/?q=';
-  const geoFormat = '&type=housenumber&autocomplete=1';
+  const apiGeo = "https://api-adresse.data.gouv.fr/search/?q=";
+  const geoFormat = "&type=housenumber&autocomplete=1";
 
   let geoAdresse = $("#geoadresse");
 
-  $('#geoadresse').keyup( function(){
-    let geourl = apiGeo+trim(geoAdresse.val())+geoFormat;
+  $("#geoadresse").keyup(function () {
+    let geourl = apiGeo + trim(geoAdresse.val()) + geoFormat;
     console.log(geourl);
     fetch(geourl, {method: 'get'}).then(response => response.json()).then(results =>{
       $('#geoselectadresse').find('option').remove();
@@ -127,8 +180,15 @@ $(document).ready(function () {
           });
         });
 
-      }
-    });
-  })
+          geolabel.push(results["features"][i]["properties"]["label"]);
+          geolong.push(results["features"][i]["geometry"]["coordinates"][0]);
+          geolatt.push(results["features"][i]["geometry"]["coordinates"][1]);
+          geocodepostal.push(results["features"][i]["properties"]["postcode"]);
+
+          console.log("geolabel");
+          console.log(geolabel);
+        }
+      });
+  });
   // JQUERY END
 });
