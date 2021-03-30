@@ -11,4 +11,10 @@ class NounouDashboardModel extends Model {
         return $this->db->getData($statement, false);
     }
 
+    public function getUserInfo($id)
+    {
+        $statement = "SELECT * FROM kido_pro_user_nounou WHERE id = '$id'";
+        return $this->db->getData($statement, true);
+    }
+
 }

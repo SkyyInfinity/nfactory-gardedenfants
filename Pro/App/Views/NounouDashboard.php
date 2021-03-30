@@ -39,37 +39,37 @@
                 <div class="input-area-infoUser">
                     <label for="name-infoUser">nom</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="text" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                    <input type="text" name="name-infoUser" id="name-infoUser" value="<?php if(!empty($user['last_name']) && $user['last_name'] != '') { echo $user['last_name']; } ?>">
                 </div>
 
                 <div class="input-area-infoUser">
                     <label for="firstname-infoUser">prenom</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="text" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                    <input type="text" name="name-infoUser" id="name-infoUser">
                 </div>
 
                 <div class="input-area-infoUser">
                     <label for="email-infoUser">email</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="email" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                    <input type="email" name="name-infoUser" id="name-infoUser">
                 </div>
 
                 <div class="input-area-infoUser">
                     <label for="email-infoUser">adresse</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="text" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                    <input type="text" name="name-infoUser" id="name-infoUser">
                 </div>
 
                 <div class="input-area-infoUser">
                     <label for="email-infoUser">Nouveau mot de passe</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="password" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                    <input type="password" name="name-infoUser" id="name-infoUser">
                 </div>
 
                 <div class="input-area-infoUser">
                     <label for="email-infoUser">Confirmer nouveau mot de passe</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="password" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') { echo 'value="' . $current_user->last_name . '"'; } else { echo 'placeholder="Doe"'; } ?>>
+                    <input type="password" name="name-infoUser" id="name-infoUser">
                 </div>
 
                 <div class="submitButtonInfoUser">
