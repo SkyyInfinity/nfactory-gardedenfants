@@ -2,7 +2,6 @@
 if(!isLogged()) {
     redirect('home');
 }
-debug($errorsChild);
 $title = 'Mon compte'; ?>
 
 <section id="account">
@@ -17,8 +16,7 @@ $title = 'Mon compte'; ?>
             <!-- ADDCHILD -->
             <div class="addChild">
                 <h2 class="second-title">Ajouter votre(vos) enfant(s)</h2>
-                <?php debug($_POST) ?>
-                <form id="addChild" action="account" method="POST" novalidate>
+                <form id="addChild" action="account" method="POST">
                     <!-- PRENOM -->
                     <div class="champ">
                         <label for="name">Son prénom</label>

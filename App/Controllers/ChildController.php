@@ -13,28 +13,22 @@ class ChildController extends Controller {
 
     public function addChild($data) {
         // Variables
-        $success = false;
-        $errorsChild = array();
-
-        if(!empty($data)) {
+        $errorsChild = [];
             // Variables
             $child = $this->encodeChars($data);
-
+            
             // Validation name
-            $errorsChild = validationText($errorsChild, $child['name'], 'name', 1, 30);
+
             // Validation age
-            // $errorsChild = validationNumber($errorsChild, $child['age'], 'age', 0, 12);
-            debug($child);
-            debug($data);
 
             // Condition
-            if (count($errorsChild) == 0) {
+            if (count($errorsChild) === 0) {
                 // Lance la requête
                 // child
-                $statement = "INSERT INTO kido_child(id_parent, 'name', age) 
-                              VALUES (".$_SESSION['user']->id.", ".$child['name'].", ".$child['age']."";
-
-                $this->db->postData($statement, $data);
+                // $statement = "INSERT INTO kido_child(id_parent, 'name', age) 
+                //               VALUES (".$_SESSION['user']->id.", ".$child['name'].", ".$child['age']."";
+                // $this->db->postData($statement, $data);
+                
                 // diseases
                 // $statement = "INSERT INTO kido_child_diseases(id_enfant, titre, 'description') 
                 //               VALUES ([value-2], [value-3], [value-4])";
@@ -46,10 +40,8 @@ class ChildController extends Controller {
 
                 // $this->db->postData($statement, $data);
                 // Redirection
-                redirect('user');
-                $success = true;
+                // redirect('user');
             }
-        }
         // Render dans la Vue
         $this->render('account', [
             'errorsChild' => $errorsChild

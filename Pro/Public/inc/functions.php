@@ -15,14 +15,16 @@ function redirectTempo($value, $page) {
 }
 // P A G I N A T I O N /////////////////////////////////////////////////////////
 function pagination($id, $page, $num, $count) {
-  ?><ul><?php
-    if($page > 1) {
-      ?><li class="pagination"><a class="back-to-home" href="single.php?id=<?php echo $id ?>&page=<?php echo $page - 1; ?>">Précedent</a></li><?php
-    }
-    if($page * $num < $count) {
-      ?><li class="pagination"><a class="back-to-home" href="single.php?id=<?php echo $id ?>&page=<?php echo $page + 1; ?>">Suivant</a></li><?php
-    }
-  ?></ul><?php
+?>
+  <ul>
+    <?php if($page > 1) : ?>
+      <li class="pagination"><a class="back-to-home" href="single.php?id=<?= $id ?>&page=<?= $page - 1 ?>">Précedent</a></li>
+    <?php endif ?>
+    <?php if($page * $num < $count) : ?>
+      <li class="pagination"><a class="back-to-home" href="single.php?id=<?= $id ?>&page=<?= $page + 1 ?>">Suivant</a></li>
+    <?php endif ?>
+  </ul>
+<?php
 }
 // C L E A N   X S S /////////////////////////////////////////////////////////////////
 function cleanXss($element) {
@@ -58,7 +60,7 @@ function validationPassword($errors, $data, $key, $min, $max) {
   $minuscule        = preg_match('@[a-z]@', $data);
   $chiffre          = preg_match('@[0-9]@', $data);
   $caractereSpecial = preg_match('@[^\w]@', $data);
-
+  
   if(!empty($data)) {
     if(mb_strlen($data) < $min) {
       $errors[$key] = 'Le mot de passe doit être plus grand que ' . $min . ' caractères.';
@@ -113,7 +115,7 @@ function formatDateWithoutMinute($dateValue) {
   return date('d/m/Y', strtotime($dateValue));
 }
 // I S   L O G G E D /////////////////////////////////////////////////////////////////
-function isLogged(){
+function isLogged() {
   if(!empty($_SESSION['user'])) {
     if(!empty($_SESSION['user']['id']) && is_numeric($_SESSION['user']['id'])) {
       if(!empty($_SESSION['user']['pseudo'])) {
