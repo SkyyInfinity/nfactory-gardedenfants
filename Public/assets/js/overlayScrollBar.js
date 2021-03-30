@@ -8,4 +8,7 @@ $(document).ready(function () {
     $('.fav-nourisse').overlayScrollbars({
         sizeAutoCapable : false
     });
+    $('.childList').overlayScrollbars({
+        sizeAutoCapable : true
+    });
 });

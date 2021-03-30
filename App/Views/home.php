@@ -11,8 +11,8 @@ $title = 'Accueil'; ?>
         <div class="flex">
             <div class="left">
                 <div id="scene" data-relative-input="true">
-                    <img class="card card3" data-depth="0.3" src="./Public/assets/img/undraw_home1.svg" alt="card">
-                    <img class="man man3" data-depth="0.1" src="./Public/assets/img/undraw_home2.svg" alt="man">
+                    <img class="card card3" data-depth="0.3" src="<?= URL ?>Public/assets/img/undraw_home1.svg" alt="card">
+                    <img class="man man3" data-depth="0.1" src="<?= URL ?>Public/assets/img/undraw_home2.svg" alt="man">
                 </div>
             </div>
             <div class="right">
