@@ -148,21 +148,16 @@ $(document).ready(function () {
       let geocodepostal = [];
 
       for(let i = 0 ; i < results['features'].length ; i++){
-        $('#geolist').append('<tr><td>numéro '+[i + 1]+' | </td><td>'+results['features'][i]['properties']['label']+'</td><td><button id="geoAdd'+[i]+'">X'+i+'</button></td><tr>');
-        
+        $('#geolist').append('<tr class="geolisting" id="geoAdd'+[i]+'"><td><i class="fa fa-location-arrow" aria-hidden="true"></i> '+results['features'][i]['properties']['label']+'</td><tr>');
         
         geolabel.push(results['features'][i]['properties']['label']);
         geolong.push(results['features'][i]['geometry']['coordinates'][0]);
         geolatt.push(results['features'][i]['geometry']['coordinates'][1]);
         geocodepostal.push(results['features'][i]['properties']['postcode']);
 
-        console.log('geolabel');
-        console.log(geolabel);
-
         $("#geoAdd"+[i]).on("click", function (e) {
           e.preventDefault();
           var stuff ={'key1':geolabel[i],'key2':geocodepostal[i],'key3':geolong[i],'key4':geolatt[i]};
-          console.log(stuff)
           $.ajax({
             type: "POST",
             url: "Public/ajax/ajaxgeo.php",
@@ -173,23 +168,22 @@ $(document).ready(function () {
             },
       
             success: function (response){
-              console.log({
-                label: geolabel[i]
-              })
-              console.log(response);
+              console.log("Requete OK " + response);
+              $('.geoNewAdress').toggleClass('hidden');
+              $('.geoNewAdress h4').append('<span>' + geolabel[i] + '</span>');
+              $('.geoSelectAdress').toggleClass('hidden');
+              $('.geoModified').text('Votre créche est situer aux : ' + geolabel[i]);
             }
           });
         });
 
-          geolabel.push(results["features"][i]["properties"]["label"]);
-          geolong.push(results["features"][i]["geometry"]["coordinates"][0]);
-          geolatt.push(results["features"][i]["geometry"]["coordinates"][1]);
-          geocodepostal.push(results["features"][i]["properties"]["postcode"]);
-
-          console.log("geolabel");
-          console.log(geolabel);
         }
       });
   });
+
+  //Carte pro géolocalisation
+
+
+
   // JQUERY END
 });

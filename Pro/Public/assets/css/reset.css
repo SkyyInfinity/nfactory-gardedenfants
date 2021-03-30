@@ -156,3 +156,7 @@ span.span-error {
 .hidden {
   display: none;
 }
+
+.isvisible{
+  display: block;
+}
