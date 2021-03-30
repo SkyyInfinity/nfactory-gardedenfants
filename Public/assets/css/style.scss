@@ -191,12 +191,13 @@ input::placeholder {
     opacity: .5;
 }
 #inscription form,
-#connexion form {
+#connexion form,
+#reserve form {
     text-align: center;
     width: 100%;
 }
 .error {
-    display: inline-block;
+    display: block;
     position: relative;
     padding: 5px 35px;
     color: white;
@@ -204,6 +205,8 @@ input::placeholder {
     border-radius: 100px;
     font-weight: 200;
     word-break: break-word;
+    width: fit-content;
+    margin: 10px auto 0 auto;
 }
 .error::before {
     content: '\f06a';

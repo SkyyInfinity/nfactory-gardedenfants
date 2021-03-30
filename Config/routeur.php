@@ -55,8 +55,8 @@ switch ($page) {
         $user->forgotPassword();
         break;
     case "reserve":
-        $childs = new ChildController();
-        $childs->getChild($_SESSION['user']->id, 1);
+        $child = new ChildController();
+        $child->getChild($_SESSION['user']->id, $_GET['id']);
         break;
     default:
         $home = new HomeController();

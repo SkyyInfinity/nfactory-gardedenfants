@@ -2,7 +2,7 @@
 if(!isLogged()) {
     redirect('home');
 }
-
+debug($errorsChild);
 $title = 'Mon compte'; ?>
 
 <section id="account">
@@ -17,16 +17,23 @@ $title = 'Mon compte'; ?>
             <!-- ADDCHILD -->
             <div class="addChild">
                 <h2 class="second-title">Ajouter votre(vos) enfant(s)</h2>
-                <form id="addChild" action="account" method="POST">
+                <?php debug($_POST) ?>
+                <form id="addChild" action="account" method="POST" novalidate>
                     <!-- PRENOM -->
                     <div class="champ">
                         <label for="name">Son prénom</label>
                         <input id="name" type="text" name="name">
+                        <?php if(!empty($errorsChild['name'])) : ?>
+                            <span class="error"><?= $errorsChild['name'] ?></span>
+                        <?php endif ?>
                     </div>
                     <!-- AGE -->
                     <div class="champ">
                         <label for="age">Son âge</label>
-                        <span class="ageLabel"><input id="age" type="number" name="age" min="0" max="12"></span>
+                        <span class="ageLabel"><input id="age" type="number" name="age" ></span>
+                        <?php if(!empty($errorsChild['age'])) : ?>
+                            <span class="error"><?= $errorsChild['age'] ?></span>
+                        <?php endif ?>
                     </div>
                     <!-- MALADIES -->
                     <div class="champ">

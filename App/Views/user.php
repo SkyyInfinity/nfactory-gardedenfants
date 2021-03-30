@@ -2,7 +2,6 @@
 if(!isLogged()) {
     redirect('home');
 }
-
 $title = 'Mon espace'; ?>
 
 <section id="user">
@@ -40,7 +39,7 @@ $title = 'Mon espace'; ?>
                         <p><?php if($child->age <= 1){echo $child->age . ' an';}else{echo $child->age . ' ans';} ?></p>
                     </div>
                     <div class="btn">
-                        <a href="reserve?id=<?= $child->id ?>" class="btn btn-orange">Reservé pour <?= $child->name ?></a>
+                        <a href="reserve/<?= $child->id ?>" class="btn btn-orange">Reservé pour <?= $child->name ?></a>
                     </div>
                 </li>
                 <?php endforeach ?>

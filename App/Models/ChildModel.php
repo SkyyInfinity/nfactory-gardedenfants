@@ -31,17 +31,16 @@ class ChildModel extends Model {
      * Récupère un enfant à partir de l'id du parent
      *
      * @param int $idParent L'id du parent (user actuellement connecter)
+     * @param int $idChild L'id de l'enfant ($_GET['id'])
      * @return object
      */
     public function getChildByParent(int $idParent, int $idChild):object {
         $statement = "SELECT kido_child.id, kido_child.name, kido_child.age FROM kido_child 
                       INNER JOIN kido_user 
                       ON kido_child.id_parent = kido_user.id 
-                      WHERE kido_child.id_parent = '$idParent' 
-                      AND
                       WHERE kido_child.id = $idChild";
 
-        return $this->db->getData($statement, false);
+        return $this->db->getData($statement, true);
     }
 
     /**

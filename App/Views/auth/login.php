@@ -10,8 +10,8 @@ $title = 'Connexion'; ?>
         <div class="flex">
             <div class="illustration">
                 <div id="scene" data-relative-input="true">
-                    <img class="card card2" data-depth="0.3" src="./Public/assets/img/undraw_auth2.svg" alt="card">
-                    <img class="man man2" data-depth="0.1" src="./Public/assets/img/undraw_auth1.svg" alt="man">
+                    <img class="card card2" data-depth="0.3" src="<?= URL ?>Public/assets/img/undraw_auth2.svg" alt="card">
+                    <img class="man man2" data-depth="0.1" src="<?= URL ?>Public/assets/img/undraw_auth1.svg" alt="man">
                 </div>
             </div>
             <div class="form">

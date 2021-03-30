@@ -12,28 +12,42 @@ class ChildController extends Controller {
     }
 
     public function addChild($data) {
+        // Variables
+        $success = false;
+        $errorsChild = array();
+
         if(!empty($data)) {
             // Variables
-            $errorsChild = [];
             $child = $this->encodeChars($data);
 
             // Validation name
-            validationText($errorsChild, $child['name'], 'name', 1, 30);
+            $errorsChild = validationText($errorsChild, $child['name'], 'name', 1, 30);
             // Validation age
-            if(!empty($child['age'])) {
-                if(!is_numeric($child['age'])) {
-                    $errorsChild['age'] = "L'âge doit être un écrit en chiffre.";
-                }
-            } else {
-                $errorsChild['age'] = "Veuillez renseigner ce champ.";
-            }
+            // $errorsChild = validationNumber($errorsChild, $child['age'], 'age', 0, 12);
+            debug($child);
+            debug($data);
 
             // Condition
             if (count($errorsChild) == 0) {
                 // Lance la requête
-                $this->userModel->create($child);
+                // child
+                $statement = "INSERT INTO kido_child(id_parent, 'name', age) 
+                              VALUES (".$_SESSION['user']->id.", ".$child['name'].", ".$child['age']."";
+
+                $this->db->postData($statement, $data);
+                // diseases
+                // $statement = "INSERT INTO kido_child_diseases(id_enfant, titre, 'description') 
+                //               VALUES ([value-2], [value-3], [value-4])";
+
+                // $this->db->postData($statement, $data);
+                // // allergies
+                // $statement = "INSERT INTO kido_child_allergy(id_enfant, titre, 'description') 
+                //               VALUES ([value-2], [value-3], [value-4])";
+
+                // $this->db->postData($statement, $data);
                 // Redirection
                 redirect('user');
+                $success = true;
             }
         }
         // Render dans la Vue
@@ -45,6 +59,10 @@ class ChildController extends Controller {
     public function getChilds($idParent) {
         // Lance la requête
         $childs = $this->childModel->getChildsByParent($idParent);
+
+        if(!empty($childs)) {
+            $_SESSION['user']->childs = $childs;
+        }
 
         // Render dans la Vue
         $this->render('user', [
