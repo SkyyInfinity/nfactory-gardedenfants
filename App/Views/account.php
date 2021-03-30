@@ -2,7 +2,6 @@
 if(!isLogged()) {
     redirect('home');
 }
-
 $title = 'Mon compte'; ?>
 
 <section id="account">
@@ -22,11 +21,17 @@ $title = 'Mon compte'; ?>
                     <div class="champ">
                         <label for="name">Son prénom</label>
                         <input id="name" type="text" name="name">
+                        <?php if(!empty($errorsChild['name'])) : ?>
+                            <span class="error"><?= $errorsChild['name'] ?></span>
+                        <?php endif ?>
                     </div>
                     <!-- AGE -->
                     <div class="champ">
                         <label for="age">Son âge</label>
-                        <span class="ageLabel"><input id="age" type="number" name="age" min="0" max="12"></span>
+                        <span class="ageLabel"><input id="age" type="number" name="age" ></span>
+                        <?php if(!empty($errorsChild['age'])) : ?>
+                            <span class="error"><?= $errorsChild['age'] ?></span>
+                        <?php endif ?>
                     </div>
                     <!-- MALADIES -->
                     <div class="champ">
@@ -61,11 +66,11 @@ $title = 'Mon compte'; ?>
             <!-- MODIFY INFORMATIONS -->
             <div class="modifyInfos">
                 <h2 class="second-title">Modifier vos informations</h2>
-                <form id="modifyInfos" action="account" method="POST">
-                    <!-- PRENOM -->
+                <form id="modifyInfos" action="accountUpdate" method="POST">
+                    <!-- NOM -->
                     <div class="champ">
-                        <label for="name">Votre nom</label>
-                        <input id="name" type="text" name="name" value="<?php if(!empty($_SESSION['user']->surname)){echo $_SESSION['user']->surname;} ?>">
+                        <label for="surname">Votre nom</label>
+                        <input id="surname" type="text" name="surname" value="<?php if(!empty($_SESSION['user']->surname)){echo $_SESSION['user']->surname;} ?>">
                     </div>
                     <!-- PRENOM -->
                     <div class="champ">

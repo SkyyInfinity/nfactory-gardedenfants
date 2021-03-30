@@ -37,6 +37,19 @@ class NounouModel extends Model {
 
     }
 
+    public function update(array $data, $table, $id)
+    {
+        
+        $statement = "UPDATE $table SET ";
+        foreach ($data as $key => $value) {
+            $statement .=  $key ." = '" . $value ."',";
+        }
+        $statement = substr($statement,0,-1);
+        $statement .= " WHERE id = $id";
+        $this->db->postData($statement);
+
+    }
+
     public function getAllCrenauxOfNounou(string $id)//:object
     {
         $statement = "SELECT * FROM kido_pro_planning_nounou WHERE id_user_nounou = '$id'";

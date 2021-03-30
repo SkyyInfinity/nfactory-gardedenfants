@@ -1,5 +1,5 @@
 <?php
-require('../../inc/functions.php');
+require('../inc/functions.php');
 $errors = array();
 $success = false;
 // $json = file_get_contents('http://ip-api.com/json/157.25.64.2?fields=continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,query');

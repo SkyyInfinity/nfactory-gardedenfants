@@ -87,6 +87,27 @@ $(document).ready(function () {
     });
   });
 
+  //Changement de données persos
+
+  $("#FormChangeData").on("submit", function (e) {
+    e.preventDefault();
+    let form = $("#FormChangeData");
+    $.ajax({
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serialize(),
+      dataType: "json",
+      beforeSend: function () {
+        $("#btn-submit-addSkill").fadeOut("200");
+      },
+
+      success: function (response) {
+        $("#btn-submit-addSkill").fadeIn("200");
+        console.log("changement");
+      },
+    });
+  });
+
   //Bouton afficher planning
 
   $("#showPlanning").on("click", function (e) {
@@ -175,15 +196,27 @@ $(document).ready(function () {
               $('.geoModified').text('Votre créche est situer aux : ' + geolabel[i]);
             }
           });
-        });
 
-        }
-      });
+        })
+      };
+  });
+}
+
+
+
+
+  //------------------
+  //EFFECT DE LA FLECHE DE FOU
+  //------------------
+
+  /*$("input").focus(function () {
+    $(this).prev().addClass("animation");
   });
 
-  //Carte pro géolocalisation
-
-
-
+  $("input").focusout(function () {
+    $(this).prev().removeClass("animation");
+  });
   // JQUERY END
-});
+
+  */
+)});

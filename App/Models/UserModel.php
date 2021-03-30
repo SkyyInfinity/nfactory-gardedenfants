@@ -24,24 +24,29 @@ class UserModel extends Model{
      * @param string $email
      * @return object
      */
-    public function getUserByEmail(string $email):object
+    public function getUserByEmail(string $email)
     {
         $statement = "SELECT * FROM kido_user WHERE email = '$email'";
         return $this->db->getData($statement, true);
     }
 
-
-
-    public function updateWithPassword($id, $data)
+    public function updateWithoutPassword($id, $data)
     {
         $statement = "UPDATE kido_user SET
                         name= :name,
                         surname= :surname,
-                        email= :email,
-                        password= :password,
+                        email= :email
 
                         WHERE id = $id";
         
         $this->db->postData($statement, $data);
+    }
+    public function submitContact($data) {
+        $statement = "INSERT INTO kido_contact (email,title,textMessage) VALUES (:email,:title,:message)";
+        $this->db->postData($statement, $data);
+    }
+    public function getProLoc() {
+        $statement = "SELECT * FROM kido_pro_user_nounou";
+        return $this->db->getData($statement);
     }
 }

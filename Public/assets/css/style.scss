@@ -191,12 +191,13 @@ input::placeholder {
     opacity: .5;
 }
 #inscription form,
-#connexion form {
+#connexion form,
+#reserve form {
     text-align: center;
     width: 100%;
 }
 .error {
-    display: inline-block;
+    display: block;
     position: relative;
     padding: 5px 35px;
     color: white;
@@ -204,6 +205,8 @@ input::placeholder {
     border-radius: 100px;
     font-weight: 200;
     word-break: break-word;
+    width: fit-content;
+    margin: 10px auto 0 auto;
 }
 .error::before {
     content: '\f06a';
@@ -288,14 +291,15 @@ input::placeholder {
     padding: 25px 0;
     width: 100%;
     display: grid;
-    grid-template-areas: "g n"
-                         "m m";
+    grid-template-areas: "m g"
+                         "m n";
     grid-gap: 20px;
     grid-auto-flow: dense;
 }
 .grid .fav-garderie,
 .grid .fav-nourisse,
-.grid .map {
+.grid .map,
+.childList {
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
@@ -303,20 +307,21 @@ input::placeholder {
 }
 .grid .fav-garderie:hover,
 .grid .fav-nourisse:hover,
-.grid .map:hover {
+.grid .map:hover,
+.childList:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2),
                 0px 0px 50px rgba(0, 0, 0, 0.1);
 }
 .fav-garderie {
-    grid-area: 'g';
+    grid-area: g;
     height: 340px;
 }
 .fav-nourisse {
-    grid-area: 'n';
+    grid-area: n;
     height: 340px;
 }
 .map {
-    grid-area: 'm';
+    grid-area: m;
     grid-row: 1 / 3;
 }
 #map {
@@ -335,6 +340,32 @@ canvas.mapboxgl-canvas:focus {
     outline: none;
     border: none;
 }
+.childList ul li {
+    padding: 15px;
+    border-radius: 15px;
+    @include flex(space-between, center);
+    transition: .2s ease-out;
+}
+.childList ul li:hover {
+    background-color: #f6f6f6;
+}
+.childList ul li h3 {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: $font1;
+    cursor: default;
+}
+.childList ul li p {
+    font-size: 1.1em;
+    font-weight: 500;
+    font-family: $font2;
+    font-style: italic;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    color: #787878;
+    margin-left: 15px;
+    cursor: default;
+}
 #account .flex {
     margin: 0 auto;
     width: 70%;
@@ -344,7 +375,8 @@ canvas.mapboxgl-canvas:focus {
     width: 100%;
 }
 .addChild form,
-.modifyInfos form {
+.modifyInfos form,
+.contactForm form {
     text-align: center;
 }
 .modifyInfos {
@@ -666,6 +698,9 @@ ul.nav-links.is-active {
     left: 24px;
     color: #fff;
 }
+.contactForm {
+
+}
 
 /* ─── RESPONSIVE ───────────────────────────────────────── */
 @media screen and (max-width: 1280px) {
@@ -784,6 +819,14 @@ ul.nav-links.is-active {
     }
     .flex {
         padding: 15px 0;
+    }
+}
+@media screen and (max-width: 350px) {
+    .childList ul li {
+        flex-direction: column;
+    }
+    .childList .btn {
+        margin-top: 25px;
     }
 }
 @media screen and (max-width: 300px) {

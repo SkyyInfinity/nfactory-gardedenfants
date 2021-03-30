@@ -39,7 +39,7 @@ function validationText($errors, $data, $key, $min, $max) {
   } else {
     $errors[$key] = 'Veuillez renseigner ce champ.';
   }
-  // return $errors;
+  return $errors;
 }
 // V A L I D A T I O N   E M A I L ///////////////////////////////////////////////////
 function validationEmail($errors, $data, $key) {
@@ -50,22 +50,31 @@ function validationEmail($errors, $data, $key) {
   } else {
     $errors[$key] = 'Veuillez renseigner ce champ.';
   }
-  // return $errors;
+  return $errors;
 }
 // V A L I D A T I O N   P A S S W O R D /////////////////////////////////////////////
-function validationPassword($errors, $data, $key, $min, $max) {
+function validationPassword($errors, $data, $data2, $key, $min, $max) {
   $majuscule        = preg_match('@[A-Z]@', $data);
   $minuscule        = preg_match('@[a-z]@', $data);
   $chiffre          = preg_match('@[0-9]@', $data);
   $caractereSpecial = preg_match('@[^\w]@', $data);
 
-    if(mb_strlen($data) < $min) {
-      $errors[$key] = 'Le mot de passe doit être plus grand que ' . $min . ' caractères.';
-    } elseif(mb_strlen($data) > $max) {
-      $errors[$key] = 'Le mot de passe doit être plus petit que ' . $max . ' caractères.';
-    } elseif(!$majuscule || !$minuscule || !$chiffre || !$caractereSpecial) {
-      $errors[$key] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractére spécial.';
+  if(!empty($data) && !empty($data2)) {
+    if($data == $data2) {
+        if(mb_strlen($data) < $min) {
+          $errors[$key] = 'Le mot de passe doit être plus grand que ' . $min . ' caractères.';
+        } elseif(mb_strlen($data) > $max) {
+          $errors[$key] = 'Le mot de passe doit être plus petit que ' . $max . ' caractères.';
+        } elseif(!$majuscule || !$minuscule || !$chiffre || !$caractereSpecial) {
+          $errors[$key] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractére spécial.';
+        }
+    } else {
+        $errors[$key] = 'Les deux mot de passe doivent être identiques';
     }
+  } else {
+    $errors[$key] = 'Veuillez renseigner ce champ.';
+  }
+  return $errors;
 }
 // G E N E R A T E   R A N D O M   S T R I N G ///////////////////////////////////////
 function generateRandomString($length = 10) {
