@@ -87,6 +87,27 @@ $(document).ready(function () {
     });
   });
 
+  //Changement de données persos
+
+  $("#FormChangeData").on("submit", function (e) {
+    e.preventDefault();
+    let form = $("#FormChangeData");
+    $.ajax({
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serialize(),
+      dataType: "json",
+      beforeSend: function () {
+        $("#btn-submit-addSkill").fadeOut("200");
+      },
+
+      success: function (response) {
+        $("#btn-submit-addSkill").fadeIn("200");
+        console.log("changement");
+      },
+    });
+  });
+
   //Bouton afficher planning
 
   $("#showPlanning").on("click", function (e) {
@@ -138,48 +159,64 @@ $(document).ready(function () {
   $("#geoadresse").keyup(function () {
     let geourl = apiGeo + trim(geoAdresse.val()) + geoFormat;
     console.log(geourl);
-    fetch(geourl, {method: 'get'}).then(response => response.json()).then(results =>{
-      $('#geoselectadresse').find('option').remove();
-      $('#geolist').find('tr').remove();
+    fetch(geourl, { method: "get" })
+      .then((response) => response.json())
+      .then((results) => {
+        $("#geoselectadresse").find("option").remove();
+        $("#geolist").find("tr").remove();
 
-      let geolabel = [];
-      let geolong = [];
-      let geolatt = [];
-      let geocodepostal = [];
+        let geolabel = [];
+        let geolong = [];
+        let geolatt = [];
+        let geocodepostal = [];
 
-      for(let i = 0 ; i < results['features'].length ; i++){
-        $('#geolist').append('<tr><td>numéro '+[i + 1]+' | </td><td>'+results['features'][i]['properties']['label']+'</td><td><button id="geoAdd'+[i]+'">X'+i+'</button></td><tr>');
-        
-        
-        geolabel.push(results['features'][i]['properties']['label']);
-        geolong.push(results['features'][i]['geometry']['coordinates'][0]);
-        geolatt.push(results['features'][i]['geometry']['coordinates'][1]);
-        geocodepostal.push(results['features'][i]['properties']['postcode']);
+        for (let i = 0; i < results["features"].length; i++) {
+          $("#geolist").append(
+            "<tr><td>numéro " +
+              [i + 1] +
+              " | </td><td>" +
+              results["features"][i]["properties"]["label"] +
+              '</td><td><button id="geoAdd' +
+              [i] +
+              '">X' +
+              i +
+              "</button></td><tr>"
+          );
 
-        console.log('geolabel');
-        console.log(geolabel);
+          geolabel.push(results["features"][i]["properties"]["label"]);
+          geolong.push(results["features"][i]["geometry"]["coordinates"][0]);
+          geolatt.push(results["features"][i]["geometry"]["coordinates"][1]);
+          geocodepostal.push(results["features"][i]["properties"]["postcode"]);
 
-        $("#geoAdd"+[i]).on("click", function (e) {
-          e.preventDefault();
-          var stuff ={'key1':geolabel[i],'key2':geocodepostal[i],'key3':geolong[i],'key4':geolatt[i]};
-          console.log(stuff)
-          $.ajax({
-            type: "POST",
-            url: "Public/ajax/ajaxgeo.php",
-            data : stuff,
-      
-            beforeSend: function (){
-              console.log("Requete en cours")
-            },
-      
-            success: function (response){
-              console.log({
-                label: geolabel[i]
-              })
-              console.log(response);
-            }
+          console.log("geolabel");
+          console.log(geolabel);
+
+          $("#geoAdd" + [i]).on("click", function (e) {
+            e.preventDefault();
+            var stuff = {
+              key1: geolabel[i],
+              key2: geocodepostal[i],
+              key3: geolong[i],
+              key4: geolatt[i],
+            };
+            console.log(stuff);
+            $.ajax({
+              type: "POST",
+              url: "Public/ajax/ajaxgeo.php",
+              data: stuff,
+
+              beforeSend: function () {
+                console.log("Requete en cours");
+              },
+
+              success: function (response) {
+                console.log({
+                  label: geolabel[i],
+                });
+                console.log(response);
+              },
+            });
           });
-        });
 
           geolabel.push(results["features"][i]["properties"]["label"]);
           geolong.push(results["features"][i]["geometry"]["coordinates"][0]);
@@ -190,6 +227,18 @@ $(document).ready(function () {
           console.log(geolabel);
         }
       });
+  });
+
+  //------------------
+  //EFFECT DE LA FLECHE DE FOU
+  //------------------
+
+  $("input").focus(function () {
+    $(this).prev().addClass("animation");
+  });
+
+  $("input").focusout(function () {
+    $(this).prev().removeClass("animation");
   });
   // JQUERY END
 });

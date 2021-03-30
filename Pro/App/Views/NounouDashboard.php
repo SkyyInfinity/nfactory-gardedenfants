@@ -35,41 +35,41 @@
         <div class="contentItem hidden" id="contentItem-2">
             <h2>Votre profil</h2>
 
-            <form action="" method="POST">
+            <form id="FormChangeData" action="./Public/ajax/ajax-changeData.php" method="POST">
                 <div class="input-area-infoUser">
                     <label for="name-infoUser">nom</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="text" name="name-infoUser" id="name-infoUser" value="<?php if(!empty($user['last_name']) && $user['last_name'] != '') { echo $user['last_name']; } ?>">
+                    <input type="text" name="name-infoUser" id="name-infoUser" <?php if(!empty($user->last_name) && $user->last_name != '') { echo 'value="' . ucfirst($user->last_name) . '"'; }else { echo 'placeholder="Doe"';} ?>>
                 </div>
 
                 <div class="input-area-infoUser">
                     <label for="firstname-infoUser">prenom</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="text" name="name-infoUser" id="name-infoUser">
+                    <input type="text" name="firstname-infoUser" id="firstname-infoUser" <?php if(!empty($user->first_name) && $user->first_name != '') { echo 'value="' . ucfirst($user->first_name) . '"'; }else { echo 'placeholder="John"';} ?>>
                 </div>
 
                 <div class="input-area-infoUser">
                     <label for="email-infoUser">email</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="email" name="name-infoUser" id="name-infoUser">
+                    <input type="email" name="email-infoUser" id="email-infoUser" <?php if(!empty($user->email) && $user->email != '') { echo 'value="' . ucfirst($user->email) . '"'; }else { echo 'placeholder="Votre email"';} ?>>
                 </div>
 
                 <div class="input-area-infoUser">
-                    <label for="email-infoUser">adresse</label>
+                    <label for="adresse-infoUser">adresse</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="text" name="name-infoUser" id="name-infoUser">
+                    <input type="text" name="adresse-infoUser" id="adresse-infoUser" <?php if(!empty($user->adresse) && $user->adresse != '') { echo 'value="' . ucfirst($user->adresse) . '"'; }else { echo 'placeholder="Votre adresse"';} ?>>
                 </div>
 
                 <div class="input-area-infoUser">
-                    <label for="email-infoUser">Nouveau mot de passe</label>
+                    <label for="password-infoUser">Nouveau mot de passe</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="password" name="name-infoUser" id="name-infoUser">
+                    <input type="password" name="password-infoUser" id="password-infoUser">
                 </div>
 
                 <div class="input-area-infoUser">
-                    <label for="email-infoUser">Confirmer nouveau mot de passe</label>
+                    <label for="confirmPassword-infoUser">Confirmer nouveau mot de passe</label>
                     <i class="fas fa-arrow-right" style="color: #227093"></i>
-                    <input type="password" name="name-infoUser" id="name-infoUser">
+                    <input type="password" name="confirmPassword-infoUser" id="confirmPassword-infoUser">
                 </div>
 
                 <div class="submitButtonInfoUser">

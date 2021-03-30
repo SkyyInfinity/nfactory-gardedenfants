@@ -297,3 +297,21 @@ body {
 #NurseryDashboard .content .contentItem-1 .box-4 {
   background-color: #dfe4ea;
 }
+
+i.animation {
+  animation: activeInput 2s ease-in-out infinite;
+}
+
+/*-----------KEY FRAME-----------*/
+
+@keyframes activeInput {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
