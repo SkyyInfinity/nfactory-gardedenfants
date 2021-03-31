@@ -69,10 +69,32 @@ function validationPassword($errors, $data, $data2, $key, $min, $max) {
           $errors[$key] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractére spécial.';
         }
     } else {
-        $errors[$key] = 'Les deux mot de passe doivent être identiques';
+        $errors[$key] = 'Les deux mot de passe doivent être identiques.';
     }
   } else {
     $errors[$key] = 'Veuillez renseigner ce champ.';
+  }
+  return $errors;
+}
+// V A L I D A T I O N   N U M B E R /////////////////////////////////////////////////
+function validationNumber($errors, $data, $key, $min, $max) {
+  if($data <= 1 || $data <= 1) {
+    $an = 'an';
+  } else {
+    $an = 'ans';
+  }
+  if(!empty($data)) {
+    if(!is_numeric($data)) {
+        $errors[$key] = "L'âge doit être un écrit en chiffre.";
+    }
+    if($data < $min) {
+      $errors[$key] = "L'âge doit être superieur à $min $an.";
+    }
+    if($data > $max) {
+      $errors[$key] = "L'âge doit être inférieur à $max $an.";
+    }
+  } else {
+      $errors[$key] = "Veuillez renseigner ce champ.";
   }
   return $errors;
 }

@@ -20,7 +20,7 @@ $title = 'Mon compte'; ?>
                     <!-- PRENOM -->
                     <div class="champ">
                         <label for="name">Son prénom</label>
-                        <input id="name" type="text" name="name">
+                        <input id="name" type="text" name="name" value="<?php if(!empty($_POST['name'])){echo $_POST['name'];} ?>">
                         <?php if(!empty($errorsChild['name'])) : ?>
                             <span class="error"><?= $errorsChild['name'] ?></span>
                         <?php endif ?>
@@ -28,7 +28,7 @@ $title = 'Mon compte'; ?>
                     <!-- AGE -->
                     <div class="champ">
                         <label for="age">Son âge</label>
-                        <span class="ageLabel"><input id="age" type="number" name="age" ></span>
+                        <span class="ageLabel"><input id="age" type="number" name="age" value="<?php if(!empty($_POST['age'])){echo $_POST['age'];} ?>" min="0" max="12"></span>
                         <?php if(!empty($errorsChild['age'])) : ?>
                             <span class="error"><?= $errorsChild['age'] ?></span>
                         <?php endif ?>
@@ -37,8 +37,16 @@ $title = 'Mon compte'; ?>
                     <div class="champ">
                         <label for="disease">Ses maladies</label>
                         <select name="disease" id="disease">
-                            <option value="">--Choisissez une maladie--</option>
                             <option value="varicelle">Varicelle</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
                             <option value="conjonctivite">Conjonctivite</option>
                         </select>
                         <a href="" class="add" id="form_add_disease"><i class="fas fa-plus"></i></a>
@@ -48,9 +56,15 @@ $title = 'Mon compte'; ?>
                     <div class="champ">
                         <label for="allergy_list">Ses allergies</label>
                         <select name="allergy" id="allergy_list">
-                            <option value="">--Choisissez une allergie--</option>
                             <option value="arachide">Arachide</option>
                             <option value="chat">Chats</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
                             <option value="oeuf">Oeufs</option>
                         </select>
                         <a href="" class="add" id="form_add_allergy"><i class="fas fa-plus"></i></a>
@@ -58,7 +72,7 @@ $title = 'Mon compte'; ?>
                     </div>
                     <!-- SUBMIT -->
                     <div class="champ">
-                        <input class="btn-submit btn-orange" type="submit" value="Ajouter">
+                        <input class="btn-submit btn-orange" type="submit" value="Ajouter" name="submittedChild">
                         <span class="beCareful">(Attention, la page va s'actualiser !)</span>
                     </div>
                 </form>
