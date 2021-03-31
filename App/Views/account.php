@@ -17,11 +17,11 @@ $title = 'Mon compte'; ?>
             <!-- ADDCHILD -->
             <div class="addChild">
                 <h2 class="second-title">Ajouter votre(vos) enfant(s)</h2>
-                <form id="addChild" action="account" method="POST">
+                <form id="addChild" action="account">
                     <!-- PRENOM -->
                     <div class="champ">
-                        <label for="name">Son prénom</label>
-                        <input id="name" type="text" name="name">
+                        <label for="childname">Son prénom</label>
+                        <input id="childname" type="text" name="childname">
                     </div>
                     <!-- AGE -->
                     <div class="champ">
@@ -30,26 +30,21 @@ $title = 'Mon compte'; ?>
                     </div>
                     <!-- MALADIES -->
                     <div class="champ">
-                        <label for="disease">Ses maladies</label>
-                        <select name="disease" id="disease">
-                            <option value="">--Choisissez une maladie--</option>
+                        <label for="disease_list">Ses Maladies</label>
+                        <select name="disease" id="disease_list">
+                            <option value="diahrée">Diahrée</option>
                             <option value="varicelle">Varicelle</option>
-                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="grippe">grippe</option>
                         </select>
-                        <a href="" class="add" id="form_add_disease"><i class="fas fa-plus"></i></a>
-                        <p id="selected_disease_list">Maladies : </p>
                     </div>
                     <!-- ALLERGIES -->
                     <div class="champ">
                         <label for="allergy_list">Ses allergies</label>
                         <select name="allergy" id="allergy_list">
-                            <option value="">--Choisissez une allergie--</option>
                             <option value="arachide">Arachide</option>
                             <option value="chat">Chats</option>
                             <option value="oeuf">Oeufs</option>
                         </select>
-                        <a href="" class="add" id="form_add_allergy"><i class="fas fa-plus"></i></a>
-                        <p id="selected_allergy_list">Allergies : </p>
                     </div>
                     <!-- SUBMIT -->
                     <div class="champ">
