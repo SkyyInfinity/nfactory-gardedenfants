@@ -128,6 +128,7 @@
     <script src="<?= URL ?>Public/assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
     <?php if ($title == 'Mon espace') : ?>
         <script src="<?= URL ?>Public/assets/js/mapbox.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?= URL ?>Public/assets/js/geoLocalisation.js" type="text/javascript" charset="utf-8"></script>
     <?php endif; ?>
     <?php if ($title == 'Connexion' || $title == 'Inscription' || $title == 'Accueil') : ?>
     <script src="<?= URL ?>Public/assets/js/parallax.js" type="text/javascript" charset="utf-8"></script>
