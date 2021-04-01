@@ -18,14 +18,14 @@
     <!-- OVERLAYSCROLLBAR -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css" integrity="sha512-jN4O0AUkRmE6Jwc8la2I5iBmS+tCDcfUd1eq8nrZIBnDKTmCp5YxxNN1/aetnAH32qT+dDbk1aGhhoaw5cJNlw==" crossorigin="anonymous" />
     <!-- MY STYLESHEET -->
-    <link rel="stylesheet" href="./Public/assets/css/style.css">
+    <link rel="stylesheet" href="<?= URL ?>Public/assets/css/style.css">
     <title>Kid'oma | <?php if(!empty($title)){echo $title;}else{echo 'undefined';} ?></title>
 </head>
 
 <body>
     <!-- LOADER -->
     <div id="loader">
-        <img src="./Public/assets/img/loader.gif" alt="loading image">
+        <img src="<?= URL ?>Public/assets/img/loader.gif" alt="loading image">
     </div>
     <!-- HEADER -->
     <header id="l-header">
@@ -40,23 +40,25 @@
                     <ul>
                         <?php if (!empty($_SESSION["user"])) : ?>
                             <?php if ($title == 'Mon compte') : ?>
-                                <li><a class="btn" href="user">Mon espace</a></li>
+                                <li><a class="btn" href="<?= URL ?>user">Mon espace</a></li>
+                                <li><a class="btn" href="<?= URL ?>logout">Déconnexion</a></li>
                             <?php else : ?>
-                                <li><a class="btn" href="account">Mon Compte</a></li>
+                                <li><a class="btn" href="<?= URL ?>account">Mon Compte</a></li>
+                                <li><a class="btn" href="<?= URL ?>logout">Déconnexion</a></li>
                             <?php endif; ?>
                         <?php else : ?>
                             <?php if ($title == 'Inscription') : ?>
-                                <li><a class="btn" href="./">Accueil</a></li>
-                                <li><a class="btn" href="login">Connexion</a></li>
+                                <li><a class="btn" href="<?= URL ?>">Accueil</a></li>
+                                <li><a class="btn" href="<?= URL ?>login">Connexion</a></li>
                             <?php elseif ($title == 'Connexion') : ?>
-                                <li><a class="btn" href="./">Accueil</a></li>
-                                <li><a class="btn" href="signup">Inscription</a></li>
+                                <li><a class="btn" href="<?= URL ?>">Accueil</a></li>
+                                <li><a class="btn" href="<?= URL ?>signup">Inscription</a></li>
                             <?php else : ?>
-                                <li><a class="btn" href="signup">Inscription</a></li>
-                                <li><a class="btn" href="login">Connexion</a></li>
+                                <li><a class="btn" href="<?= URL ?>signup">Inscription</a></li>
+                                <li><a class="btn" href="<?= URL ?>login">Connexion</a></li>
                             <?php endif; ?>
                         <?php endif; ?>
-                        <li><a class="logo" href="./"><img src="./Public/assets/img/logo_without_text.svg" alt="logo du site"></a></li>
+                        <li><a class="logo" href="./"><img src="<?= URL ?>Public/assets/img/logo_without_text.svg" alt="logo du site"></a></li>
                     </ul>
                 </div>
             </nav>
@@ -86,7 +88,7 @@
                     <?php
                     // echo $_SESSION['user']->picture 
                     ?>
-                    <a id="js_accountBtn" class="account-btn" aria-describedby="tooltip" href="account"><img class="avatar" src="./Public/assets/img/profile.svg" alt="avatar"></a>
+                    <a id="js_accountBtn" class="account-btn" aria-describedby="tooltip" href="account"><img class="avatar" src="<?= URL ?>Public/assets/img/profile.svg" alt="avatar"></a>
                     <a id="js_logoutBtn" class="logout-btn" aria-describedby="tooltip" href="logout"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             <?php endif; ?>
@@ -121,17 +123,17 @@
     <!-- OVERLAYSCROLLBAR -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js" integrity="sha512-B1xv1CqZlvaOobTbSiJWbRO2iM0iii3wQ/LWnXWJJxKfvIRRJa910sVmyZeOrvI854sLDsFCuFHh4urASj+qgw==" crossorigin="anonymous"></script>
     <!-- OUR SCRIPTS -->
-    <script src="./Public/assets/js/UserAjax.js" type="text/javascript" charset="utf-8"></script>
-    <script src="./Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
-    <script src="./Public/assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?= URL ?>Public/assets/js/UserAjax.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?= URL ?>Public/assets/js/loader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?= URL ?>Public/assets/js/hamburger.js" type="text/javascript" charset="utf-8"></script>
     <?php if ($title == 'Mon espace') : ?>
-        <script src="./Public/assets/js/mapbox.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?= URL ?>Public/assets/js/mapbox.js" type="text/javascript" charset="utf-8"></script>
     <?php endif; ?>
     <?php if ($title == 'Connexion' || $title == 'Inscription' || $title == 'Accueil') : ?>
-    <script src="./Public/assets/js/parallax.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?= URL ?>Public/assets/js/parallax.js" type="text/javascript" charset="utf-8"></script>
     <?php endif; ?>
-    <script src="./Public/assets/js/tooltip.js" type="text/javascript" charset="utf-8"></script>
-    <script src="./Public/assets/js/overlayScrollBar.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?= URL ?>Public/assets/js/tooltip.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?= URL ?>Public/assets/js/overlayScrollBar.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

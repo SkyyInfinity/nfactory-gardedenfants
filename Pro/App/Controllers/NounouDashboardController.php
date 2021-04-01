@@ -15,10 +15,13 @@ class NounouDashboardController extends Controller {
 
         $competences = $this->nounouDashboardModel->getAllSkills($_SESSION['user']['id']);
         $userInfo = $this->nounouDashboardModel->getUserInfo($_SESSION['user']['id']);
+        $adresse = $this->nounouDashboardModel->getAdresse($_SESSION['user']['id']);
 
         $this->render('NounouDashboard', [
             'competences' => $competences,
-            'user' => $userInfo
+            'adresse' => $adresse,
+            'user' => $userInfo,
         ]);
+
     }
 }

@@ -159,81 +159,57 @@ $(document).ready(function () {
   $("#geoadresse").keyup(function () {
     let geourl = apiGeo + trim(geoAdresse.val()) + geoFormat;
     console.log(geourl);
-    fetch(geourl, { method: "get" })
-      .then((response) => response.json())
-      .then((results) => {
-        $("#geoselectadresse").find("option").remove();
-        $("#geolist").find("tr").remove();
+    fetch(geourl, {method: 'get'}).then(response => response.json()).then(results =>{
+      $('#geoselectadresse').find('option').remove();
+      $('#geolist').find('tr').remove();
 
-        let geolabel = [];
-        let geolong = [];
-        let geolatt = [];
-        let geocodepostal = [];
+      let geolabel = [];
+      let geolong = [];
+      let geolatt = [];
+      let geocodepostal = [];
 
-        for (let i = 0; i < results["features"].length; i++) {
-          $("#geolist").append(
-            "<tr><td>numéro " +
-              [i + 1] +
-              " | </td><td>" +
-              results["features"][i]["properties"]["label"] +
-              '</td><td><button id="geoAdd' +
-              [i] +
-              '">X' +
-              i +
-              "</button></td><tr>"
-          );
+      for(let i = 0 ; i < results['features'].length ; i++){
+        $('#geolist').append('<tr class="geolisting" id="geoAdd'+[i]+'"><td><i class="fa fa-location-arrow" aria-hidden="true"></i> '+results['features'][i]['properties']['label']+'</td><tr>');
+        
+        geolabel.push(results['features'][i]['properties']['label']);
+        geolong.push(results['features'][i]['geometry']['coordinates'][0]);
+        geolatt.push(results['features'][i]['geometry']['coordinates'][1]);
+        geocodepostal.push(results['features'][i]['properties']['postcode']);
 
-          geolabel.push(results["features"][i]["properties"]["label"]);
-          geolong.push(results["features"][i]["geometry"]["coordinates"][0]);
-          geolatt.push(results["features"][i]["geometry"]["coordinates"][1]);
-          geocodepostal.push(results["features"][i]["properties"]["postcode"]);
-
-          console.log("geolabel");
-          console.log(geolabel);
-
-          $("#geoAdd" + [i]).on("click", function (e) {
-            e.preventDefault();
-            var stuff = {
-              key1: geolabel[i],
-              key2: geocodepostal[i],
-              key3: geolong[i],
-              key4: geolatt[i],
-            };
-            console.log(stuff);
-            $.ajax({
-              type: "POST",
-              url: "Public/ajax/ajaxgeo.php",
-              data: stuff,
-
-              beforeSend: function () {
-                console.log("Requete en cours");
-              },
-
-              success: function (response) {
-                console.log({
-                  label: geolabel[i],
-                });
-                console.log(response);
-              },
-            });
+        $("#geoAdd"+[i]).on("click", function (e) {
+          e.preventDefault();
+          var stuff ={'key1':geolabel[i],'key2':geocodepostal[i],'key3':geolong[i],'key4':geolatt[i]};
+          $.ajax({
+            type: "POST",
+            url: "Public/ajax/ajaxgeo.php",
+            data : stuff,
+      
+            beforeSend: function (){
+              console.log("Requete en cours")
+            },
+      
+            success: function (response){
+              console.log("Requete OK " + response);
+              $('.geoNewAdress').toggleClass('hidden');
+              $('.geoNewAdress h4').append('<span>' + geolabel[i] + '</span>');
+              $('.geoSelectAdress').toggleClass('hidden');
+              $('.geoModified').text('Votre créche est situer aux : ' + geolabel[i]);
+            }
           });
 
-          geolabel.push(results["features"][i]["properties"]["label"]);
-          geolong.push(results["features"][i]["geometry"]["coordinates"][0]);
-          geolatt.push(results["features"][i]["geometry"]["coordinates"][1]);
-          geocodepostal.push(results["features"][i]["properties"]["postcode"]);
-
-          console.log("geolabel");
-          console.log(geolabel);
-        }
-      });
+        })
+      };
   });
+}
+
+
+
 
   //------------------
   //EFFECT DE LA FLECHE DE FOU
   //------------------
 
-  $("input").focus(function () {
+  /*$("input").focus(function () {
     $(this).prev().addClass("animation");
   });
 
@@ -241,4 +217,6 @@ $(document).ready(function () {
     $(this).prev().removeClass("animation");
   });
   // JQUERY END
-});
+
+  */
+)});

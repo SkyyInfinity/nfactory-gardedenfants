@@ -180,30 +180,39 @@
         </div>
 
         <div class="contentItem hidden" id="contentItem-7">
-            <h2>Votre crèche</h2>
+            <div>
+                <h3>Localisation</h2>
+                <?php if(!empty($adresse)){ ?>
+                    <h4 class="geoModified">Votre créche est situer aux : <?= $adresse->adresse ?> </h3>
+                <?php }else{ ?>
+                    <h4>Vous n'avez pas géolocaliser votre créche. </h3>
+                <?php } ?>
 
-            <form action="" method="post">
-                <div>
-                    <label for="">Adresse</label>
-                    <input type="text" id="geoadresse">
+                <div class="geoNewAdress hidden">
+                    <h4 class="success">Vous venez de changer votre emplacement au : </h4>
                 </div>
 
-                <div id="geolist">
-                    <tr>
-                        <th>Adresse</th>
-                    </tr>
-                    <tr>
+                <div class="resize">
+                    <div class="geoSelectAdress">
+                        <h3 class="find" >(Re)Localiser votre créche !</h3>
+                        <h4>Entrée votre adresse.</h4>
 
-                    </tr>
+                            <div>
+                                <label for="">Adresse : </label>
+                                <input type="text" id="geoadresse">
+                            </div>
+
+                            <div id="geolist">
+                                <tr>
+
+                                </tr>
+                            </div>
+                    </div>
                 </div>
-
-                <div>
-                    <input type="submit" id="geosubmit">
-                </div>
-
-            
-            </form>
-
+            </div>
+            <div>
+                <img src="./Public/assets/img/svg/locate.svg" alt="">
+            </div>
         </div>
 
         <!-- Espace paiment-->
