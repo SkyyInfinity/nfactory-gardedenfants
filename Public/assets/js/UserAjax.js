@@ -1,29 +1,28 @@
 $(document).ready(function () {
-    $('#addChild').on('submit', function (e) {
-        e.preventDefault();
-        console.log('test');
-        var nom = $('#childname').value;
-        var age = $('#age').value;
-        var checkedValues = $('.mulinput').map(function() {
-            return this.value;
-        }).get();
-        $.ajax({
-            type: 'POST',
-            url: './Public/ajax/addChild.php',
-            data: {
-                name: nom,
-                age: age,
-
-            },
-            dataType: 'json',
-            success: function(response) {
-                console.log(response);
-            },
-            error : function(response) {
-                console.log(response);
-            }
-        })
-    })
+    // $('#addChild').on('submit', function (e) {
+    //     e.preventDefault();
+    //     console.log('test');
+    //     var nom = $('#childname').value;
+    //     var age = $('#age').value;
+    //     var checkedValues = $('.mulinput').map(function() {
+    //         return this.value;
+    //     }).get();
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: './Public/ajax/addChild.php',
+    //         data: {
+    //             name: nom,
+    //             age: age,
+    //         },
+    //         dataType: 'json',
+    //         success: function(response) {
+    //             console.log(response);
+    //         },
+    //         error : function(response) {
+    //             console.log(response);
+    //         }
+    //     })
+    // })
     $(document).on("click", ".MultiCheckBox", function () {
         var detail = $(this).next();
         detail.show();
