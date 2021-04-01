@@ -26,8 +26,8 @@ $title = 'Connexion'; ?>
                         <input id="password" type="password" name="password" placeholder="********">
                         <a class="forgot" href="forgotPassword">Mot de passe oublié ?</a>
                     </div>
-                    <?php if(!empty($errors)) : ?>
-                        <p class="error"> <?= $errors ?></p>
+                    <?php if(!empty($error)) : ?>
+                        <p class="error"> <?= $error ?></p>
                     <?php endif; ?>
                     <div class="champ submit">
                         <!-- <button class="btn-submit btn-orange">Se connecter</button> -->

@@ -122,7 +122,4 @@ class UserController extends Controller
             ]);
         }
     }
-    // public function getProPos(){
-    //     $this->userModel->getProLoc();
-    // }
 }
