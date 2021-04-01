@@ -20,23 +20,35 @@ $title = 'Mon compte'; ?>
                     <!-- PRENOM -->
                     <div class="champ">
                         <label for="childname">Son prénom</label>
-                        <input id="childname" type="text" name="childname">
+                        <input id="childname" type="text" name="childname" value="<?php if(!empty($_POST['name'])){echo $_POST['name'];} ?>">
+                        <label for="name">Son prénom</label>
+                        <?php if(!empty($errorsChild['name'])) : ?>
+                            <span class="error"><?= $errorsChild['name'] ?></span>
+                        <?php endif ?>
                     </div>
                     <!-- AGE -->
                     <div class="champ">
                         <label for="age">Son âge</label>
-                        <span class="ageLabel"><input id="age" type="number" name="age" ></span>
+                        <span class="ageLabel"><input id="age" type="number" name="age" value="<?php if(!empty($_POST['age'])){echo $_POST['age'];} ?>" min="0" max="12"></span>
                         <?php if(!empty($errorsChild['age'])) : ?>
                             <span class="error"><?= $errorsChild['age'] ?></span>
                         <?php endif ?>
                     </div>
                     <!-- MALADIES -->
                     <div class="champ">
-                        <label for="disease_list">Ses Maladies</label>
-                        <select name="disease" id="disease_list">
-                            <option value="diahrée">Diahrée</option>
+                        <label for="disease">Ses maladies</label>
+                        <select name="disease" id="disease">
                             <option value="varicelle">Varicelle</option>
-                            <option value="grippe">grippe</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
+                            <option value="conjonctivite">Conjonctivite</option>
                         </select>
                     </div>
                     <!-- ALLERGIES -->
@@ -46,11 +58,18 @@ $title = 'Mon compte'; ?>
                             <option value="arachide">Arachide</option>
                             <option value="chat">Chats</option>
                             <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
+                            <option value="oeuf">Oeufs</option>
                         </select>
                     </div>
                     <!-- SUBMIT -->
                     <div class="champ">
-                        <input class="btn-submit btn-orange" type="submit" value="Ajouter">
+                        <input class="btn-submit btn-orange" type="submit" value="Ajouter" name="submittedChild">
                         <span class="beCareful">(Attention, la page va s'actualiser !)</span>
                     </div>
                 </form>

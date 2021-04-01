@@ -12,17 +12,15 @@ class ChildController extends Controller {
     }
 
     public function addChild($data) {
-        // Variables
         $errorsChild = [];
-            // Variables
+
+        if(!empty($data['submittedChild'])) {
             $child = $this->encodeChars($data);
-            
-            // Validation name
+            $errorsChild = validationText($errorsChild, $child['name'], 'name', 1, 30);
+            $errorsChild = validationNumber($errorsChild, $child['age'], 'age', 0, 12);
 
-            // Validation age
-
-            // Condition
-            if (count($errorsChild) === 0) {
+            if(count($errorsChild) === 0) {
+                echo 'c\'est good';
                 // Lance la requête
                 // child
                 // $statement = "INSERT INTO kido_child(id_parent, 'name', age) 
@@ -42,6 +40,7 @@ class ChildController extends Controller {
                 // Redirection
                 // redirect('user');
             }
+        }
         // Render dans la Vue
         $this->render('account', [
             'errorsChild' => $errorsChild
@@ -54,6 +53,8 @@ class ChildController extends Controller {
 
         if(!empty($childs)) {
             $_SESSION['user']->childs = $childs;
+        } else {
+            redirect('login');
         }
 
         // Render dans la Vue
