@@ -2,7 +2,6 @@
 if (isLogged()) {
     redirect('user');
 }
-
 $title = 'Inscription'; ?>
 
 <section id="inscription">
@@ -16,24 +15,24 @@ $title = 'Inscription'; ?>
             </div>
             <div class="form">
                 <h1 class="section-title">Inscription</h1>
-                <form action="signupRequest" method="post" id="registration_form">
+                <form action="" method="post" id="registration_form">
                     <div class="champ">
                         <label for="name">Votre prénom</label>
-                        <input id="name" type="text" name="name" placeholder="John">
+                        <input id="name" type="text" name="name" placeholder="John" value="<?php if(!empty($_POST['name'])){echo $_POST['name'];} ?>">
                         <?php if (!empty($errors['name'])) : ?>
-                            <?php echo '<span class="error">' . $errors['name'] . '</span>' ?>
+                            <span class="error"><?= $errors['name'] ?></span>
                         <?php endif; ?>
                     </div>
                     <div class="champ">
                         <label for="surname">Votre nom</label>
-                        <input id="surname" type="text" name="surname" placeholder="Doe">
+                        <input id="surname" type="text" name="surname" placeholder="Doe" value="<?php if(!empty($_POST['surname'])){echo $_POST['surname'];} ?>">
                         <?php if (!empty($errors['surname'])) : ?>
                             <span class="error"><?= $errors['surname']; ?></span>
                         <?php endif; ?>
                     </div>
                     <div class="champ">
                         <label for="email">Votre email</label>
-                        <input id="email" type="email" name="email" placeholder="john.doe@example.com">
+                        <input id="email" type="email" name="email" placeholder="john.doe@example.com" value="<?php if(!empty($_POST['email'])){echo $_POST['email'];} ?>">
                         <?php if (!empty($errors['email'])) : ?>
                             <span class="error"><?= $errors['email']; ?></span>
                         <?php endif; ?>
@@ -50,7 +49,7 @@ $title = 'Inscription'; ?>
                         <?php endif; ?>
                     </div>
                     <div class="champ submit">
-                        <input class="btn-submit btn-orange" type="submit" value="S'inscrire"></input>
+                        <input class="btn-submit btn-orange" type="submit" name="submitted" value="S'inscrire"></input>
                     </div>
                     <div class="champ">
                         <a href="login">Déjà inscrit ? Connectez-vous !</a>

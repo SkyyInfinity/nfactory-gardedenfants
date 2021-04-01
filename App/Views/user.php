@@ -26,7 +26,12 @@ $title = 'Mon espace'; ?>
                 </ul>
             </div>
             <div class="map">
-                <h2 class="second-title">Établisements à proximité</h2>
+                <h2 class="second-title">Nourisse et crêche à proximité</h2>
+                <div class="geolocalisation">
+                    <button class="btn-submit btn-orange" id="geolocMe">Trouver à proximité</button>
+                    <input type="search" name="geo" id="geo">
+                    <button class="btn-submit btn-orange" id="searchGeo"><i class="fas fa-search"></i></button>
+                </div>
                 <div id='map' style='width: 100%; height: 600px;'></div>
             </div>
         </div>

@@ -112,7 +112,7 @@ $(document).ready(function () {
 
   $("#showPlanning").on("click", function (e) {
     console.log("pouet");
-    $(this).html("Actualiser mon planning");
+    $(this).html('<i class="fas fa-sync-alt"></i> Actualiser mon planning');
     $.ajax({
       type: "POST",
       url: "./Public/ajax/ajax-getPlanning.php",
