@@ -10,6 +10,7 @@ App::load();
 $user = new UserController();
 $errors = [];
 $success = false;
+debug($_POST);
 if (!empty($_POST)) {
     
 } else {

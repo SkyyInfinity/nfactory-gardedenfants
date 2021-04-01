@@ -44,12 +44,13 @@ switch ($page) {
         $childs = new ChildController();
         $childs->getChilds($_SESSION['user']->id);
         break;
+    
     case "account":
         // $user = new UserController();
         // $user->account();
         $child = new ChildController();
         $child->addChild($_POST);
-        break;
+        break;      
     case "accountUpdate":
         $user = new UserController();
         $user->updateUser($_POST);

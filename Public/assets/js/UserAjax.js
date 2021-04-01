@@ -12,6 +12,8 @@ $(document).ready(function () {
             url: './Public/ajax/addChild.php',
             data: {
                 name: nom,
+                age: age,
+                
             },
             dataType: 'json',
             success: function(response) {
