@@ -200,7 +200,7 @@ $(document).ready(function () {
         })
       };
   });
-}
+})
 
 
 
@@ -209,7 +209,7 @@ $(document).ready(function () {
   //EFFECT DE LA FLECHE DE FOU
   //------------------
 
-  /*$("input").focus(function () {
+  $("input").focus(function () {
     $(this).prev().addClass("animation");
   });
 
@@ -218,5 +218,5 @@ $(document).ready(function () {
   });
   // JQUERY END
 
-  */
-)});
+  
+});
