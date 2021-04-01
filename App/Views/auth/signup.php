@@ -10,8 +10,8 @@ $title = 'Inscription'; ?>
         <div class="flex">
             <div class="illustration">
                 <div id="scene" data-relative-input="true">
-                    <img class="card" data-depth="0.3" src="./Public/assets/img/undraw_signin1.svg" alt="card">
-                    <img class="man" data-depth="0.1" src="./Public/assets/img/undraw_signin2.svg" alt="man">
+                    <img class="card" data-depth="0.3" src="<?= URL ?>Public/assets/img/undraw_signin1.svg" alt="card">
+                    <img class="man" data-depth="0.1" src="<?= URL ?>Public/assets/img/undraw_signin2.svg" alt="man">
                 </div>
             </div>
             <div class="form">

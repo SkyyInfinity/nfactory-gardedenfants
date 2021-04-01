@@ -2,7 +2,6 @@
 if(!isLogged()) {
     redirect('home');
 }
-
 $title = 'Mon compte'; ?>
 
 <section id="account">
@@ -26,7 +25,10 @@ $title = 'Mon compte'; ?>
                     <!-- AGE -->
                     <div class="champ">
                         <label for="age">Son âge</label>
-                        <span class="ageLabel"><input id="age" type="number" name="age" min="0" max="12"></span>
+                        <span class="ageLabel"><input id="age" type="number" name="age" ></span>
+                        <?php if(!empty($errorsChild['age'])) : ?>
+                            <span class="error"><?= $errorsChild['age'] ?></span>
+                        <?php endif ?>
                     </div>
                     <!-- MALADIES -->
                     <div class="champ">
