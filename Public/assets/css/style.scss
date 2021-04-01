@@ -332,6 +332,12 @@ input::placeholder {
 .map .geolocalisation {
     padding: 15px 0;
 }
+.geolocalisation #geolocMe {
+    margin-right: .5em;
+}
+.geolocalisation #searchGeo {
+    margin-left: .5em;
+}
 #map {
     border-radius: 15px;
     border: 1px solid white;
