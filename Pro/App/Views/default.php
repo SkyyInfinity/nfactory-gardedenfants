@@ -24,16 +24,16 @@
     <header id="proHeader">
         <nav class="proNav">
             <ul>
-                <li><a href="../">Partie Particulier</a></li>
-                <li><a href="./home">Accueil</a></li>
+                <li><a href="../" class="particulier">&nbsp;<i class="fa fa-bed" aria-hidden="true"></i> Partie Particulier&nbsp;</a></li>
+                <li><a href="./home" class="accueil">&nbsp;<i class="fa fa-home" aria-hidden="true"></i> Accueil&nbsp;</a></li>
                 <?php if(!empty($_SESSION['user']['email'])) : ?>
-                <li><a href="./Dashboard">Mon espace</a></li>
+                <li><a href="./Dashboard" class="espace">&nbsp;<i class="fa fa-user" aria-hidden="true"></i> Mon espace&nbsp;</a></li>
                 <?php endif; ?>
                 <?php if(!empty($_SESSION['user']['email']) && $_SESSION['user']['type'] === 'nursery') : ?>
                 <li><a href="./logoutNursery">Deconnexion</a></li>
                 <?php endif; ?>
                 <?php if(!empty($_SESSION['user']['email']) && $_SESSION['user']['type'] === 'nounou') : ?>
-                <li><a href="./logoutNounou">Deconnexion</a></li>
+                <li><a href="./logoutNounou" class="deco">&nbsp;<i class="fa fa-times" aria-hidden="true"></i> Deconnexion&nbsp;</a></li>
                 <?php endif; ?>
             </ul>
         </nav>
