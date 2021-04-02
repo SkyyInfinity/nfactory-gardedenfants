@@ -30,7 +30,7 @@ Si vous voulez installer ce prototype sur votre PC ou MAC, veuillez suivre ses i
 
 2. Installer la base de données `(kidoma.sql)` sur votre application de gestions de base de données, par exemple **PHPMyAdmin**.
   
-3. Vous rentre dans les deux fichier `.htaccess` (le second est dans le dossier "Pro") et changer les urls, comme ceci:
+3. Créer deux fichier `.htaccess` (le premier à la racine et le second est dans le dossier "Pro") et changer les urls, comme ceci:
 
 ```html
 RewriteEngine on
