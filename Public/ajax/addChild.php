@@ -2,42 +2,29 @@
 require('../inc/functions.php');
 
 use Core\App;
-use App\Controllers\UserController;
+use App\Controllers\ChildController;
 
 define('ROOT', dirname(dirname(__DIR__)) . '/');
 require '../../Core/App.php';
 App::load();
 
-$user = new UserController();
+$childC = new ChildController();
+
 $errorsChild = [];
 $success = false;
 
-$child = $this->encodeChars($data);
-$errorsChild = validationText($errorsChild, $child['name'], 'name', 1, 30);
-$errorsChild = validationNumber($errorsChild, $child['age'], 'age', 0, 12);
-
-if (count($errorsChild) == 0) {
-    // Lance la requête
-    // child
-    // $statement = "INSERT INTO kido_child(id_parent, 'name', age) 
-    //               VALUES (".$_SESSION['user']->id.", ".$child['name'].", ".$child['age']."";
-    // $this->db->postData($statement, $data);
-
-    // diseases
-    // $statement = "INSERT INTO kido_child_diseases(id_enfant, titre, 'description') 
-    //               VALUES ([value-2], [value-3], [value-4])";
-
-    // $this->db->postData($statement, $data);
-    // // allergies
-    // $statement = "INSERT INTO kido_child_allergy(id_enfant, titre, 'description') 
-    //               VALUES ([value-2], [value-3], [value-4])";
-
-    // $this->db->postData($statement, $data);
-    // Redirection
-    // redirect('user');
+if (!empty($_POST)) {
+    $child = $childC->encodeChars($_POST);
+    $errorsChild = validationText($errorsChild, $child['name'], 'name', 1, 30);
+    $errorsChild = validationNumber($errorsChild, $child['age'], 'age', 0, 12);
+    if (count($errorsChild) == 0) {
+        $childC->addChild($child);
+    }
+} else {
+    $errorsChild = "Veuillez renseignez les champs";
 }
 $data = array(
-    'errors' => $errors,
+    'errorsChild' => $errorsChild,
     'success' => $success
 );
 
