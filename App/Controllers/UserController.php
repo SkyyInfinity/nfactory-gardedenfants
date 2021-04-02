@@ -12,56 +12,56 @@ class UserController extends Controller
     {
         $this->userModel = new UserModel();
     }
-    public function signup()
-    {
-        $this->render("auth.signup");
-    }
-    public function signupRequest($data)
+    
+    public function signup($data)
     {
         $errors = [];
-        $user = $this->encodeChars($data);
-        $errors = validationText($errors, $user["name"], 'name', 1, 30);
-        $errors = validationText($errors, $user["surname"], 'surname', 1, 30);
-        $errors = validationEmail($errors, $user["email"], 'email');
-        $errors = validationPassword($errors, $user['password'], $user['password2'], 'password', 8, 30);
-        if (empty($errors)) {
-            unset($user['password2']);
-            $user["password"] = password_hash($user["password"], PASSWORD_DEFAULT);
-            $user["role"] = json_encode(['user']);
-            $this->userModel->create($user);
-            header("Location:login");
-        } else {
-            $this->render("auth.signup", [
-                "errors" => $errors
-            ]);
+        if(!empty($data['submitted'])) {
+            $user = $this->encodeChars($data);
+            $errors = validationText($errors, $user['name'], 'name', 1, 30);
+            $errors = validationText($errors, $user['surname'], 'surname', 1, 30);
+            $errors = validationEmail($errors, $user['email'], 'email');
+            $errors = validationPassword($errors, $user['password'], $user['password2'], 'password', 8, 30);
+
+            if(count($errors) == 0) {
+                unset($user['password2']);
+                unset($user['submitted']);
+                $user["password"] = password_hash($user["password"], PASSWORD_DEFAULT);
+                $user["role"] = json_encode(['user']);
+                $this->userModel->create($user);
+                header("Location:login");
+            }
         }
-    }
-    public function login()
-    {
-        $this->render("auth.login");
+        $this->render("auth.signup", [
+            "errors" => $errors
+        ]);
     }
 
-    public function loginRequest($data)
+    public function login($data)
     {
-        if (!empty($data["email"])) {
-            if ($user = $this->userModel->getUserByEmail($data["email"])) {
-                if ($user && password_verify($data["password"], $user->password)) {
-                    $_SESSION["user"] = $user;
-                    $_SESSION["user"]->role = json_decode($user->role);
-                    $user = [];
-                    header("Location:user");
+        $errors = '';
+        if(!empty($data['submitted'])) {
+            if (!empty($data['email'])) {
+                $user = $this->userModel->getUserByEmail($data['email']);
+                if(!empty($user)) {
+                    if (password_verify($data['password'], $user->password)) {
+                        $_SESSION['user'] = $user;
+                        $_SESSION['user']->role = json_decode($user->role);
+                        $user = [];
+                        // header("Location:user");
+                    } else {
+                        $errors = "Utilisateur ou mot de passe incorrect.";
+                    }
                 } else {
-                    $errors = "Utilisateur ou mot de passe incorrect.";
+                    $errors = "Cette utilisateur n'existe pas.";
                 }
+            } else {
+                $errors = "Veuillez renseigner les champs";
             }
-        } else {
-            $errors = "Veuillez renseigner les champs";
         }
-        if (!empty($errors)) {
-            $this->render("auth.login", [
-                "error" => $errors
-            ]);
-        }
+        $this->render("auth.login", [
+            "errors" => $errors
+        ]);
     }
 
     public function logout()

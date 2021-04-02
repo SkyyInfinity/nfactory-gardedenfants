@@ -38,7 +38,7 @@ class ChildModel extends Model {
         $statement = "SELECT kido_child.id, kido_child.name, kido_child.age FROM kido_child 
                       INNER JOIN kido_user 
                       ON kido_child.id_parent = kido_user.id 
-                      WHERE kido_child.id = $idChild";
+                      WHERE kido_child.id = $idChild AND kido_user.id = $idParent";
 
         return $this->db->getData($statement, true);
     }
@@ -57,5 +57,23 @@ class ChildModel extends Model {
                         WHERE id = $id";
 
         $this->db->postData($statement, $data);
+    }
+
+    public function addChild($data) {
+        $statement = "INSERT INTO $this->table (name,age)VALUES (:name,:age)";
+        $this->db->postData($statement, $data);
+    }
+    public function addChild_disease($data) {
+        $statement = "INSERT INTO kido_child_caract(id_child, title, type) 
+        VALUES (:data['id'] :data['disease'], 'disease')";
+        $this->db->postData($statement, $data);
+    }
+    
+    public function addChild_allergy($data) {  
+
+    }
+
+    public function getlastInsertId() {
+        return $this->db->lastInsertId();
     }
 }

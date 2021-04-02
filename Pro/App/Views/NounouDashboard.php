@@ -10,7 +10,7 @@
         <div id="menuItem-5" class="menuItem">Certification</div>
         <div id="menuItem-6" class="menuItem">Paiment</div>
         <div id="menuItem-7" class="menuItem">Localisation</div>
-        <div id="menuItem-8" class="menuItem">Enfants</div>
+        <div id="menuItem-8" class="menuItem">Finance</div>
     </div>
 
     <div class="content">
@@ -33,7 +33,7 @@
 
     <!-- Espace Mon profil-->
         <div class="contentItem hidden" id="contentItem-2">
-            <h2>Votre profil</h2>
+            <h2 class="titleSection">Votre profil</h2>
 
             <form id="FormChangeData" action="./Public/ajax/ajax-changeData.php" method="POST">
                 <div class="input-area-infoUser">
@@ -80,7 +80,7 @@
 
     <!-- Espace Vos compétence-->
         <div class="contentItem hidden" id="contentItem-3">
-            <h2>Vos compétences</h2>
+            <h2 class="titleSection">Vos compétences</h2>
             <?php if(!empty($competences)) : ?>
             <div id="allSkills">
                 <?php foreach($competences as $skill) : ?>
@@ -91,22 +91,24 @@
             </div>
             <?php endif ?>
 
-            <h2>Ajouter une compétence :</h2>
+            <h2 class="subtitleSection">Ajouter une compétence :</h2>
 
             <div class="form-control">
                 <form action="./Public/ajax/ajax-addSkill.php" method="POST" id="AddSkillNounou" novalidate>
                 
                     <div class="input-area">
                         <label for="title">Titre :</label>
-                        <input type="text" name="title-addSkill-nounou">
+                        <i class="fas fa-arrow-right" style="color: #227093"></i>
+                        <input type="text" name="title-addSkill-nounou" placeholder="Votre titre">
                     </div>
 
                     <div class="input-area">
                         <label for="description-addSkill-nounou">Description :</label>
+                        <i class="fas fa-arrow-right" style="color: #227093"></i>
                         <textarea name="description-addSkill-nounou"></textarea>
                     </div>
 
-                    <div class="input-area">
+                    <div class="input-area-submitSkill">
                         <input type="submit" value="Ajouter" id="btn-submit-addSkill">
                     </div>
 
@@ -116,26 +118,29 @@
 
     <!-- Espace Planning-->
         <div class="contentItem hidden" id="contentItem-4">
-            <h2>Votre Planning</h2>
+            <h2 class="titleSection">Votre Planning</h2>
             <div class="holdFormAddDateNounou">
                 <form action="./Public/ajax/ajax-addCrenaux.php" method="POST" id="AddDateNounou" novalidate>
 
                     <div class="input-area">
                         <label for="start">Heure de début</label>
+                        <i class="fas fa-arrow-right" style="color: #227093"></i>
                         <input type="datetime-local" name="start" id="startDate">
                     </div>
 
                     <div class="input-area">
                         <label for="start">Heure de fin</label>
+                        <i class="fas fa-arrow-right" style="color: #227093"></i>
                         <input type="datetime-local" name="end" id="endDate">
                     </div>
 
                     <div class="input-area">
                         <label for="start">Places disponibles</label>
+                        <i class="fas fa-arrow-right" style="color: #227093"></i>
                         <input type="number" name="place" id="placeDate">
                     </div>
 
-                    <div class="input-area">
+                    <div class="input-area_submit">
                         <input type="submit" name="submit" id="btn-submit-addDate" value="Ajouter disponibilité">
                     </div>
                 </form>
@@ -150,20 +155,23 @@
 
 
         <div class="contentItem hidden" id="contentItem-5">
-            <h2>Vos fichiers</h2>
-            <div>   
+            <div>
+                <h2>Vos fichiers</h2>
                 <h2>Status : </h2>
-                <p>Envoyer une pièces justificatives : </p>
+                <h2>Envoyer une pièces justificatives : </h2>
                 <form action="" method="POST" enctype="multipart/form-data" id="PV_form_file">
                     <input type="file" name="PV_file">
                     <button type="submit" name="PV_send_file">Upload File</button>
                 </form>
             </div>
+            <div>
+                <img src="./Public/assets/img/svg/certification.svg" alt="">
+            </div>
 
 
         </div>
 
-        <!-- Espace paiment-->
+        <!-- Espace paiments-->
 
 
         <div class="contentItem hidden" id="contentItem-6">
@@ -214,8 +222,20 @@
 
 
         <div class="contentItem hidden" id="contentItem-8">
-            <h2>Vos paiment reçu</h2>
             <div>   
+
+                    <h2>Finance</h2>
+
+                    <h3>Envoyer Facture client</h3>
+                    <button>Envoyer les facture</button>
+
+
+                    <form action="">
+                    <label for="">Prix de l'abonnement par ans : </label>
+                    <input type="number">
+                    
+                    </form>
+
             </div>
 
 

@@ -173,6 +173,7 @@ body {
   background-color: #227093;
   color: #f1f2f6;
   transition-duration: 500ms;
+  cursor: pointer;
 }
 
 #loginSectionNounou div.login input[type="submit"]:active {
@@ -359,6 +360,233 @@ body {
 }
 i.animation {
   animation: activeInput 2s ease-in-out infinite;
+}
+
+/*-- Envoye des fichiers  --*/
+
+#contentItem-5{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+#contentItem-5 input,button {
+  background-color: #f1f2f6;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  padding: 4px 8px;
+  font-weight: 500;
+  width: 400px;
+}
+
+#contentItem-5 button {
+  width: 200px;
+  cursor: pointer;
+}
+
+#contentItem-5 button:hover{
+  background-color: #227093;
+  color: #f1f2f6;
+  transition-duration: 0.3s;
+}
+
+#contentItem-5 h2{
+  margin: 20px 0;
+  font-size: 18px;
+}
+/*------------DASHBOARD----------*/
+
+.titleSection {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 40px;
+}
+
+.subtitleSection {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+#FormChangeData {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#FormChangeData div {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#FormChangeData div label {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  align-self: flex-start;
+  width: 30%;
+}
+
+#FormChangeData div i {
+  width: 10%;
+}
+
+#FormChangeData div input {
+  background-color: #f1f2f6;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 4px 8px;
+  color: #227093;
+  width: 300px;
+}
+
+#FormChangeData div.submitButtonInfoUser {
+  align-self: center;
+  width: 30%;
+  margin-top: 50px;
+}
+
+#FormChangeData div.submitButtonInfoUser input[type="submit"] {
+  font-weight: 700;
+}
+
+#FormChangeData div.submitButtonInfoUser input[type="submit"]:hover {
+  background-color: #227093;
+  color: #f1f2f6;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+#FormChangeData div.submitButtonInfoUser input[type="submit"]:active {
+  position: relative;
+  bottom: 2px;
+}
+
+div#allSkills div.skill {
+  margin: 10px 0;
+}
+
+div#allSkills div.skill span.title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+div#allSkills div.skill span.description {
+  font-size: 1.1em;
+}
+
+#AddSkillNounou {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#AddSkillNounou div {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#AddSkillNounou div label {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  align-self: flex-start;
+  width: 20%;
+}
+
+#AddSkillNounou div input,
+#AddSkillNounou div textarea,
+#AddDateNounou div input {
+  background-color: #f1f2f6;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 4px 8px;
+  color: #227093;
+  width: 50%;
+}
+
+#AddSkillNounou div input[type="submit"],
+#AddDateNounou div input[type="submit"] {
+  font-weight: 700;
+}
+
+#AddDateNounou div input[type="submit"] {
+  width: 100%;
+}
+
+#AddSkillNounou div input[type="submit"]:hover,
+#AddDateNounou div input[type="submit"]:hover {
+  background-color: #227093;
+  color: #f1f2f6;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+#AddSkillNounou div input[type="submit"]:active,
+#AddDateNounou div input[type="submit"]:active {
+  position: relative;
+  bottom: 2px;
+}
+
+#AddSkillNounou div i {
+  width: 10%;
+}
+
+#AddSkillNounou div.input-area-submitSkill {
+  align-self: center;
+  width: 30%;
+  margin-top: 50px;
+}
+
+#AddDateNounou {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#AddDateNounou div.input-area {
+  width: 32%;
+  margin-bottom: 20px;
+}
+
+#AddDateNounou div label {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  align-self: flex-start;
+  width: 25%;
+}
+
+#AddDateNounou div i {
+  width: 5%;
+  margin-left: 10px;
+}
+
+#showPlanning {
+  background-color: #f1f2f6;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 4px 8px;
+  color: #227093;
+  width: 20%;
+}
+
+#showPlanning:hover {
+  background-color: #227093;
+  color: #f1f2f6;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+#showPlanning:active {
+  position: relative;
+  bottom: 2px;
 }
 
 /*-----------KEY FRAME-----------*/

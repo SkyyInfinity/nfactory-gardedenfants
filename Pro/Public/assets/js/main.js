@@ -112,7 +112,7 @@ $(document).ready(function () {
 
   $("#showPlanning").on("click", function (e) {
     console.log("pouet");
-    $(this).html("Actualiser mon planning");
+    $(this).html('<i class="fas fa-sync-alt"></i> Actualiser mon planning');
     $.ajax({
       type: "POST",
       url: "./Public/ajax/ajax-getPlanning.php",
@@ -200,7 +200,7 @@ $(document).ready(function () {
         })
       };
   });
-}
+})
 
 
 
@@ -209,7 +209,7 @@ $(document).ready(function () {
   //EFFECT DE LA FLECHE DE FOU
   //------------------
 
-  /*$("input").focus(function () {
+  $("input").focus(function () {
     $(this).prev().addClass("animation");
   });
 
@@ -218,5 +218,5 @@ $(document).ready(function () {
   });
   // JQUERY END
 
-  */
-)});
+  
+});

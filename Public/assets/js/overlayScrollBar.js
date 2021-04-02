@@ -11,4 +11,7 @@ $(document).ready(function () {
     $('.childList').overlayScrollbars({
         sizeAutoCapable : true
     });
+    $('.MultiCheckBoxDetailBody').overlayScrollbars({
+        sizeAutoCapable : true
+    });
 });

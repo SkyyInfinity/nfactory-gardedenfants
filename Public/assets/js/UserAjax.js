@@ -1,17 +1,29 @@
 $(document).ready(function () {
     $('#addChild').on('submit', function (e) {
         e.preventDefault();
-        console.log('test');
-        var nom = $('#childname').value;
-        var age = $('#age').value;
-        var checkedValues = $('.mulinput').map(function() {
-            return this.value;
-        }).get();
+        data = $('#addChild').serializeArray();
+        var nom = data[0]['value'];
+        var age = data[1]['value'];
+        data.shift();
+        data.shift();
+        var disease = [];
+        var allergy = [];
+        data.forEach(element => {
+            if(element['name'] == 'disease'){
+                disease.push(element['value']);
+            } else if (element['name'] == 'allergy') {
+                allergy.push(element['value']);
+            }
+        });
+        console.log(data);
         $.ajax({
             type: 'POST',
             url: './Public/ajax/addChild.php',
             data: {
                 name: nom,
+                age: age,
+                disease: disease,
+                allergy: allergy
             },
             dataType: 'json',
             success: function(response) {
@@ -70,12 +82,7 @@ $(document).ready(function () {
         }
     });
 
-
-    var defaultMultiCheckBoxOption = {
-        width: '220px',
-        defaultText: 'Select Below',
-        height: '200px'
-    };
+    var defaultMultiCheckBoxOption = { width: '100%', defaultText: 'Select Below', height: '200px' };
 
     jQuery.fn.extend({
         CreateMultiCheckBox: function (options) {
@@ -87,16 +94,11 @@ $(document).ready(function () {
 
             this.hide();
             this.attr("multiple", "multiple");
-            var divSel = $("<div class='MultiCheckBox'>" + localOption.defaultText + "<span class='k-icon k-i-arrow-60-down'><svg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='sort-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' class='svg-inline--fa fa-sort-down fa-w-10 fa-2x'><path fill='currentColor' d='M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z' class=''></path></svg></span></div>").insertBefore(this);
-            divSel.css({
-                "width": localOption.width
-            });
+            var divSel = $("<div class='MultiCheckBox'>" + localOption.defaultText + '<span class="k-icon k-i-arrow-60-down"><i class="fas fa-chevron-down"></i></span></div>').insertBefore(this);
+            divSel.css({ "width": localOption.width });
 
-            var detail = $("<div class='MultiCheckBoxDetail'><div class='MultiCheckBoxDetailHeader'><input type='checkbox' class='mulinput' value='-1982' /><div>Select All</div></div><div class='MultiCheckBoxDetailBody'></div></div>").insertAfter(divSel);
-            detail.css({
-                "width": parseInt(options.width) + 10,
-                // "max-height": localOption.height
-            });
+            var detail = $("<div class='MultiCheckBoxDetail'><div class='MultiCheckBoxDetailHeader'><div>Tout selectionner</div><input type='checkbox' class='mulinput' value='-1982' /></div><div class='MultiCheckBoxDetailBody'></div></div>").insertAfter(divSel);
+            detail.css({ "width": '327.06px', "max-height": localOption.height });
             var multiCheckBoxDetailBody = detail.find(".MultiCheckBoxDetailBody");
 
             this.find("option").each(function () {
@@ -120,15 +122,16 @@ $(document).ready(function () {
             this.val(arr);
         },
     });
-    $("#allergy_list").CreateMultiCheckBox({
-        width: '100%',
-        defaultText: '--Choisissez les allergies--',
-        height: '43px'
+    $("#allergy_list").CreateMultiCheckBox({ 
+        width: '80%', 
+        defaultText : '--Choisissez une allergie--', 
+        height:'250px' 
     });
-    $("#disease_list").CreateMultiCheckBox({
-        width: '100%',
-        defaultText: '--Choisissez les maladies--',
-        height: '43px'
+
+    $("#disease").CreateMultiCheckBox({ 
+        width: '80%', 
+        defaultText : '--Choisissez une maladie--', 
+        height:'250px' 
     });
 
 });
