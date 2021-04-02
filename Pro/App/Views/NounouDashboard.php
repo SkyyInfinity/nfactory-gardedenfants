@@ -10,7 +10,7 @@
         <div id="menuItem-5" class="menuItem">Certification</div>
         <div id="menuItem-6" class="menuItem">Paiment</div>
         <div id="menuItem-7" class="menuItem">Localisation</div>
-        <div id="menuItem-8" class="menuItem">Enfants</div>
+        <div id="menuItem-8" class="menuItem">Finance</div>
     </div>
 
     <div class="content">
@@ -155,20 +155,23 @@
 
 
         <div class="contentItem hidden" id="contentItem-5">
-            <h2>Vos fichiers</h2>
-            <div>   
+            <div>
+                <h2>Vos fichiers</h2>
                 <h2>Status : </h2>
-                <p>Envoyer une pièces justificatives : </p>
+                <h2>Envoyer une pièces justificatives : </h2>
                 <form action="" method="POST" enctype="multipart/form-data" id="PV_form_file">
                     <input type="file" name="PV_file">
                     <button type="submit" name="PV_send_file">Upload File</button>
                 </form>
             </div>
+            <div>
+                <img src="./Public/assets/img/svg/certification.svg" alt="">
+            </div>
 
 
         </div>
 
-        <!-- Espace paiment-->
+        <!-- Espace paiments-->
 
 
         <div class="contentItem hidden" id="contentItem-6">
@@ -219,8 +222,20 @@
 
 
         <div class="contentItem hidden" id="contentItem-8">
-            <h2>Vos paiment reçu</h2>
             <div>   
+
+                    <h2>Finance</h2>
+
+                    <h3>Envoyer Facture client</h3>
+                    <button>Envoyer les facture</button>
+
+
+                    <form action="">
+                    <label for="">Prix de l'abonnement par ans : </label>
+                    <input type="number">
+                    
+                    </form>
+
             </div>
 
 

@@ -26,7 +26,17 @@ $title = 'Mon espace'; ?>
                 </ul>
             </div>
             <div class="map">
-                <h2 class="second-title">Établisements à proximité</h2>
+                <h2 class="second-title">Nourisse et crêche à proximité</h2>
+                <div class="geolocalisation">
+                    <button class="btn-submit btn-orange" id="geolocMe">Me géolocaliser</button>
+                    <span>Ou</span>
+                    <input type="search" name="geo" id="geo" placeholder="Taper votre adresse ici">
+                    <div id="geolist">
+                        <tr>
+
+                        </tr>
+                    </div>
+                </div>
                 <div id='map' style='width: 100%; height: 600px;'></div>
             </div>
         </div>
@@ -39,7 +49,7 @@ $title = 'Mon espace'; ?>
                         <p><?php if($child->age <= 1){echo $child->age . ' an';}else{echo $child->age . ' ans';} ?></p>
                     </div>
                     <div class="btn">
-                        <a href="reserve/<?= $child->id ?>" class="btn btn-orange">Reservé pour <?= $child->name ?></a>
+                        <a href="reserve/<?= $child->id ?>" class="btn btn-orange">Reserver pour <?= $child->name ?></a>
                     </div>
                 </li>
                 <?php endforeach ?>

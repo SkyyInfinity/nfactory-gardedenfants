@@ -1,6 +1,14 @@
 $(document).ready(function () {
+    function markerColor(type) {
+        if (type == "nounou") {
+            return "#f00";
+        } else if(type == "nursery") {
+            return "#0f0";
+        }
+    }
     var userLoc;
     var map;
+    var marker = [];
     // Gestion Formulaire
     $.ajax({
         type: 'GET',
@@ -21,12 +29,14 @@ $(document).ready(function () {
         type: 'GET',
         url: './Public/ajax/getProLocs.php',
         success: function (response) {
-            console.log(response.ProPos)
+            console.log(response)
             var i = 0;
-            response.ProPos.forEach(element => {
-                coordinates = element.features[0].geometry.coordinates;
-                var marker = new mapboxgl.Marker()
-                    .setLngLat([coordinates[0],coordinates[1]])
+            response['features'].forEach(element => {
+                coordinate = element.coordinate;
+                marker = new mapboxgl.Marker({
+                    color: markerColor(element.type),
+                    draggable: false,
+                    }).setLngLat([coordinate[0],coordinate[1]])
                     .addTo(map);
                 map.setLayoutProperty('country-label', 'text-field', [
                     'get',
@@ -40,6 +50,5 @@ $(document).ready(function () {
         }
     })
     mapboxgl.accessToken = 'pk.eyJ1IjoibGVnaWxhbWFscyIsImEiOiJja21kNzNwZW4yaXJjMnFuNmtua2FpNWFoIn0.Tj_VsoXaE3EC1vM88riKzw';
-
-});
-
+// create the popup
+})
