@@ -1,2 +1,2 @@
 <?php 
-define('URL', 'http://localhost/Projet/GardeEnfant/nfactory-gardedenfants/');
+define('URL', 'http://localhost/Nfactory/projet/kidoma/');

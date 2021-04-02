@@ -60,20 +60,28 @@ class ChildModel extends Model {
     }
 
     public function addChild($data) {
-        $statement = "INSERT INTO $this->table (name,age)VALUES (:name,:age)";
+        $statement = "INSERT INTO kido_child (name, age, id_parent) VALUES (:name, :age, :id_parent)";
         $this->db->postData($statement, $data);
     }
     public function addChild_disease($data) {
-        $statement = "INSERT INTO kido_child_caract(id_child, title, type) 
-        VALUES (:data['id'] :data['disease'], 'disease')";
+        $statement = "INSERT INTO kido_child_caract(id_child, title, type) VALUES (:idParent , :disease , 'disease')";
         $this->db->postData($statement, $data);
     }
     
     public function addChild_allergy($data) {  
-
+        $statement = "INSERT INTO kido_child_caract(id_child, title, type) VALUES (:idParent , :allergy, 'allergy')";
+        $this->db->postData($statement, $data);
     }
 
     public function getlastInsertId() {
         return $this->db->lastInsertId();
+    }
+    public function getProPlanning() {
+        $statement = "SELECT * FROM kido_pro_planning_nounou";
+        return $this->db->getData($statement, false);
+    }
+    public function getPro($idPro) {
+        $statement = "SELECT * FROM kido_pro_planning_nounou WHERE id = $idPro ";
+        return $this->db->getData($statement, true);
     }
 }

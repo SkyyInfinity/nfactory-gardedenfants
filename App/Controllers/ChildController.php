@@ -15,14 +15,13 @@ class ChildController extends Controller
 
     public function addChild($data)
     {
-
         if (!empty($data)) {
-            $info = ['name' => $data['name'], 'age' => $data['age']];
+            $info = ['name' => $data['name'], 'age' => $data['age'],'id_parent' => $_SESSION['user']->id];
             $disease = $data['disease'];
             $allergy = $data['allergy'];
-            debug($disease);
             $this->childModel->addChild($info);
             $id = $this->childModel->getlastInsertId();
+            echo $id;
             foreach ($disease as $key => $value) {
                 $values = [
                     'id' => $id,
@@ -32,7 +31,11 @@ class ChildController extends Controller
             }
             //allergies
             foreach ($allergy as $key => $value) {
-                $this->childModel->addChild_allergy($id,$value);
+                $values = [
+                    'id' => $id,
+                    'allergy' => $value
+                ];
+                $this->childModel->addChild_allergy($values);
             }
             // Redirection
             // redirect('user');
@@ -61,10 +64,15 @@ class ChildController extends Controller
     {
         // Lance la requête
         $child = $this->childModel->getChildByParent($idParent, $idChild);
-
+        $plannings = $this->childModel->getProPlanning();
+        $pros = [];
+        foreach ($plannings as $value) {
+            array_push($pros,$this->childModel->getPro($value->id_user_nounou));
+        }
         // Render dans la Vue
         $this->render('reserve', [
-            'child' => $child
+            'child' => $child,
+            'pros' => $pros
         ]);
     }
 }

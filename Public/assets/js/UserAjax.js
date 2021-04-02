@@ -15,7 +15,6 @@ $(document).ready(function () {
                 allergy.push(element['value']);
             }
         });
-        console.log(data);
         $.ajax({
             type: 'POST',
             url: './Public/ajax/addChild.php',

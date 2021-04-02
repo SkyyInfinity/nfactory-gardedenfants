@@ -9,7 +9,12 @@ $title = 'Reserver pour ' . $child->name; ?>
         <h1 class="section-title">Reserver pour <?= $child->name ?></h1>
         <form action="" method="post">
             <div class="champ">
-                
+                <select name="pro" id="selectPro">
+                    <option>--Choisir un pro--</option>
+                <?php foreach ($pros as $key => $pro):?>
+                    echo $pro;
+                <?php endforeach?>
+                </select>
             </div>
             <div class="champ">
                 <label for="startDate">Heure d'arrivé</label>
