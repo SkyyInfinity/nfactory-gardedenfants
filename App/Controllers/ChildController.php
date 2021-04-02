@@ -15,38 +15,33 @@ class ChildController extends Controller
 
     public function addChild($data)
     {
-        $errorsChild = [];
-        if (!empty($data['submittedChild'])) {
-            $child = $this->encodeChars($data);
-            $errorsChild = validationText($errorsChild, $child['name'], 'name', 1, 30);
-            $errorsChild = validationNumber($errorsChild, $child['age'], 'age', 0, 12);
-            debug($errorsChild);
-            if (count($errorsChild) == 0) {
-                echo 'c\'est good';
-                // Lance la requête
-                // child
-                // $statement = "INSERT INTO kido_child(id_parent, 'name', age) 
-                //               VALUES (".$_SESSION['user']->id.", ".$child['name'].", ".$child['age']."";
-                // $this->db->postData($statement, $data);
 
-                // diseases
-                // $statement = "INSERT INTO kido_child_diseases(id_enfant, titre, 'description') 
-                //               VALUES ([value-2], [value-3], [value-4])";
-
-                // $this->db->postData($statement, $data);
-                // // allergies
-                // $statement = "INSERT INTO kido_child_allergy(id_enfant, titre, 'description') 
-                //               VALUES ([value-2], [value-3], [value-4])";
-
-                // $this->db->postData($statement, $data);
-                // Redirection
-                // redirect('user');
+        if (!empty($data)) {
+            $info = ['name' => $data['name'], 'age' => $data['age']];
+            $disease = $data['disease'];
+            $allergy = $data['allergy'];
+            debug($disease);
+            $this->childModel->addChild($info);
+            $id = $this->childModel->getlastInsertId();
+            foreach ($disease as $key => $value) {
+                $values = [
+                    'id' => $id,
+                    'disease' => $value
+                ];
+                $this->childModel->addChild_disease($values);
             }
+            //allergies
+            foreach ($allergy as $key => $value) {
+                $this->childModel->addChild_allergy($id,$value);
+            }
+            // Redirection
+            // redirect('user');
+        } else {
+            $this->render('account');
         }
+
         // Render dans la Vue
-        $this->render('account', [
-            'errorsChild' => $errorsChild
-        ]);
+
     }
 
     public function getChilds($idParent)
@@ -59,6 +54,7 @@ class ChildController extends Controller
             'childs' => $childs
         ]);
     }
+
 
 
     public function getChild($idParent, $idChild)

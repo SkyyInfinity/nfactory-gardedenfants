@@ -6,9 +6,22 @@ class Controller{
     public function encodeChars($data)
     {
         $encoded=[];
+
         foreach ($data as $key => $element) {
-            
-            $encoded[$key] = htmlspecialchars($element);
+            if (is_array($element)) {
+                foreach ($element as $key2 => $element2) {
+                    if ($key == 'disease') {
+                        $encoded['disease']=[];
+                        array_push($encoded['disease'],htmlspecialchars($element2));
+                    } elseif ($key == 'allergy') {
+                        $encoded['allergy']=[];
+                        array_push($encoded['allergy'],htmlspecialchars($element2));
+                    }
+                }
+            } else {
+                $encoded[$key] = htmlspecialchars($element);
+            }
+
         }
         return $encoded;
     }

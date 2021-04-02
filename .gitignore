@@ -2,9 +2,4 @@ README.md
 /Config/DbConfig.php
 /Pro/Config/DbConfig.php
 .htaccess
-<<<<<<< HEAD
 Public/inc/url.php
-Public\inc\url.php
-=======
-/Public/inc/url.php
->>>>>>> 9ecbd0373996ebe48a1eaa044dcac8e9e3835d08

@@ -46,8 +46,8 @@ class UserModel extends Model{
         $this->db->postData($statement, $data);
     }
     public function getProLoc() {
-        $statement1 = "SELECT adresse,name,type,place FROM kido_pro_creche";
-        $statement2 = "SELECT adresse,first_name,last_name,genre,type FROM kido_pro_user_nounou";
-        return array_merge($this->db->getData($statement1),$this->db->getData($statement2));
+        $statement = "SELECT * FROM kido_pro_locate";
+        return $this->db->getData($statement);
     }
+    
 }
