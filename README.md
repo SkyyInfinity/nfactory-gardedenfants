@@ -25,7 +25,6 @@ Installation
 
 Si vous voulez installer ce prototype sur votre PC ou MAC, veuillez suivre ses indications:
 
-**
 
 1. Télécharger le code source en .zip via **"Code"** en haut à droite et ensuite **"Download ZIP"**.
 
