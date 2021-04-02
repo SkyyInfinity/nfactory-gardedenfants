@@ -42,7 +42,7 @@ if(!empty($_POST['firstname-infoUser'])){
 if(!empty($_POST['email-infoUser'])){
     $email = $ValideForm->cleanXSS($_POST['email-infoUser']);
     if($ValideForm->verifEmail($email) && ($email !== $actualUser->email)){
-        $user['user'] = $email;
+        $user['email'] = $email;
         $_SESSION['user']['email'];
     }
 }
