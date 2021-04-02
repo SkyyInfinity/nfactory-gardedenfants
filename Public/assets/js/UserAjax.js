@@ -1,106 +1,74 @@
 $(document).ready(function () {
-    //Ajout d'un enfant ()
-    var allergys = [];
-    // $('#form_add_disease').on('click',function(event) {
-    //     event.preventDefault();
-
-    // }),
-    $('#form_add_allergy').on('click', function (event) {
-        event.preventDefault();
-        if ($('#allergy_list').val() != '') {
-            var selected_allergy = $('#allergy_list').val();
-            if (allergys.indexOf(selected_allergy) < 0) {
-                allergys.push(selected_allergy)
-            }
-            $('#selected_allergy_list').empty();
-            var i = 0;
-            allergys.forEach(allergy => {
-                if (i == 0) {
-                    $('#selected_allergy_list').append('<p>Allergies : </p><a href="#" class="span_allergy_' + allergy + '" id="remove_allergy">' + allergy + '</a>')
-                    i++;
-                } else {
-                    $('#selected_allergy_list').append(', <a href="#" class="span_allergy_' + allergy + '" id="remove_allergy">' + allergy + '</a>')
-                    i++;
-                }
-            });
-        } else {
-            console.log('error no selection')
-        }
-    })
-    $('#form_add_childs').on('submit', function (e) {
-        e.preventDefault();
-        var children = [];
-        $('#form_add_childs input[type=text]').each(function (index, element) {
-            children.push(element.value);
-        })
-        // TODO Terminer l'ajax d'ajout d'enfants
-        // TODO implementer l'ajax dans la connexion et l'inscription (Objectif : One page).
-        // $.ajax({
-        //     type: 'POST',
-        //     url: 'ajax/ajax-abonne.php',
-        //     data: {
-        //         name: nom,
-        //     },
-        //     dataType: 'json',
-        //     success: function(response) {
-        //         console.log(response);
-        //     }
-        // })
-    })
-    $('#remove_allergy').click(function (e) { 
-        e.preventDefault();
-            console.log('test')
-            var allergy_id = $(this).attr;
-            console.log(allergy_id);
+    // $('#addChild').on('submit', function (e) {
+    //     e.preventDefault();
+    //     console.log('test');
+    //     var nom = $('#childname').value;
+    //     var age = $('#age').value;
+    //     var checkedValues = $('.mulinput').map(function() {
+    //         return this.value;
+    //     }).get();
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: './Public/ajax/addChild.php',
+    //         data: {
+    //             name: nom,
+    //             age: age,
+    //         },
+    //         dataType: 'json',
+    //         success: function(response) {
+    //             console.log(response);
+    //         },
+    //         error : function(response) {
+    //             console.log(response);
+    //         }
+    //     })
+    // })
+    $(document).on("click", ".MultiCheckBox", function () {
+        var detail = $(this).next();
+        detail.show();
     });
-    $(document).ready(function () {
-        $(document).on("click", ".MultiCheckBox", function () {
-            var detail = $(this).next();
-            detail.show();
-        });
 
-        $(document).on("click", ".MultiCheckBoxDetailHeader input", function (e) {
-            e.stopPropagation();
-            var hc = $(this).prop("checked");
-            $(this).closest(".MultiCheckBoxDetail").find(".MultiCheckBoxDetailBody input").prop("checked", hc);
-            $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
-        });
+    $(document).on("click", ".MultiCheckBoxDetailHeader input", function (e) {
+        e.stopPropagation();
+        var hc = $(this).prop("checked");
+        $(this).closest(".MultiCheckBoxDetail").find(".MultiCheckBoxDetailBody input").prop("checked", hc);
+        $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
+    });
 
-        $(document).on("click", ".MultiCheckBoxDetailHeader", function (e) {
-            var inp = $(this).find("input");
-            var chk = inp.prop("checked");
-            inp.prop("checked", !chk);
-            $(this).closest(".MultiCheckBoxDetail").find(".MultiCheckBoxDetailBody input").prop("checked", !chk);
-            $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
-        });
+    $(document).on("click", ".MultiCheckBoxDetailHeader", function (e) {
+        var inp = $(this).find("input");
+        var chk = inp.prop("checked");
+        inp.prop("checked", !chk);
+        $(this).closest(".MultiCheckBoxDetail").find(".MultiCheckBoxDetailBody input").prop("checked", !chk);
+        $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
+    });
 
-        $(document).on("click", ".MultiCheckBoxDetail .cont input", function (e) {
-            e.stopPropagation();
-            $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
+    $(document).on("click", ".MultiCheckBoxDetail .cont input", function (e) {
+        e.stopPropagation();
+        $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
 
-            var val = ($(".MultiCheckBoxDetailBody input:checked").length == $(".MultiCheckBoxDetailBody input").length)
-            $(".MultiCheckBoxDetailHeader input").prop("checked", val);
-        });
+        var val = ($(".MultiCheckBoxDetailBody input:checked").length == $(".MultiCheckBoxDetailBody input").length)
+        $(".MultiCheckBoxDetailHeader input").prop("checked", val);
+    });
 
-        $(document).on("click", ".MultiCheckBoxDetail .cont", function (e) {
-            var inp = $(this).find("input");
-            var chk = inp.prop("checked");
-            inp.prop("checked", !chk);
+    $(document).on("click", ".MultiCheckBoxDetail .cont", function (e) {
+        var inp = $(this).find("input");
+        var chk = inp.prop("checked");
+        inp.prop("checked", !chk);
 
-            var multiCheckBoxDetail = $(this).closest(".MultiCheckBoxDetail");
-            var multiCheckBoxDetailBody = $(this).closest(".MultiCheckBoxDetailBody");
-            multiCheckBoxDetail.next().UpdateSelect();
+        var multiCheckBoxDetail = $(this).closest(".MultiCheckBoxDetail");
+        var multiCheckBoxDetailBody = $(this).closest(".MultiCheckBoxDetailBody");
+        multiCheckBoxDetail.next().UpdateSelect();
 
-            var val = ($(".MultiCheckBoxDetailBody input:checked").length == $(".MultiCheckBoxDetailBody input").length)
-            $(".MultiCheckBoxDetailHeader input").prop("checked", val);
-        });
+        var val = ($(".MultiCheckBoxDetailBody input:checked").length == $(".MultiCheckBoxDetailBody input").length)
+        $(".MultiCheckBoxDetailHeader input").prop("checked", val);
+    });
 
-        $(document).mouseup(function (e) {
-            var container = $(".MultiCheckBoxDetail");
-            if (!container.is(e.target) && container.has(e.target).length === 0) {
-                container.hide();
-            }
-        });
+    $(document).mouseup(function (e) {
+        var container = $(".MultiCheckBoxDetail");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.hide();
+        }
     });
 
     var defaultMultiCheckBoxOption = { width: '100%', defaultText: 'Select Below', height: '200px' };
@@ -131,7 +99,7 @@ $(document).ready(function () {
                 multiCheckBoxDetailBody.append("<div class='cont'><div><input type='checkbox' class='mulinput' value='" + val + "' /></div><div>" + $(this).text() + "</div></div>");
             });
 
-            multiCheckBoxDetailBody.css("max-height", (parseInt($(".MultiCheckBoxDetail").css("max-height")) - 28) + "px");
+            multiCheckBoxDetailBody.css("max-height", (parseInt($(".MultiCheckBoxDetail").css("max-height")) - 1) + "px");
         },
         UpdateSelect: function () {
             var arr = [];

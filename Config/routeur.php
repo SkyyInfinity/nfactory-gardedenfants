@@ -31,19 +31,17 @@ switch ($page) {
         $user->logout();
         break;
     case "user":
-        // $user = new UserController();
-        // $user->homeUser();
         $childs = new ChildController();
         $user = new UserController();
-        if(!empty($_SESSION['user']->id)) {
-            $childs->getChilds($_SESSION['user']->id);
-        } else {
-            $user->logout();
-        }
+        $childs->getChilds($_SESSION['user']->id);
+        // if(!empty($_SESSION['user']->id)) {
+        //     $childs->getChilds($_SESSION['user']->id);
+        // } else {
+        //     $user->logout();
+        // }
         break;
+
     case "account":
-        // $user = new UserController();
-        // $user->account();
         $child = new ChildController();
         $child->addChild($_POST);
         break;
@@ -63,7 +61,7 @@ switch ($page) {
         $child = new ChildController();
         $child->getChild($_SESSION['user']->id, $_GET['id']);
         break;
-    default:
+    default :
         $home = new HomeController();
         $home->home();
         break;

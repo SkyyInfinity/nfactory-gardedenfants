@@ -38,7 +38,7 @@ class ChildModel extends Model {
         $statement = "SELECT kido_child.id, kido_child.name, kido_child.age FROM kido_child 
                       INNER JOIN kido_user 
                       ON kido_child.id_parent = kido_user.id 
-                      WHERE kido_child.id = $idChild";
+                      WHERE kido_child.id = $idChild AND kido_user.id = $idParent";
 
         return $this->db->getData($statement, true);
     }

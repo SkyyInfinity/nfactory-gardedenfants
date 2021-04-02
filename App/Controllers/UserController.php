@@ -23,8 +23,9 @@ class UserController extends Controller
             $errors = validationEmail($errors, $user['email'], 'email');
             $errors = validationPassword($errors, $user['password'], $user['password2'], 'password', 8, 30);
 
-            if(count($errors) === 0) {
+            if(count($errors) == 0) {
                 unset($user['password2']);
+                unset($user['submitted']);
                 $user["password"] = password_hash($user["password"], PASSWORD_DEFAULT);
                 $user["role"] = json_encode(['user']);
                 $this->userModel->create($user);
@@ -47,7 +48,7 @@ class UserController extends Controller
                         $_SESSION['user'] = $user;
                         $_SESSION['user']->role = json_decode($user->role);
                         $user = [];
-                        header("Location:user");
+                        // header("Location:user");
                     } else {
                         $errors = "Utilisateur ou mot de passe incorrect.";
                     }
