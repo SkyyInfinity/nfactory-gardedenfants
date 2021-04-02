@@ -9,6 +9,9 @@ $title = 'Reserver pour ' . $child->name; ?>
         <h1 class="section-title">Reserver pour <?= $child->name ?></h1>
         <form action="" method="post">
             <div class="champ">
+                
+            </div>
+            <div class="champ">
                 <label for="startDate">Heure d'arrivé</label>
                 <input type="date" name="startDate" id="startDate">
                 <?php if(!empty($errors['startDate'])) : ?>

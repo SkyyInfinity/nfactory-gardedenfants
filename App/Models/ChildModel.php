@@ -58,4 +58,22 @@ class ChildModel extends Model {
 
         $this->db->postData($statement, $data);
     }
+
+    public function addChild($data) {
+        $statement = "INSERT INTO $this->table (name,age)VALUES (:name,:age)";
+        $this->db->postData($statement, $data);
+    }
+    public function addChild_disease($data) {
+        $statement = "INSERT INTO kido_child_caract(id_child, title, type) 
+        VALUES (:data['id'] :data['disease'], 'disease')";
+        $this->db->postData($statement, $data);
+    }
+    
+    public function addChild_allergy($data) {  
+
+    }
+
+    public function getlastInsertId() {
+        return $this->db->lastInsertId();
+    }
 }
