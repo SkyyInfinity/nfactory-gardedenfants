@@ -78,7 +78,7 @@ body {
   justify-content: space-around;
   padding-bottom: 10px;
 }
-#main .box2 .title2 p{
+#main .box2 .title2 p {
   margin-bottom: 25px;
 }
 
@@ -120,9 +120,7 @@ body {
   left: 50px;
 }
 
-
 /*-------- LOGIN --------*/
-
 
 #loginSectionNounou {
   display: flex;
@@ -217,19 +215,18 @@ body {
   letter-spacing: 5px;
 }
 
-.proNav ul li{
+.proNav ul li {
   padding: 25px 25px;
   margin: 0 15px;
 }
 
-
-header nav.proNav ul{
+header nav.proNav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.proNav ul li:hover a{
+.proNav ul li:hover a {
   transform: translateY(-600px);
   animation: 0s slideIn ease-in-out forwards 0s;
   z-index: 10;
@@ -237,8 +234,8 @@ header nav.proNav ul{
   position: relative;
 }
 
-.proNav ul li:hover a::before{
-  content: '';
+.proNav ul li:hover a::before {
+  content: "";
   height: 20px;
   width: 0%;
   position: absolute;
@@ -261,24 +258,23 @@ header nav.proNav ul{
   }
 }
 
-.proNav ul li:hover a.deco::before{
+.proNav ul li:hover a.deco::before {
   background-color: #c0392b;
 }
-.proNav ul li:hover a.particulier::before{
-  background-color: #9980FA;
+.proNav ul li:hover a.particulier::before {
+  background-color: #9980fa;
 }
-.proNav ul li:hover a.accueil::before{
-  background-color: #12CBC4;
+.proNav ul li:hover a.accueil::before {
+  background-color: #12cbc4;
 }
-.proNav ul li:hover a.espace::before{
-  background-color: #A3CB38;
+.proNav ul li:hover a.espace::before {
+  background-color: #a3cb38;
 }
 
-.proNav ul li:active a{
+.proNav ul li:active a {
   position: relative;
   top: 2px;
 }
-
 
 /*--------------------------------------------*/
 /*-------------DASHBOARD NOUNOU---------------*/
@@ -369,23 +365,28 @@ header nav.proNav ul{
 
 /*-- GEO LIST --*/
 
-#contentItem-7 .geolisting:hover {
+#contentItem-6 .geolisting:hover {
   transition-duration: 0.3s;
   color: #227093;
 }
 
-#contentItem-7 .geolisting {
+#contentItem-6 .geolisting {
   cursor: pointer;
 }
 
-#contentItem-7 {
+#contentItem-6 div.flex-justify-center {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 100%;
 }
 
-#contentItem-7 input {
+#contentItem-6 div.flex-justify-center div.content-local {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#contentItem-6 input {
   background-color: #f1f2f6;
   outline: none;
   border: none;
@@ -408,22 +409,22 @@ header nav.proNav ul{
   padding: 2px 4px;
 }
 
-#contentItem-7 h3 {
+#contentItem-6 h3 {
   margin: 20px 0;
   font-size: 18px;
 }
 
-#contentItem-7 h4 {
+#contentItem-6 h4 {
   font-size: 17px;
   margin: 15px 0;
 }
 
-#contentItem-7 h4.success span {
+#contentItem-6 h4.success span {
   color: #009432;
   font-weight: 700;
 }
 
-#contentItem-7 .resize {
+#contentItem-6 .resize {
   height: 300px;
 }
 i.animation {
@@ -432,14 +433,14 @@ i.animation {
 
 /*-- Envoye des fichiers  --*/
 
-#contentItem-5 {
+#contentItem-4 div.content-Certif {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 100%;
 }
 
-#contentItem-5 input,
+#contentItem-4 input,
 button {
   background-color: #f1f2f6;
   outline: none;
@@ -450,18 +451,20 @@ button {
   width: 400px;
 }
 
-#contentItem-5 button {
+#contentItem-4 button {
+  margin-top: 20px;
+  margin-left: 50px;
   width: 200px;
   cursor: pointer;
 }
 
-#contentItem-5 button:hover {
+#contentItem-4 button:hover {
   background-color: #227093;
   color: #f1f2f6;
   transition-duration: 0.3s;
 }
 
-#contentItem-5 h2 {
+#contentItem-4 h2 {
   margin: 20px 0;
   font-size: 18px;
 }
@@ -626,7 +629,7 @@ div#allSkills div.skill span.description {
 
 #AddDateNounou div label {
   text-transform: uppercase;
-  font-size: 1.3em;
+  font-size: 1.2em;
   align-self: flex-start;
   width: 25%;
 }
@@ -634,6 +637,10 @@ div#allSkills div.skill span.description {
 #AddDateNounou div i {
   width: 5%;
   margin-left: 10px;
+}
+
+#AddDateNounou div input {
+  width: 30%;
 }
 
 #showPlanning {
