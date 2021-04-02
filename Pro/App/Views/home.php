@@ -7,7 +7,7 @@
     <div class="box_categorie">
         <div class="box">
             <div class="title">
-                <p>Vous étes gérant d'une créche ?</p>
+                <p>Connexion !</p>
             </div>
             <div class="content_box1">
                 <div class="img pos1"><img src="./Public/assets/img/svg/house.svg" alt="House"></div>
@@ -19,15 +19,15 @@
                         jelly-o icing pudding jelly-o danish candy marshmallow cookie.
                     </p>
                 </div>
-                <div class="button"><a href="./registerNursery"><i class="fas fa-arrow-right"></i> Créer votre compte pro <i class="fas fa-user"></i></a></div>
+                <div class="button"><a href="./registerNounou"><i class="fas fa-arrow-right"></i> Créer votre compte pro <i class="fas fa-user"></i></a></div>
             </div>
         </div>
 
-        <div class="box">
+        <div class="box box2">
             <div class="content1">
                 <div class="content1right">
                     <div class="title">
-                        <p>Vous étes assitante maternelle ?</p>
+                        <p>Une interface intuitive !</p>
                     </div>
                     <div class="text">
                         <p>
@@ -37,13 +37,12 @@
                             jelly-o icing pudding jelly-o danish candy marshmallow cookie.
                         </p>
                     </div>
-                    <div class="button"><a href="./registerNounou"><i class="fas fa-arrow-right"></i> Créer votre compte pro <i class="fas fa-user"></i></a></div>
                 </div>
                 <div class="content1left img pos2">
                     <img src="./Public/assets/img/svg/woman.svg" alt="woman">
                 </div>
             </div>
-            <div class="title">
+            <div class="title title2">
                 <p>Vous avez déja un compte ?</p>
             </div>
             <div class="login">

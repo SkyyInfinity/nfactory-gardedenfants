@@ -2,5 +2,4 @@ README.md
 /Config/DbConfig.php
 /Pro/Config/DbConfig.php
 .htaccess
-/Public/inc/url.php
 Public/inc/url.php

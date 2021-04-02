@@ -157,6 +157,21 @@ span.span-error {
   display: none;
 }
 
-.isvisible{
+.isvisible {
   display: block;
 }
+/*
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-justify-center div {
+  width: 50%;
+}
+
+.flex-justify-center div.text-local {
+  width: 100%;
+}
+*/
