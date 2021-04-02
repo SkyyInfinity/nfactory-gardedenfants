@@ -3,36 +3,20 @@
 <div id="NounouDashboard">
 
     <div class="navBar">
-        <div id="menuItem-1" class="menuItem active">Dashboard</div>
-        <div id="menuItem-2" class="menuItem">Votre profil</div>
-        <div id="menuItem-3" class="menuItem">Vos compétences</div>
-        <div id="menuItem-4" class="menuItem">Votre planning</div>
-        <div id="menuItem-5" class="menuItem">Certification</div>
-        <div id="menuItem-6" class="menuItem">Paiment</div>
-        <div id="menuItem-7" class="menuItem">Localisation</div>
-        <div id="menuItem-8" class="menuItem">Finance</div>
+        <div id="menuItem-1" class="menuItem active">Votre profil</div>
+        <div id="menuItem-2" class="menuItem">Vos compétences</div>
+        <div id="menuItem-3" class="menuItem">Votre planning</div>
+        <div id="menuItem-4" class="menuItem">Certification</div>
+        <div id="menuItem-5" class="menuItem">Paiment</div>
+        <div id="menuItem-6" class="menuItem">Localisation</div>
+        <div id="menuItem-7" class="menuItem">Finance</div>
     </div>
 
     <div class="content">
 
-    <!-- Espace récap / Dashboard -->
-        <div class="contentItem contentItem-1" id="contentItem-1">
-            <div class="box box-1">
-                <h2 class="titleBox">Récapitulatif</h2>
-            </div>
-            <div class="box box-2">
-                <h2 class="titleBox">Problème</h2>
-            </div>
-            <div class="box box-3">
-                <h2 class="titleBox">Messagerie</h2>
-            </div>
-            <div class="box box-4">
-                <h2 class="titleBox">Finance</h2>
-            </div>
-        </div>
 
     <!-- Espace Mon profil-->
-        <div class="contentItem hidden" id="contentItem-2">
+        <div class="contentItem " id="contentItem-1">
             <h2 class="titleSection">Votre profil</h2>
 
             <form id="FormChangeData" action="./Public/ajax/ajax-changeData.php" method="POST">
@@ -79,7 +63,7 @@
         </div>
 
     <!-- Espace Vos compétence-->
-        <div class="contentItem hidden" id="contentItem-3">
+        <div class="contentItem hidden" id="contentItem-2">
             <h2 class="titleSection">Vos compétences</h2>
             <?php if(!empty($competences)) : ?>
             <div id="allSkills">
@@ -117,7 +101,7 @@
         </div>
 
     <!-- Espace Planning-->
-        <div class="contentItem hidden" id="contentItem-4">
+        <div class="contentItem hidden" id="contentItem-3">
             <h2 class="titleSection">Votre Planning</h2>
             <div class="holdFormAddDateNounou">
                 <form action="./Public/ajax/ajax-addCrenaux.php" method="POST" id="AddDateNounou" novalidate>
@@ -154,7 +138,7 @@
     <!-- Espace Certification-->
 
 
-        <div class="contentItem hidden" id="contentItem-5">
+        <div class="contentItem hidden" id="contentItem-4">
             <div>
                 <h2>Vos fichiers</h2>
                 <h2>Status : </h2>
@@ -174,7 +158,7 @@
         <!-- Espace paiments-->
 
 
-        <div class="contentItem hidden" id="contentItem-6">
+        <div class="contentItem hidden" id="contentItem-5">
             <h2>Vos paiment reçu</h2>
             <div>   
             </div>
@@ -182,7 +166,7 @@
 
         </div>
 
-        <div class="contentItem hidden" id="contentItem-7">
+        <div class="contentItem hidden" id="contentItem-6">
             <div>
                 <h3>Localisation</h2>
                 <?php if(!empty($adresse)){ ?>
@@ -221,7 +205,7 @@
         <!-- Espace paiment-->
 
 
-        <div class="contentItem hidden" id="contentItem-8">
+        <div class="contentItem hidden" id="contentItem-7">
             <div>   
 
                     <h2>Finance</h2>

@@ -301,16 +301,16 @@ body {
 
 /*-- GEO LIST --*/
 
-#contentItem-7 .geolisting:hover{
+#contentItem-7 .geolisting:hover {
   transition-duration: 0.3s;
   color: #227093;
 }
 
-#contentItem-7 .geolisting{
+#contentItem-7 .geolisting {
   cursor: pointer;
 }
 
-#contentItem-7{
+#contentItem-7 {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -327,35 +327,35 @@ body {
   width: 400px;
 }
 
-#geolist{
+#geolist {
   height: 200px;
   margin-left: 67px;
   line-height: 26px;
 }
 
-#geolist tr td{
+#geolist tr td {
   background-color: #f1f2f6;
   border-bottom: #7f8c8d 1px solid;
   width: 400px;
   padding: 2px 4px;
 }
 
-#contentItem-7 h3{
+#contentItem-7 h3 {
   margin: 20px 0;
   font-size: 18px;
 }
 
-#contentItem-7 h4{
+#contentItem-7 h4 {
   font-size: 17px;
   margin: 15px 0;
 }
 
-#contentItem-7 h4.success span{
-  color:#009432;
+#contentItem-7 h4.success span {
+  color: #009432;
   font-weight: 700;
 }
 
-#contentItem-7 .resize{
+#contentItem-7 .resize {
   height: 300px;
 }
 i.animation {
@@ -364,14 +364,15 @@ i.animation {
 
 /*-- Envoye des fichiers  --*/
 
-#contentItem-5{
+#contentItem-5 {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 100%;
 }
 
-#contentItem-5 input,button {
+#contentItem-5 input,
+button {
   background-color: #f1f2f6;
   outline: none;
   border: none;
@@ -386,13 +387,13 @@ i.animation {
   cursor: pointer;
 }
 
-#contentItem-5 button:hover{
+#contentItem-5 button:hover {
   background-color: #227093;
   color: #f1f2f6;
   transition-duration: 0.3s;
 }
 
-#contentItem-5 h2{
+#contentItem-5 h2 {
   margin: 20px 0;
   font-size: 18px;
 }
