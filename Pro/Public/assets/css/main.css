@@ -184,6 +184,68 @@ body {
   bottom: 2px;
 }
 
+
+/*-------- Register --------*/
+
+#formRegisterNounou{
+  font-size: 20px;
+}
+
+#formRegisterNounou form{
+  display: flex;
+  flex-direction: column;
+}
+#formRegisterNounou form div{
+  margin: 10px 0;
+  display: flex;
+}
+
+#formRegisterNounou h2 {
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+  font-weight: 800;
+}
+
+#formRegisterNounou input {
+  background-color: #f1f2f6;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 4px 8px;
+  color: #227093;
+  width: 300px;
+}
+
+#formRegisterNounou h2 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #227093;
+  padding-bottom: 15px;
+}
+
+#formRegisterNounou label {
+  font-size: 20px;
+}
+#formRegisterNounou span.span-error {
+  font-size: 20px;
+}
+
+#formRegisterNounou input[type="submit"] {
+  font-weight: 700;
+}
+
+#formRegisterNounou input[type="submit"]:hover {
+  background-color: #227093;
+  color: #f1f2f6;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+#formRegisterNounou input[type="submit"]:active {
+  position: relative;
+  bottom: 2px;
+}
+
 /*------------HEADER---------------*/
 
 #proHeader {
