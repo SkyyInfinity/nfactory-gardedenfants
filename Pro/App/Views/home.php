@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="title title2">
-                <p>Vous avez déja un compte ?</p>
+                <p>Vous avez déjà un compte ?</p>
             </div>
             <div class="login">
                 <div class="button loginbtn"><a href="./loginNounou"><i class="fas fa-arrow-right"></i> Se connecter <i class="fas fa-user"></i></a></div>
