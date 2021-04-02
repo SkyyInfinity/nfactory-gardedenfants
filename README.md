@@ -48,7 +48,20 @@ RewriteRule ^/?()$ /your/path/here/Public/index.php [L]
 define('URL', 'http://localhost/your/path/here/');
 ```
 
-5. Ensuite vous pouvez explorer le site en toute tranquillité ! :)
+5. Modifier le fichier `DbConfig.php` dans `Config/` , comme ceci:
+
+```html
+<?php
+
+$config = [
+    "dbName" => "mydb",
+    "dbHost" => "localhost",
+    "dbUser" => "user",
+    "dbPassword" => "password" //pas de mot de passe sur Windows
+];
+```
+
+6. Ensuite vous pouvez explorer le site en toute tranquillité ! :)
 
 
 Remerciements
